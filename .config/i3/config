@@ -82,6 +82,7 @@ bindsym Print exec --no-startup-id i3-scrot
 #
 # Fullscreen screenshot
 bindsym --release Print exec "flameshot full -p ~/pix/ss/ -c"
+testing
 bindsym --release $mod+Shift+Print exec --no-startup-id "flameshot gui"
 
 # Start Applications with $mod+Fn
