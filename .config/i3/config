@@ -81,8 +81,8 @@ bindsym Print exec --no-startup-id i3-scrot
 # bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 #
 # Fullscreen screenshot
-bindsym --release Print exec "flameshot full -p ~/pix/ss/ -c" # store to path and add to clipboard
-bindsym --release $mod+Shift+Print exec --no-startup-id "flameshot gui" # select region
+bindsym --release Print exec --no-startup-id flameshot full -p /home/savolla/pix/ss/ -c
+bindsym --release $mod+Shift+Print exec --no-startup-id flameshot gui # select region
 
 # Start Applications with $mod+Fn
 bindsym $mod+F1 exec $terminal -e weechat
