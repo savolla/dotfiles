@@ -44,7 +44,14 @@ alias rmorph="sudo pacman -R \$(pacman -Qdtq)"
 alias newnet="sudo systemctl restart NetworkManager" # Refresh wifi
 alias rkey="sh ~/.scripts/repair-keys"
 alias b="cd .."
+alias g="cd"
 alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
+alias pss="pacman -Ss" # pacman search
+alias ass="pacaur -Ss" # aur search
+alias pi="sudo pacman -S --noconfirm" # pacman install
+alias ai="sudo pacman -S" # aur install
+alias prs="sudo pacman -Rs" # pacman remove
+alias prf="sudo pacman -Rs" # pacman remove force
 
 # some aliases
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
@@ -59,6 +66,7 @@ alias r="ranger"
 alias mkdir="mkdir -pv"
 weath() { curl wttr.in/$1 ;} # Check the weather (give city or leave blank).
 alias torb="./src/tor-browser_en-US/Browser/start-tor-browser www.thepiratebay.org &"
+
 
 # Adding color
 alias ls='ls -hN --color=auto --group-directories-first'

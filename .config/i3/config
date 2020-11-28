@@ -557,11 +557,13 @@ bindsym $mod+Shift+m exec --no-startup-id sh ~/.scripts/mm
 bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
 
 # browser-fu
-bindsym$mod+Ctrl+Shift+t exec --no-startup-id brave https://translate.google.com    # translate
+bindsym $mod+Ctrl+Shift+t exec --no-startup-id brave https://translate.google.com    # translate
 bindsym $mod+Ctrl+Shift+y exec --no-startup-id brave https://youtube.com             # video source
 bindsym $mod+Ctrl+Shift+g exec --no-startup-id brave https://google.com              # google search
 bindsym $mod+Ctrl+Shift+s exec --no-startup-id brave https://github.com/search       # github search
 bindsym $mod+Ctrl+Shift+e exec --no-startup-id brave https://www.reddit.com/r/emacs/ # reddit
+bindsym $mod+Ctrl+Shift+w exec --no-startup-id brave https://www.wikipedia.org/      # wikipedia
+bindsym $mod+Ctrl+Shift+a exec --no-startup-id brave https://wiki.archlinux.org/     # archwiki
 
 # INITIALIZATION
 # ----------------
@@ -577,8 +579,9 @@ exec --no-startup-id xmodmap -e "keycode 66 = ISO_Level3_Shift"
 exec --no-startup-id xmodmap -e "keycode 50 = Alt_L"
 exec --no-startup-id xmodmap -e "keycode 64 = Shift_L"
 
-exec --no-startup-id sh /home/savolla/src/scripts/battery-low-alert/battery-low-alert.s	# battery
-exec --no-startup-id sudo chown savolla /sys/class/backlight/intel_backlight/brightness	# bright
+exec --no-startup-id sh ~/.scripts/battery-low-alert/battery-low-alert.sh # battery
+exec --no-startup-id sh ~/.scripts/demon.sh # my beautiful daemon >:)
+exec --no-startup-id sudo chown savolla /sys/class/backlight/intel_backlight/brightness # bright
 exec --no-startup-id pulseaudio-equalizer enable # soundgoodizer :D
 exec --no-startup-id sct 3210 # warm and sweet screen
 exec --no-startup-id xrdb ~/.Xresources # initialize my own .Xresources
