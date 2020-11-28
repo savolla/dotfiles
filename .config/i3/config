@@ -554,8 +554,13 @@ bindsym $mod+b exec --no-startup-id sh ~/.scripts/book-opener.sh
 bindsym $mod+n exec --no-startup-id mpv --volume=60 ~/aud/mus/rlx/white-noise.mp3
 bindsym $mod+Shift+n exec --no-startup-id kill $(ps aux | grep white-noise | grep -v grep | awk '{ print $2 }')
 bindsym $mod+Shift+m exec --no-startup-id sh ~/.scripts/mm
-bindsym $mod+Shift+y exec --no-startup-id brave https://translate.google.com
 bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
+
+# browser-fu
+bindsym $mod2+Ctrl+t exec --no-startup-id brave https://translate.google.com    # translate
+bindsym $mod2+Ctrl+y exec --no-startup-id brave https://youtube.com             # video source
+bindsym $mod2+Ctrl+g exec --no-startup-id brave https://google.com              # google search
+bindsym $mod2+Ctrl+s exec --no-startup-id brave https://github.com/search       # github search
 
 # INITIALIZATION
 # ----------------
