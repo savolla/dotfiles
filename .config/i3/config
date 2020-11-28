@@ -545,7 +545,7 @@ bindsym $mod+Shift+i exec --no-startup-id xcalib -invert -alter
 # bindsym $mod+F12	exec --no-startup-id amixer -q set Master 2dB+ unmute	# volume DOWN
 # bindsym $mod+F10	exec --no-startup-id amixer -q set Master 2dB+ mute	    # mute
 bindsym $mod2+u exec --no-startup-id screenkey -s small --mods-mod win -f Hermit # quickly showing what you type
-bindsym $mod2+y exec --no-startup-id pkill -f screenkey
+bindsym $mod2+Shift+u exec --no-startup-id pkill -f screenkey
 bindsym $mod2+Shift+s exec --no-startup-id pkill -f ffmpeg
 bindsym $mod2+d exec --no-startup-id optirun ~/gms/DF/PyLNP
 bindsym $mod2+1 exec --no-startup-id sh ~/.scripts/vocab
@@ -557,10 +557,11 @@ bindsym $mod+Shift+m exec --no-startup-id sh ~/.scripts/mm
 bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
 
 # browser-fu
-bindsym $mod2+Ctrl+t exec --no-startup-id brave https://translate.google.com    # translate
-bindsym $mod2+Ctrl+y exec --no-startup-id brave https://youtube.com             # video source
-bindsym $mod2+Ctrl+g exec --no-startup-id brave https://google.com              # google search
-bindsym $mod2+Ctrl+s exec --no-startup-id brave https://github.com/search       # github search
+bindsym$mod+Ctrl+Shift+t exec --no-startup-id brave https://translate.google.com    # translate
+bindsym $mod+Ctrl+Shift+y exec --no-startup-id brave https://youtube.com             # video source
+bindsym $mod+Ctrl+Shift+g exec --no-startup-id brave https://google.com              # google search
+bindsym $mod+Ctrl+Shift+s exec --no-startup-id brave https://github.com/search       # github search
+bindsym $mod+Ctrl+Shift+e exec --no-startup-id brave https://www.reddit.com/r/emacs/ # reddit
 
 # INITIALIZATION
 # ----------------
