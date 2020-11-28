@@ -19,3 +19,4 @@ git --git-dir="$HOME/$NOTITIA"/.git commit -m "$COMMIT_MESSAGE"
 git --git-dir="$HOME/$NOTITIA"/.git push https://"$GITHUB_USER":"$GITHUB_PASS"@github.com/"$GITHUB_USER"/"$NOTITIA".git main -f
 
 ## savolla.github.io
+# update the hugo theme once a week
