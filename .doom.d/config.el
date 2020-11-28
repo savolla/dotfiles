@@ -5,6 +5,10 @@
 (setq lsp-gopls-hover-kind "FullDocumentation")
 
 ;; python
+;; rust
+(setq rustic-format-on-save t)
+(setq lsp-rust-all-features t)
+(setq lsp-rust-cfg-test t)
 ;;#######################################################################################
 
 
@@ -70,6 +74,12 @@
 (map! :leader :desc "next workspace"         "TAB l" #'+workspace:switch-next ) ;; workspace next
 (map! :leader :desc "previous workspace"     "TAB h" #'+workspace:switch-previous ) ;; workspace previous
 
+;; org-roam
+(map! :leader :desc "tagging"           "n r t")
+(map! :leader :desc "add tag"           "n r t a" #'org-roam-tag-add)
+(map! :leader :desc "delete tag"        "n r t d" #'org-roam-tag-delete)
+(map! :leader :desc "roam server"       "n r G" #'org-roam-server-mode)
+
 ;;#######################################################################################
 
 
@@ -120,11 +130,13 @@
 
 ;; Utility ##############################################################################
 
+
 ;; Anki
 (setq anki-editor-create-decks t)
 
 ;; Org
 (setq
+ org-adapt-indentation nil ;; [fn::suspect]
  org-directory "~/txt/"
  org-ellipsis " ▼ "
  org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")
@@ -175,11 +187,13 @@
 ;; Company
 (after! company
   (remove-hook 'evil-normal-state-entry-hook #'company-abort)) ;; prevent mini blocks disappearence
+(setq company-idle-delay 0)
 
 ;; Magit
 (setq forge-topic-list-limit '(30 . 6)) ;; limit the number of topics
 
 ;; org-roam
+(setq org-roam-index-file "notitia.org" )
 (setq org-roam-capture-templates
       '(("d" "default" plain (function org-roam-capture--get-point)
          "%?"
