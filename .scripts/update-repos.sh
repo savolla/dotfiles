@@ -24,5 +24,3 @@ cd "$NOTITIA"
 git add -u
 git commit -m "$COMMIT_MESSAGE"
 git push -u origin main
-
-## savolla.github.io
