@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-DELAY=0.5 # hours
+DELAY=1 # hours
 
 # update github, my website and other things periodically
 while true; do
