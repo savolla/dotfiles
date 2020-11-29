@@ -17,7 +17,7 @@ NOTITIA="txt"
 ## dotfiles
 git --git-dir="$HOME/$DOTFILES" --work-tree="$HOME" add -u
 git --git-dir="$HOME/$DOTFILES" --work-tree="$HOME" commit -m "$COMMIT_MESSAGE"
-git --git-dir="$HOME/$DOTFILES" --work-tree="$HOME" push https://"$GITHUB_USER":"$GITHUB_PASS"@github.com/"$GITHUB_USER"/"$DOTFILES".git main -f
+git --git-dir="$HOME/$DOTFILES" --work-tree="$HOME" push -u origin main
 
 ## notitia
 git --git-dir="$HOME/$NOTITIA"/.git add -u
