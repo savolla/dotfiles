@@ -6,8 +6,6 @@
 #!/usr/bin/env bash
 
 ### pushing to github
-GITHUB_USER=$(grep github ~/etc/sec/creds | awk -F : '{ print $3 }')
-GITHUB_PASS=$(grep github ~/etc/sec/creds | awk -F : '{ print $4 }')
 COMMIT_MESSAGE=$(curl -s http://whatthecommit.com | perl -p0e '($_)=m{<p>(.+?)</p>}s')
 
 ## github projects:
