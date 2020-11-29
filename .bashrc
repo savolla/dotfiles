@@ -135,3 +135,13 @@ ida()
 {
     cd /home/savolla/.wine/drive_c/Program\ Files/IDA\ 7.0/
 }
+
+pause() {
+   PROCESS_ID=$(ps aux | grep -i $1 | grep -v grep | awk '{ print $2 }')
+   kill -STOP $PROCESS_ID
+}
+
+cont() {
+   PROCESS_ID=$(ps aux | grep -i $1 | grep -v grep | awk '{ print $2 }')
+   kill -CONT $PROCESS_ID
+}
