@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-DELAY=1 # hours
+PERIOD=1 # hours
+DELAY=$(echo "3600*$DELAY" | bc)
 
 # update github, my website and other things periodically
 while true; do
-        sleep $(echo "3600*$DELAY" | bc)
-        ./update-my-life.sh  # run this script
+        sleep "$DELAY"
+        ./update-repos.sh   # update all github repos
+        ./update-blog.sh    # update my blog
     done
