@@ -11,17 +11,18 @@ GITHUB_PASS=$(grep github ~/etc/sec/creds | awk -F : '{ print $4 }')
 COMMIT_MESSAGE=$(curl -s http://whatthecommit.com | perl -p0e '($_)=m{<p>(.+?)</p>}s')
 
 ## github projects:
-DOTFILES=".dotfiles"
-NOTITIA="txt"
+DOTFILES="$HOME/.dotfiles"
+NOTITIA="$HOME/txt"
 
 ## dotfiles
-git --git-dir="$HOME/$DOTFILES" --work-tree="$HOME" add -u
-git --git-dir="$HOME/$DOTFILES" --work-tree="$HOME" commit -m "$COMMIT_MESSAGE"
-git --git-dir="$HOME/$DOTFILES" --work-tree="$HOME" push -u origin main
+git --git-dir="$DOTFILES" --work-tree="$HOME" add -u
+git --git-dir="$DOTFILES" --work-tree="$HOME" commit -m "$COMMIT_MESSAGE"
+git --git-dir="$DOTFILES" --work-tree="$HOME" push -u origin main
 
 ## notitia
-git --git-dir="$HOME/$NOTITIA"/.git add -u
-git --git-dir="$HOME/$NOTITIA"/.git commit -m "$COMMIT_MESSAGE"
-git --git-dir="$HOME/$NOTITIA"/.git push https://"$GITHUB_USER":"$GITHUB_PASS"@github.com/"$GITHUB_USER"/"$NOTITIA".git main -f
+cd "$NOTITIA"
+git add -u
+git commit -m "$COMMIT_MESSAGE"
+git push -u origin main
 
 ## savolla.github.io
