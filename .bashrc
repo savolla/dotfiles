@@ -54,6 +54,8 @@ alias pi="sudo pacman -S --noconfirm" # pacman install
 alias ai="pacaur -S" # aur install
 alias prs="sudo pacman -Rs" # pacman remove
 alias prf="sudo pacman -Rs" # pacman remove force
+alias pause="process-pause.sh" # pause the process
+alias cont="process-cont.sh" # continues the process
 
 # some aliases
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
@@ -138,12 +140,3 @@ ida()
     cd /home/savolla/.wine/drive_c/Program\ Files/IDA\ 7.0/
 }
 
-pause() {
-   PROCESS_ID=$(ps aux | grep -i $1 | grep -v grep | awk '{ print $2 }')
-   kill -STOP $PROCESS_ID
-}
-
-cont() {
-   PROCESS_ID=$(ps aux | grep -i $1 | grep -v grep | awk '{ print $2 }')
-   kill -CONT $PROCESS_ID
-}
