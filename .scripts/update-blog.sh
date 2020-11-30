@@ -4,7 +4,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 #!/usr/bin/env bash
-BLOG_PATH="$HOME/txt/blog"
+BLOG_PATH="$HOME/dev/web/blog"
 BLOG_REPO="savolla.github.io"
 GITHUB_PAGES="$HOME/dev/web/savolla.github.io"
 COMMIT_MESSAGE=$(curl -s http://whatthecommit.com | perl -p0e '($_)=m{<p>(.+?)</p>}s')
