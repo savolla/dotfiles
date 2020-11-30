@@ -132,12 +132,11 @@
 
 ;; vterm
 (after! vterm
-  (set-popup-rule! "*doom:vterm-popup:main"
+  (set-popup-rule! "*doom:vterm-popup"
     :size 0.15
     ;; :vslot -4
     :select t
-    :quit nil
-    :ttl 0))
+    :quit nil))
 
 ;; Anki
 (setq anki-editor-create-decks t)
