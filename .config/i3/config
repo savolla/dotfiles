@@ -46,7 +46,7 @@ bindsym $mod+Shift+q kill
 # start program launcher
 #bindsym $mod+d exec --no-startup-id dmenu_run
 # bindsym $mod+d exec --no-startup-id rofi -show run -lines 20 -width 50
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show drun -t c64
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
