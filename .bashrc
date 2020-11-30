@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #/ ___|  __ ___   _____ | | | __ _   | |__   __ _ ___| |__  _ __ ___
 #\___ \ / _` \ \ / / _ \| | |/ _` |  | '_ \ / _` / __| '_ \| '__/ __|
 # ___) | (_| |\ V / (_) | | | (_| |  | |_) | (_| \__ \ | | | | | (__
@@ -49,7 +51,7 @@ alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
 alias pss="pacman -Ss" # pacman search
 alias ass="pacaur -Ss" # aur search
 alias pi="sudo pacman -S --noconfirm" # pacman install
-alias ai="sudo pacman -S" # aur install
+alias ai="pacaur -S" # aur install
 alias prs="sudo pacman -Rs" # pacman remove
 alias prf="sudo pacman -Rs" # pacman remove force
 
