@@ -1,9 +1,9 @@
+#!/usr/bin/env bash
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # @author : savolla
 # @description: this script will update all my github repositories
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
-#!/usr/bin/env bash
 
 ### pushing to github
 COMMIT_MESSAGE=$(curl -s http://whatthecommit.com | perl -p0e '($_)=m{<p>(.+?)</p>}s')
