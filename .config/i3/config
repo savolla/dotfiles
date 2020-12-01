@@ -575,6 +575,7 @@ exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
 exec --no-startup-id xset r rate 200 100 # type speed
 #exec --no-startup-id setxkbmap -option caps:swapescape # swap caps-lock and escape keys
 
+# healing my carpal tunnel
 exec --no-startup-id xmodmap -e "keycode 108 = Escape"
 exec --no-startup-id xmodmap -e "keycode 66 = ISO_Level3_Shift"
 exec --no-startup-id xmodmap -e "keycode 50 = Alt_L"
@@ -584,8 +585,8 @@ exec --no-startup-id sh ~/.scripts/battery-low-alert/battery-low-alert.sh # batt
 exec --no-startup-id sh ~/.scripts/demon.sh # my beautiful daemon >:)
 exec --no-startup-id sudo chown savolla /sys/class/backlight/intel_backlight/brightness # bright
 exec --no-startup-id pulseaudio-equalizer enable # soundgoodizer :D
-exec --no-startup-id sct 3210 # warm and sweet screen
+exec --no-startup-id sct 6400 # warm and sweet screen
 exec --no-startup-id xrdb ~/.Xresources # initialize my own .Xresources
 exec --no-startup-id pactl set-sink-volume 0 35% # set volume level
-exec --no-startup-id emacs --daemon
+exec --no-startup-id emacs --daemon # start emacsclient
 exec --no-startup-id dunst -config /usr/share/dunst/dunstrc
