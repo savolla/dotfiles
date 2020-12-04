@@ -38,6 +38,8 @@ o() { xdg-open "$@" & }
 
 # system maintenance
 
+alias pis="pipenv shell"
+alias pisi="pipenv install"
 alias x="exit";
 alias k="pkill -f"
 alias progs="pacman -Qet" # List programs I've installed
