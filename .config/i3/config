@@ -74,7 +74,7 @@ bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 #bindsym $mod+F5 exec $terminal -e 'cmus'
 #bindsym $mod+t exec --no-startup-id pkill compton
 #bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Ctrl+t exec --no-startup-id xcompmgr 
+# bindsym $mod+Ctrl+t exec --no-startup-id xcompmgr
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 # bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
@@ -134,7 +134,7 @@ bindsym $mod+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -557,14 +557,36 @@ bindsym $mod+Shift+n exec --no-startup-id kill $(ps aux | grep white-noise | gre
 bindsym $mod+Shift+m exec --no-startup-id sh ~/.scripts/mm
 bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
 
-# browser-fu
-bindsym $mod+Ctrl+Shift+t exec --no-startup-id brave https://translate.google.com    # translate
-bindsym $mod+Ctrl+Shift+y exec --no-startup-id brave https://youtube.com             # video source
-bindsym $mod+Ctrl+Shift+g exec --no-startup-id brave https://google.com              # google search
-bindsym $mod+Ctrl+Shift+s exec --no-startup-id brave https://github.com/search       # github search
-bindsym $mod+Ctrl+Shift+e exec --no-startup-id brave https://www.reddit.com/r/emacs/ # reddit
-bindsym $mod+Ctrl+Shift+w exec --no-startup-id brave https://www.wikipedia.org/      # wikipedia
-bindsym $mod+Ctrl+Shift+a exec --no-startup-id brave https://wiki.archlinux.org/     # archwiki
+# # browser-fu
+bindsym $mod+s mode "web"
+mode "web" {
+        # translate
+        bindsym t exec --no-startup-id brave https://translate.google.com, mode "default"
+        # youtube
+        bindsym y exec --no-startup-id brave https://youtube.com, mode "default"
+        # google
+        bindsym g exec --no-startup-id brave https://google.com, mode "default"
+        # github account
+        bindsym s exec --no-startup-id brave https://github.com/savolla, mode "default"
+        # github search
+        bindsym Shift+S exec --no-startup-id brave https://github.com/search, mode "default"
+        # my website
+        bindsym i exec --no-startup-id brave https://savolla.github.io/, mode "default"
+        # wikipedia
+        bindsym w exec --no-startup-id brave https://www.wikipedia.org/, mode "default"
+        # reddit
+        bindsym r exec --no-startup-id brave https://www.reddit.com/r/unixporn/, mode "default"
+        # arch wiki
+        bindsym a exec --no-startup-id brave https://wiki.archlinux.org/, mode "default"
+        # hackernews
+        bindsym h exec --no-startup-id brave https://news.ycombinator.com/, mode "default"
+        # book heaven
+        bindsym l exec --no-startup-id brave http://libgen.rs/, mode "default"
+
+        # exit keys mode
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 # INITIALIZATION
 # ----------------

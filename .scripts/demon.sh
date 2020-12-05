@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+cd ~/.scripts
 PERIOD=1 # hours
 DELAY=$(echo "3600*$PERIOD" | bc)
 
