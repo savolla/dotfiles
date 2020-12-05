@@ -148,7 +148,8 @@
  org-ellipsis " ▼ "
  org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")
  org-beamer-theme "[progressbar=foot]metropolis"
- org-beamer-frame-level 2)
+ org-beamer-frame-level 2
+ org-hide-block-startup t)
 
 (after! org
   (setq
