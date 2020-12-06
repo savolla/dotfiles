@@ -72,6 +72,10 @@ alias r="ranger"
 alias mkdir="mkdir -pv"
 weath() { curl wttr.in/$1 ;} # Check the weather (give city or leave blank).
 alias torb="./src/tor-browser_en-US/Browser/start-tor-browser www.thepiratebay.org &"
+alias win10-start="vboxmanage startvm win10"
+alias win10-start="vboxmanage startvm win10"
+alias win10-snap="vboxmanage snapshot win10 take"
+alias win10-restore="vboxmanage snapshot win10 restore"
 
 
 # Adding color
