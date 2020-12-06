@@ -80,7 +80,7 @@ alias win10-restore="vboxmanage snapshot win10 restore"
 
 # Adding color
 alias ls='ls -hN --color=auto --group-directories-first'
-alias ll='ls -lhN --color=auto --group-directories-first'
+alias l='ls -lhN --color=auto --group-directories-first'
 alias lh='ls -lhNa --color=auto --group-directories-first'
 alias grep="grep --color=always" # Color grep - highlight desired sequence.
 alias ccat="highlight --out-format=xterm256" #Color cat - print file with syntax highlighting.

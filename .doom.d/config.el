@@ -69,6 +69,7 @@
 (map! :leader :desc "utility"     "- u")
 (map! :leader :desc "open pass"   "- u p" #'pass ) ;; passwords
 (map! :leader :desc "irc"         "- u i" #'irc ) ;; IRC
+(map! :leader :desc "ranger"      "o - " #'ranger ) ;; ranger
 
 ;; workspace navigation
 (map! :leader :desc "next workspace"         "TAB l" #'+workspace:switch-next ) ;; workspace next
