@@ -70,6 +70,7 @@
 (map! :leader :desc "open pass"   "- u p" #'pass ) ;; passwords
 (map! :leader :desc "irc"         "- u i" #'irc ) ;; IRC
 (map! :leader :desc "ranger"      "o - " #'ranger ) ;; ranger
+(map! :leader :desc "unfuck json" "- c j" #'json-pretty-print-buffer ) ;; ranger
 
 ;; workspace navigation
 (map! :leader :desc "next workspace"         "TAB l" #'+workspace:switch-next ) ;; workspace next
