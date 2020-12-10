@@ -81,6 +81,7 @@
 (map! :leader :desc "add tag"           "n r t a" #'org-roam-tag-add)
 (map! :leader :desc "delete tag"        "n r t d" #'org-roam-tag-delete)
 (map! :leader :desc "roam server"       "n r G" #'org-roam-server-mode)
+(map! :leader :desc "screenshot"       "- u s" #'org-screenshot-take)
 
 ;;#######################################################################################
 
