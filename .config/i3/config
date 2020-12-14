@@ -606,7 +606,7 @@ exec --no-startup-id xmodmap -e "keycode 64 = Shift_L"
 exec --no-startup-id sh ~/.scripts/battery-low-alert/battery-low-alert.sh # battery
 exec --no-startup-id sh ~/.scripts/demon.sh # my beautiful daemon >:)
 exec --no-startup-id sudo chown savolla /sys/class/backlight/intel_backlight/brightness # bright
-exec --no-startup-id pulseaudio-equalizer enable # soundgoodizer :D
+# exec --no-startup-id pulseaudio-equalizer enable # i don't need this anymore (audio technica bro)
 exec --no-startup-id sct 6400 # warm and sweet screen
 exec --no-startup-id xrdb ~/.Xresources # initialize my own .Xresources
 exec --no-startup-id pactl set-sink-volume 0 35% # set volume level

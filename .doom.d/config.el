@@ -48,41 +48,43 @@
 
 ;; Custom Key Bindings ##################################################################
 ;; custom keys '-'
-(map! :leader :desc "custom keys"       "-") ;; custom bindings
+(map! :leader :desc "custom keys"             "-") ;; custom bindings
 
 ;; code 'c'
-(map! :leader :desc "code"              "- c")
-(map! :leader :desc "toggle tagbar"     "- c t" #'lsp-ui-imenu ) ;; toggle tagbar
-(map! :leader :desc "toggle undo tree"  "- c u" #'undo-tree-visualize ) ;; toggle undo tree
-(map! :leader :desc "run gdb"           "- c g" #'gdb ) ;; run gdb
+(map! :leader :desc "code"                    "- c")
+(map! :leader :desc "toggle tagbar"           "- c t" #'lsp-ui-imenu ) ;; toggle tagbar
+(map! :leader :desc "toggle undo tree"        "- c u" #'undo-tree-visualize ) ;; toggle undo tree
+(map! :leader :desc "run gdb"                 "- c g" #'gdb ) ;; run gdb
+(map! :leader :desc "unfuck json" "- c j      " #'json-pretty-print-buffer ) ;; ranger
 
 ;; tabs 't'
-(map! :leader :desc "tabs"              "- t")
-(map! :leader :desc "new tab"           "- t o" #'tab-new ) ;; new tab
-(map! :leader :desc "next tab"          "- t n" #'tab-next ) ;; next tab
-(map! :leader :desc "kill tab"          "- t k" #'tab-kill ) ;; kill tab
-(map! :leader :desc "previous tab"      "- t p" #'tab-previous ) ;; previous tab
-(map! :leader :desc "list tabs"         "- t l" #'tab-list ) ;; list all tabs
-(map! :leader :desc "toggle tabs"       "- t t" #'tab-bar-mode ) ;; toggle tab-bar-mode
+(map! :leader :desc "tabs"                    "- t")
+(map! :leader :desc "new tab"                 "- t o" #'tab-new ) ;; new tab
+(map! :leader :desc "next tab"                "- t n" #'tab-next ) ;; next tab
+(map! :leader :desc "kill tab"                "- t k" #'tab-kill ) ;; kill tab
+(map! :leader :desc "previous tab"            "- t p" #'tab-previous ) ;; previous tab
+(map! :leader :desc "list tabs"               "- t l" #'tab-list ) ;; list all tabs
+(map! :leader :desc "toggle tabs"             "- t t" #'tab-bar-mode ) ;; toggle tab-bar-mode
 
 ;; utility 'u'
-(map! :leader :desc "utility"     "- u")
-(map! :leader :desc "open pass"   "- u p" #'pass ) ;; passwords
-(map! :leader :desc "irc"         "- u i" #'irc ) ;; IRC
-(map! :leader :desc "ranger"      "o - " #'ranger ) ;; ranger
-(map! :leader :desc "unfuck json" "- c j" #'json-pretty-print-buffer ) ;; ranger
+(map! :leader :desc "utility"                 "- u")
+(map! :leader :desc "open pass"               "- u p" #'pass ) ;; passwords
+(map! :leader :desc "irc"                     "- u i" #'irc ) ;; IRC
+(map! :leader :desc "string sort"             "- u a" #'sort-lines ) ;; ranger
+(map! :leader :desc "screenshot"              "- u s" #'org-screenshot-take)
 
 ;; workspace navigation
-(map! :leader :desc "next workspace"         "TAB l" #'+workspace:switch-next ) ;; workspace next
-(map! :leader :desc "previous workspace"     "TAB h" #'+workspace:switch-previous ) ;; workspace previous
+(map! :leader :desc "next workspace"          "TAB l" #'+workspace:switch-next ) ;; workspace next
+(map! :leader :desc "previous workspace"      "TAB h" #'+workspace:switch-previous ) ;; workspace previous
 
 ;; org-roam
-(map! :leader :desc "tagging"           "n r t")
-(map! :leader :desc "add tag"           "n r t a" #'org-roam-tag-add)
-(map! :leader :desc "delete tag"        "n r t d" #'org-roam-tag-delete)
-(map! :leader :desc "roam server"       "n r G" #'org-roam-server-mode)
-(map! :leader :desc "screenshot"       "- u s" #'org-screenshot-take)
+(map! :leader :desc "tagging"                 "n r t")
+(map! :leader :desc "add tag"                 "n r t a" #'org-roam-tag-add)
+(map! :leader :desc "delete tag"              "n r t d" #'org-roam-tag-delete)
+(map! :leader :desc "roam server"             "n r G" #'org-roam-server-mode)
 
+;; general
+(map! :leader :desc "ranger"      "o - " #'ranger ) ;; ranger
 ;;#######################################################################################
 
 
