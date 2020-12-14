@@ -17,12 +17,7 @@ set guioptions ""
 # zathurarc-dark
 
 # set font "Iosevka 14"
-# set default-bg "#1b182c" #00
 # set default-fg "#cbe3e7" #01
-
-set font "Firacode 14"
-set default-bg "#1b182c" #00
-set default-fg "#cbe3e7" #01
 
 set statusbar-fg "#B0B0B0" #04
 set statusbar-bg "#202020" #01
@@ -49,11 +44,14 @@ set notification-bg "#90A959" #0B
 set notification-fg "#151515" #00
 
 set recolor "true"
-set recolor-lightcolor "#1b182c" #00
-set recolor-darkcolor "#cbe3e7" #06
+# set recolor-lightcolor "#1b182c" #00
+# set recolor-darkcolor "#cbe3e7" #06
+set recolor-lightcolor          "#FBF0D9" # base of pdf
+set recolor-darkcolor           "#654321" # text
+set default-bg                  "#FBF0D9" #00
+
 set recolor-reverse-video "true"
 set recolor-keephue "true"
-
 
 set render-loading "false"
 set scroll-step 50
