@@ -135,6 +135,9 @@
 
 ;; Utility ##############################################################################
 
+;; plantuml
+(setq plantuml-output-type "png" )
+
 ;; vterm
 (after! vterm
   (set-popup-rule! "*doom:vterm-popup"
