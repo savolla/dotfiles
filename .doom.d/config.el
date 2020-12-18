@@ -255,12 +255,12 @@
 
 ;; autosave
 (setq auto-save-visited-interval 30) ; Save after 30s of idle time.
-(auto-save-visited-mode t)
-(add-hook! '(doom-switch-buffer-hook
-             doom-switch-window-hook)
-  (if (buffer-file-name) (save-some-buffers t))) ; avoid saving when switching to a non-file buffer
-(add-function :after after-focus-change-function
-              (lambda () (save-some-buffers t)))
+;; (auto-save-visited-mode t)
+;; (add-hook! '(doom-switch-buffer-hook
+;;              doom-switch-window-hook)
+;;   (if (buffer-file-name) (save-some-buffers t))) ; avoid saving when switching to a non-file buffer
+;; (add-function :after after-focus-change-function
+;;               (lambda () (save-some-buffers t)))
 
 ;; column filling
 ;;(setq-default fill-column 80) ;; max 80 characters per line
