@@ -72,6 +72,7 @@
 (map! :leader :desc "irc"                     "- u i" #'irc ) ;; IRC
 (map! :leader :desc "string sort"             "- u a" #'sort-lines ) ;; ranger
 (map! :leader :desc "screenshot"              "- u s" #'org-screenshot-take)
+(map! :leader :desc "babel tangle"            "- u t" #'org-babel-tangle)
 
 ;; workspace navigation
 (map! :leader :desc "next workspace"          "TAB l" #'+workspace:switch-next ) ;; workspace next
@@ -84,7 +85,7 @@
 (map! :leader :desc "roam server"             "n r G" #'org-roam-server-mode)
 
 ;; general
-(map! :leader :desc "ranger"      "o - " #'ranger ) ;; ranger
+(map! :leader :desc "ranger"                  "o - " #'ranger ) ;; ranger
 ;;#######################################################################################
 
 
