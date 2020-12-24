@@ -113,11 +113,11 @@
 
 ;; font
 ;; FONT OPTION 3
-(setq-default line-spacing 0.25)
-(setq doom-font (font-spec :family "Pragmata Pro Mono" :size 18 :weight 'light)
-      doom-big-font (font-spec :family "Pragmata Pro Mono" :size 30)
-      doom-serif-font (font-spec :family "Pragmata Pro Mono" :weight 'light)
-      doom-variable-pitch-font (font-spec :family "Pragmata Pro Mono" :size 19))
+;; (setq-default line-spacing 0.25)
+;; (setq doom-font (font-spec :family "Pragmata Pro Mono" :size 18 :weight 'light)
+;;       doom-big-font (font-spec :family "Pragmata Pro Mono" :size 30)
+;;       doom-serif-font (font-spec :family "Pragmata Pro Mono" :weight 'light)
+;;       doom-variable-pitch-font (font-spec :family "Pragmata Pro Mono" :size 19))
 
 ;; (setq doom-font (font-spec :family "FiraCode NF" :size 20))
 
@@ -126,8 +126,8 @@
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 17))
 
 ;; FONT OPTION 2
-;; (setq doom-font (font-spec :family "Fira Code" :size 17)
-;;       doom-variable-pitch-font (font-spec :family "Fira Code" :size 17))
+(setq doom-font (font-spec :family "Fira Code" :size 17)
+      doom-variable-pitch-font (font-spec :family "Fira Code" :size 17))
 
 ;;#######################################################################################
 
