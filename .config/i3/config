@@ -563,7 +563,7 @@ mode "web" {
         # translate
         bindsym t exec --no-startup-id brave https://translate.google.com, mode "default"
         # protonmail
-        bindsym p exec --no-startup-id brave https://translate.google.com, mode "default"
+        bindsym p exec --no-startup-id brave https://mail.protonmail.com/login, mode "default"
         # youtube
         bindsym y exec --no-startup-id brave https://youtube.com, mode "default"
         # google
