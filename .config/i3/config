@@ -299,13 +299,13 @@ bindsym $mod+Escape mode "kbd layout"
 mode "kbd layout" {
         # set keyboard maps quickly
         # Turkish layout
-        bindsym 1 exec --no-startup-id setxkbmap tr
+        bindsym t exec --no-startup-id setxkbmap tr
         # Russian layout
-        bindsym 2 exec --no-startup-id setxkbmap ru
+        bindsym r exec --no-startup-id setxkbmap ru
         # United States layout
-        bindsym 3 exec --no-startup-id setxkbmap us
+        bindsym e exec --no-startup-id setxkbmap us
         # custom layout of mine
-        bindsym 4 exec --no-startup-id setxkbmap xy
+        bindsym x exec --no-startup-id setxkbmap xy
         # bindsym _ exec --no-startup-id setxkbmap _
 
         # exit keys mode
@@ -406,10 +406,6 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-	#font xft:URWGothic-Book 12
-	#font xft:Awesome 13
-	#font pango:DejaVu Sans Mono 10
-	#font xft:TerminessTTFNerdFontMono 17
 	strip_workspace_numbers yes
 
     colors {
@@ -418,7 +414,7 @@ bar {
         separator  #000000
 
 #                           border  backgr. text
-        focused_workspace  #000000 #000000 #a6000d
+        focused_workspace  #000000 #000000 #FF0000
         active_workspace   #000000 #000000 #a6000d
         inactive_workspace #000000 #000000 #b6b6b6
         binding_mode       #16a085 #2C2C2C #F9FAF9
