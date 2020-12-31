@@ -592,8 +592,8 @@ exec --no-startup-id xcompmgr
 #exec --no-startup-id wal -n -i /home/savolla/.config/color-scheme-image # set color scheme with sxiv
 exec --no-startup-id feh --bg-scale /home/savolla/.config/background-image # set background image with sxiv 
 exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
-# exec --no-startup-id xset r rate 200 100 # type speed
-exec --no-startup-id xset r rate 150 10 # type speed
+#exec --no-startup-id xset r rate 200 100 # type speed
+exec --no-startup-id xset r rate 150 100 # type speed
 #exec --no-startup-id setxkbmap -option caps:swapescape # swap caps-lock and escape keys
 
 # healing my carpal tunnel
