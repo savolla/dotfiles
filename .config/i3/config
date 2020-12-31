@@ -609,5 +609,5 @@ exec --no-startup-id sudo chown savolla /sys/class/backlight/intel_backlight/bri
 exec --no-startup-id sct 6400 # warm and sweet screen
 exec --no-startup-id xrdb ~/.Xresources # initialize my own .Xresources
 exec --no-startup-id pactl set-sink-volume 0 35% # set volume level
-exec --no-startup-id emacs --daemon # start emacsclient
+# exec --no-startup-id emacs --daemon # start emacsclient
 exec --no-startup-id dunst -config /usr/share/dunst/dunstrc
