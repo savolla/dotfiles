@@ -112,7 +112,7 @@
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;; coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
-       csharp            ; unity, .NET, and mono shenanigans
+       ;; csharp            ; unity, .NET, and mono shenanigans
        ;;data              ; config/data formats
        ;;(dart +flutter)   ; paint ui and not much else
        ;;elixir            ; erlang done right
@@ -129,15 +129,15 @@
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ;
        json              ; At least it ain't XML
-       (java +lsp) ; the poster child for carpal tunnel syndrome
-       (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
+       ;; (java +lsp) ; the poster child for carpal tunnel syndrome
+       ;; (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        ;;latex             ; writing papers in Emacs has never been so fun
        ;;lean
        ;;factor
        ;;ledger            ; an accounting system in Emacs
-       lua               ; one-based indices? one-based indices
+       ;; lua               ; one-based indices? one-based indices
        markdown         ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
@@ -159,7 +159,7 @@
        ;;purescript        ; javascript, but functional
        (python +lsp +pyright +pyenv)            ; beautiful is better than ugly
        qt                ; the 'cutest' gui framework ever
-       racket            ; a DSL for DSLs
+       ;; racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
        ;;rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
@@ -182,8 +182,8 @@
 
        :app
        ;; calendar
-       irc               ; how neckbeards socialize
-       (rss +org)        ; emacs as an RSS reader
+       ;; irc               ; how neckbeards socialize
+       ;; (rss +org)        ; emacs as an RSS reader
        ;; twitter           ; twitter client https://twitter.com/vnought
 
        :config

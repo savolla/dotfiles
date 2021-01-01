@@ -256,6 +256,7 @@
 (setq evil-want-fine-undo t) ; undo more pleasant
 
 ;; autosave
+(setq auto-save-default nil)
 ;; (setq auto-save-visited-interval 30) ; Save after 30s of idle time.
 ;; (auto-save-visited-mode t)
 ;; (add-hook! '(doom-switch-buffer-hook
