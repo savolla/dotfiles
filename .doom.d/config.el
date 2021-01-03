@@ -129,8 +129,8 @@
 ;; (setq doom-font (font-spec :family "Fira Code" :size 17)
       ;; doom-variable-pitch-font (font-spec :family "Fira Code" :size 17))
 
-(setq doom-font (font-spec :family "Gohufont" :size 17)
-      doom-variable-pitch-font (font-spec :family "Gohufont" :size 17))
+(setq doom-font (font-spec :family "Input" :size 17)
+      doom-variable-pitch-font (font-spec :family "Input" :size 17))
 ;;#######################################################################################
 
 
