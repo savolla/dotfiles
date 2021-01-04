@@ -299,13 +299,13 @@ bindsym $mod+Escape mode "kbd layout"
 mode "kbd layout" {
         # set keyboard maps quickly
         # Turkish layout
-        bindsym t exec --no-startup-id setxkbmap tr
+        bindsym 1 exec --no-startup-id setxkbmap tr
         # Russian layout
-        bindsym r exec --no-startup-id setxkbmap ru
+        bindsym 2 exec --no-startup-id setxkbmap ru
         # United States layout
-        bindsym e exec --no-startup-id setxkbmap us
+        bindsym 3 exec --no-startup-id setxkbmap us
         # custom layout of mine
-        bindsym x exec --no-startup-id setxkbmap xy
+        bindsym 4 exec --no-startup-id setxkbmap xy
         # bindsym _ exec --no-startup-id setxkbmap _
 
         # exit keys mode
@@ -575,7 +575,7 @@ mode "web" {
         # reddit
         bindsym r exec --no-startup-id brave https://www.reddit.com/r/unixporn/, mode "default"
         # arch wiki
-        bindsym a exec --no-startup-id brave https://wiki.archlinux.org/, mode "default"
+        bindsym a exec --no-starjup-id brave https://wiki.archlinux.org/, mode "default"
         # hackernews
         bindsym h exec --no-startup-id brave https://news.ycombinator.com/, mode "default"
         # book heaven
