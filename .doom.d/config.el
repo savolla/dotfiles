@@ -126,11 +126,9 @@
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 17))
 
 ;; FONT OPTION 2
-;; (setq doom-font (font-spec :family "Fira Code" :size 17)
-      ;; doom-variable-pitch-font (font-spec :family "Fira Code" :size 17))
+(setq doom-font (font-spec :family "Fira Code" :size 17)
+      doom-variable-pitch-font (font-spec :family "Fira Code" :size 17))
 
-(setq doom-font (font-spec :family "Input" :size 17)
-      doom-variable-pitch-font (font-spec :family "Input" :size 17))
 ;;#######################################################################################
 
 
