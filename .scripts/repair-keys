@@ -4,3 +4,7 @@ xmodmap -e "keycode 108 = Escape"
 xmodmap -e "keycode 66 = ISO_Level3_Shift"
 xmodmap -e "keycode 50 = Alt_L"
 xmodmap -e "keycode 64 = Shift_L"
+
+xset r rate 150 200
+
+setxkbmap tr

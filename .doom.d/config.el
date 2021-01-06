@@ -100,13 +100,15 @@
 (defun doom-dashboard-widget-footer ())
 
 ;; transparency
-(add-to-list 'default-frame-alist '(alpha . (82 . 92)))
+;; (add-to-list 'default-frame-alist '(alpha . (82 . 92)))
+(add-to-list 'default-frame-alist '(alpha . (90 . 92)))
 
 ;; themes
 ;; (setq doom-theme 'doom-one) ;; option 1
 ;; (setq doom-theme 'doom-gruvbox) ;; option 2
 ;; (setq doom-theme 'doom-outrun-electric) ;; option 3
-(setq doom-theme 'doom-dracula) ;; option 4
+;; (setq doom-theme 'doom-dracula) ;; option 4
+(setq doom-theme 'doom-solarized-dark) ;; option 5
 
 ;; coding
 (setq display-line-numbers-type nil)
