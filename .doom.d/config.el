@@ -1,5 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;; Packages ####################################################################
+'(require ob-async)
 ;; Languages ###################################################################
 ;; go
 (setq lsp-gopls-hover-kind "FullDocumentation")
