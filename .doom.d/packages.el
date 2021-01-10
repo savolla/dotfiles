@@ -9,7 +9,6 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
 (package! ob-async)
-(package! code-compass)
 (package! org-download)
 (package! python-black)
 (package! neotree)

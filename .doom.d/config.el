@@ -7,12 +7,15 @@
 (setq lsp-gopls-hover-kind "FullDocumentation")
 
 ;; python
+;;
 ;; rust
-(setq rustic-format-on-save t)
-(setq lsp-rust-all-features t)
-(setq lsp-rust-cfg-test t)
-;;#######################################################################################
+;; (setq rustic-format-on-save t)
+;; (setq lsp-rust-all-features t)
+;; (setq lsp-rust-cfg-test t)
+(after! rustic
+  (setq rustic-lsp-server 'rls))
 
+;;#######################################################################################
 
 
 ;; IRC config ###########################################################################
