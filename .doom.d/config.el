@@ -1,5 +1,11 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;; Custom Functions
+(defun open-todo()
+  "Open Personal TODO file"
+
+  )
+
 ;; Packages ####################################################################
 '(require ob-async)
 ;; Languages ###################################################################
