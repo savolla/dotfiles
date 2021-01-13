@@ -421,6 +421,7 @@
  ;; If there is more than one, they won't work right.
  )
 
+(setq elfeed-db-directory "~/txt/.elfeed" )
 
 ;; Startup
 ;; ---------------------------
