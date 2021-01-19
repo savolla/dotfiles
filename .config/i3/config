@@ -561,7 +561,7 @@ mode "web" {
         # protonmail
         bindsym p exec --no-startup-id brave https://mail.protonmail.com/login, mode "default"
         # youtube
-        bindsym y exec --no-startup-id brave https://youtube.com, mode "default"
+        bindsym y exec --no-startup-id brave https://www.youtube.com/results, mode "default"
         # google
         bindsym g exec --no-startup-id brave https://google.com, mode "default"
         # github account
