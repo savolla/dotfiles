@@ -594,7 +594,6 @@ exec --no-startup-id feh --bg-scale /home/savolla/.config/background-image # set
 exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
 #exec --no-startup-id xset r rate 200 100 # type speed
 exec --no-startup-id xset r rate 150 100 # type speed
-#exec --no-startup-id setxkbmap -option caps:swapescape # swap caps-lock and escape keys
 
 # healing my carpal tunnel
 exec --no-startup-id xmodmap -e "keycode 108 = Escape"
