@@ -21,13 +21,15 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 # WSL options (disable when in linux env)
 #################################################################################
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2; exit; }'):0.0
-export LIBGL_ALWAYS_INDIRECT=1
+# export LIBGL_ALWAYS_INDIRECT=1
 sudo /etc/init.d/dbus start &> /dev/null
 alias cdw="cd /mnt/c/Users/savolla/Desktop/savolla"
 export GDK_SCALE=0.5
 export GDK_DPI_SCALE=1.2
 xset r rate 150 200 # set x input speed
 cd
+
+export GAZEBO_IP=127.0.0.1
 #################################################################################
 
 # generic shortcuts

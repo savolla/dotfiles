@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pkill -f gzserver
+pkill -f gzclient
+pkill -f gazebo
