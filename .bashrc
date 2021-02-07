@@ -29,7 +29,8 @@ export GDK_DPI_SCALE=1.2
 xset r rate 150 200 # set x input speed
 cd
 
-export GAZEBO_IP=127.0.0.1
+export GAZEBO_IP=127.0.0.1 # gazebo setting
+source /opt/ros/noetic/setup.bash # ros settings
 #################################################################################
 
 # generic shortcuts
