@@ -31,6 +31,11 @@ cd
 
 export GAZEBO_IP=127.0.0.1 # gazebo setting
 source /opt/ros/noetic/setup.bash # ros settings
+dockerd &> /dev/null
+
+## start pulseaudio server
+
+export PULSE_SERVER=tcp:$(grep nameserver /etc/resolv.conf | awk '{print $2}');
 #################################################################################
 
 # generic shortcuts
