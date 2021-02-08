@@ -13,9 +13,10 @@ DOTFILES="$HOME/.dotfiles"
 NOTITIA="$HOME/txt"
 
 ## dotfiles
-git --git-dir="$DOTFILES" --work-tree="$HOME" add -u
-git --git-dir="$DOTFILES" --work-tree="$HOME" commit -m "$COMMIT_MESSAGE"
-git --git-dir="$DOTFILES" --work-tree="$HOME" push -u origin main
+cd $DOTFILES
+git add -u
+git commit -m "$COMMIT_MESSAGE"
+git push -u origin wsl2
 
 ## notitia
 cd "$NOTITIA"
