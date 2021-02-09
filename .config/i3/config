@@ -556,30 +556,18 @@ bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
 # # browser-fu
 bindsym $mod+s mode "web"
 mode "web" {
-        # translate
-        bindsym t exec --no-startup-id $browser https://translate.google.com, mode "default"
-        # protonmail
-        bindsym p exec --no-startup-id $browser https://mail.protonmail.com/login, mode "default"
-        # youtube
-        bindsym y exec --no-startup-id $browser https://www.youtube.com/results, mode "default"
-        # google
-        bindsym g exec --no-startup-id $browser https://google.com, mode "default"
-        # github account
-        bindsym s exec --no-startup-id $browser https://github.com/savolla, mode "default"
-        # github search
-        bindsym Shift+S exec --no-startup-id $browser https://github.com/search, mode "default"
-        # my website
-        bindsym i exec --no-startup-id $browser https://savolla.github.io/, mode "default"
-        # wikipedia
-        bindsym w exec --no-startup-id $browser https://www.wikipedia.org/, mode "default"
-        # reddit
-        bindsym r exec --no-startup-id $browser https://www.reddit.com/r/unixporn/, mode "default"
-        # arch wiki
-        bindsym a exec --no-starjup-id $browser https://wiki.archlinux.org/, mode "default"
-        # hackernews
-        bindsym h exec --no-startup-id $browser https://news.ycombinator.com/, mode "default"
-        # book heaven
-        bindsym l exec --no-startup-id $browser http://libgen.rs/, mode "default"
+        bindsym t exec --no-startup-id $browser https://translate.google.com, mode "default" # translate
+        bindsym p exec --no-startup-id $browser https://mail.protonmail.com/login, mode "default" # protonmail
+        bindsym y exec --no-startup-id $browser https://www.youtube.com/results, mode "default" # youtube
+        bindsym g exec --no-startup-id $browser https://google.com, mode "default" # google
+        bindsym s exec --no-startup-id $browser https://github.com/savolla, mode "default" # github account
+        bindsym Shift+S exec --no-startup-id $browser https://github.com/search, mode "default" # github search
+        bindsym i exec --no-startup-id $browser https://savolla.github.io/, mode "default" # my website
+        bindsym w exec --no-startup-id $browser https://www.wikipedia.org/, mode "default" # wikipedia
+        bindsym r exec --no-startup-id $browser https://www.reddit.com/r/unixporn/, mode "default" # reddit
+        bindsym a exec --no-starjup-id $browser https://wiki.archlinux.org/, mode "default" # arch wiki
+        bindsym h exec --no-startup-id $browser https://news.ycombinator.com/, mode "default" # hackernews
+        bindsym l exec --no-startup-id $browser http://libgen.rs/, mode "default" # book heaven
 
         # exit keys mode
         bindsym Return mode "default"

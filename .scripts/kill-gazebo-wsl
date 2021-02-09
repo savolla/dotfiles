@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export LIBGL_ALWAYS_INDIRECT=1
 pkill -f gzserver
 pkill -f gzclient
 pkill -f gazebo
