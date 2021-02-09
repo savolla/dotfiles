@@ -128,9 +128,9 @@
 ;; themes
 ;; (setq doom-theme 'doom-one) ;; option 1
 ;; (setq doom-theme 'doom-gruvbox) ;; option 2
-;; (setq doom-theme 'doom-outrun-electric) ;; option 3
+(setq doom-theme 'doom-outrun-electric) ;; option 3
 ;; (setq doom-theme 'doom-dracula) ;; option 4
-(setq doom-theme 'doom-solarized-dark) ;; option 5
+;; (setq doom-theme 'doom-solarized-dark) ;; option 5
 
 ;; coding
 (setq display-line-numbers-type nil)
@@ -146,8 +146,8 @@
 ;; (setq doom-font (font-spec :family "FiraCode NF" :size 20))
 
 ;; FONT OPTION 1
-(setq doom-font (font-spec :family "monospace" :size 16 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "sans" :size 17))
+(setq doom-font (font-spec :family "monospace" :size 18 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "sans" :size 18))
 
 ;; FONT OPTION 2
 ;; (setq doom-font (font-spec :family "Fira Code" :size 17)
