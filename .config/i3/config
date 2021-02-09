@@ -10,7 +10,7 @@
 set $mod Mod4
 set $mod2 Mod1
 set $terminal alacritty
-set $browser brave
+set $browser brave-browser
 set $editor emacs
 
 # set default desktop layout (default is tiling)
@@ -557,29 +557,29 @@ bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
 bindsym $mod+s mode "web"
 mode "web" {
         # translate
-        bindsym t exec --no-startup-id brave https://translate.google.com, mode "default"
+        bindsym t exec --no-startup-id $browser https://translate.google.com, mode "default"
         # protonmail
-        bindsym p exec --no-startup-id brave https://mail.protonmail.com/login, mode "default"
+        bindsym p exec --no-startup-id $browser https://mail.protonmail.com/login, mode "default"
         # youtube
-        bindsym y exec --no-startup-id brave https://www.youtube.com/results, mode "default"
+        bindsym y exec --no-startup-id $browser https://www.youtube.com/results, mode "default"
         # google
-        bindsym g exec --no-startup-id brave https://google.com, mode "default"
+        bindsym g exec --no-startup-id $browser https://google.com, mode "default"
         # github account
-        bindsym s exec --no-startup-id brave https://github.com/savolla, mode "default"
+        bindsym s exec --no-startup-id $browser https://github.com/savolla, mode "default"
         # github search
-        bindsym Shift+S exec --no-startup-id brave https://github.com/search, mode "default"
+        bindsym Shift+S exec --no-startup-id $browser https://github.com/search, mode "default"
         # my website
-        bindsym i exec --no-startup-id brave https://savolla.github.io/, mode "default"
+        bindsym i exec --no-startup-id $browser https://savolla.github.io/, mode "default"
         # wikipedia
-        bindsym w exec --no-startup-id brave https://www.wikipedia.org/, mode "default"
+        bindsym w exec --no-startup-id $browser https://www.wikipedia.org/, mode "default"
         # reddit
-        bindsym r exec --no-startup-id brave https://www.reddit.com/r/unixporn/, mode "default"
+        bindsym r exec --no-startup-id $browser https://www.reddit.com/r/unixporn/, mode "default"
         # arch wiki
-        bindsym a exec --no-starjup-id brave https://wiki.archlinux.org/, mode "default"
+        bindsym a exec --no-starjup-id $browser https://wiki.archlinux.org/, mode "default"
         # hackernews
-        bindsym h exec --no-startup-id brave https://news.ycombinator.com/, mode "default"
+        bindsym h exec --no-startup-id $browser https://news.ycombinator.com/, mode "default"
         # book heaven
-        bindsym l exec --no-startup-id brave http://libgen.rs/, mode "default"
+        bindsym l exec --no-startup-id $browser http://libgen.rs/, mode "default"
 
         # exit keys mode
         bindsym Return mode "default"
