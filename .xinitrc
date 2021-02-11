@@ -1,2 +1,1 @@
-setxkbmap tr
-exec i3
+.dotfiles/.xinitrc
