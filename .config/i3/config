@@ -4,7 +4,6 @@
 #\__ \ (_| |\ V / (_) | | | (_| |   | |___) |
 #|___/\__,_| \_/ \___/|_|_|\__,_|   |_|____/
 #
-# complete reference: http://i3wm.org/docs/userguide.html
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -162,22 +161,6 @@ bindsym $mod+minus scratchpad show
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
 
-# ws1 is window-porn panel
-set $ws1 1: 
-# ws2 is for doom emacs
-set $ws2 2: 
-# ws3/4/5 are basic workstations
-set $ws3 3: ¹
-set $ws4 4: ²
-set $ws5 5: ³
-# ws6 is for surfing web
-set $ws6 6: 
-# ws7 is for telegram-desktop
-set $ws7 7: 
-# ws8 is for gaming
-set $ws8 8: 
-# ws9 is for virtual machines
-set $ws9 9: 
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -324,18 +307,6 @@ exec_always --no-startup-id unclutter -idle 1
 exec_always --no-startup-id dunst
 exec_always --no-startup-id flameshot
 
-# Color palette used for the terminal ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground
 set_from_resource $term_color0     color0
@@ -393,6 +364,23 @@ set_from_resource $term_color15    color15
 # current status bar
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 
+# ws1 is window-porn panel
+set $ws1 1: 
+# ws2 is for doom emacs
+set $ws2 2: 
+# ws3/4/5 are basic workstations
+set $ws3 3: ¹
+set $ws4 4: ²
+set $ws5 5: ³
+# ws6 is for surfing web
+set $ws6 6: 
+# ws7 is for telegram-desktop
+set $ws7 7: 
+# ws8 is for gaming
+set $ws8 8: 
+# ws9 is for virtual machines
+set $ws9 9: 
+
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 12
     position bottom
@@ -447,8 +435,8 @@ bindsym $mod+m bar mode toggle
 # Set inner/outer gaps
 #gaps inner 10
 #gaps outer -4
-gaps inner 20
-gaps outer 0
+# gaps inner 20
+# gaps outer 0
 
 # bindsym $mod+t gaps inner all set 0;gaps outer all set 0;
 # bindsym $mod+Shift+t gaps inner all set 20;gaps outer all set 0;
@@ -573,7 +561,7 @@ mode "web" {
 
 # INITIALIZATION
 # ----------------
-exec --no-startup-id xcompmgr
+exec --no-startup-id compton -b
 #exec --no-startup-id wal -n -i /home/savolla/.config/color-scheme-image # set color scheme with sxiv
 exec --no-startup-id feh --bg-scale /home/savolla/.config/background-image # set background image with sxiv 
 exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
@@ -586,11 +574,9 @@ exec --no-startup-id xmodmap -e "keycode 66 = ISO_Level3_Shift"
 exec --no-startup-id xmodmap -e "keycode 50 = Alt_L"
 exec --no-startup-id xmodmap -e "keycode 64 = Shift_L"
 
-exec --no-startup-id sh ~/.scripts/battery-low-alert/battery-low-alert.sh # battery
 exec --no-startup-id sh ~/.scripts/demon.sh # my beautiful daemon >:)
 exec --no-startup-id sudo chown savolla /sys/class/backlight/intel_backlight/brightness # bright
 # exec --no-startup-id pulseaudio-equalizer enable # i don't need this anymore (audio technica bro)
-exec --no-startup-id sct 6400 # warm and sweet screen
 exec --no-startup-id xrdb ~/.Xresources # initialize my own .Xresources
 exec --no-startup-id pactl set-sink-volume 0 35% # set volume level
 # exec --no-startup-id emacs --daemon # start emacsclient

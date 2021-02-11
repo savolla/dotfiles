@@ -1,7 +1,8 @@
 #!/bin/bash
 # this script meant to be run with `bash -c "/path/to/wlaunch"` when running from e.g. a Windows shortcut
-
 # explicitly needed when launching with bash -c from Windows
 
 source ~/.bashrc
+sudo dockerd &> /dev/null
 i3
+compton -b
