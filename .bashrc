@@ -15,7 +15,7 @@ set -o vi
 export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 export PROMT_COMMAND="clear"
-export PATH=$PATH:$HOME/job/re/bin/:$HOME/.scripts/:$HOME/.emacs/bin/:$HOME/.scripts/process-cop:$HOME/bin/stm32cubeide
+export PATH=$PATH:$HOME/job/re/bin/:$HOME/.scripts/:$HOME/.emacs/bin/:$HOME/.scripts/process-cop:$HOME/bin/stm32cubeide:$HOME/.cargo/bin
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # WSL options (disable when in linux env)
@@ -167,3 +167,4 @@ ida()
     cd /home/savolla/.wine/drive_c/Program\ Files/IDA\ 7.0/
 }
 
+source "$HOME/.cargo/env"
