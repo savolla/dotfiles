@@ -1,1 +1,1 @@
-.dotfiles/.gdbinit
+set disassembly-flavor intel
