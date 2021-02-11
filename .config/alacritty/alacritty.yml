@@ -29,3 +29,5 @@ colors:
 
 font:
   size: 10
+
+background_opacity: 50
