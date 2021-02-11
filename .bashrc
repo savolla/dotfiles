@@ -20,7 +20,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # WSL options (disable when in linux env)
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2; exit; }'):0.0
-export LIBGL_ALWAYS_INDIRECT=1
+export LIBGL_ALWAYS_INDIRECT=0
 sudo /etc/init.d/dbus start &> /dev/null
 export GDK_SCALE=0.5
 export GDK_DPI_SCALE=1.2
