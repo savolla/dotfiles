@@ -1,33 +1,36 @@
 # XTerm's default colors
 colors:
-  name: Erebus
-  author: ""
-  primary:
-    background: "#000000"
-    foreground: "#ffffff"
   cursor:
-    text: "#000000"
-    cursor: "#ffffff"
+    text: '#fefff2'
+    cursor: '#f0cc09'
+
+  selection:
+    text: '#b5b5b5'
+    background: '#18354f'
+
+  primary:
+    background: '#132738'
+    foreground: '#ffffff'
+
   normal:
-    black: "#757575"
-    red: "#ff5f5f"
-    green: "#de8a36"
-    yellow: "#d78787"
-    blue: "#af5fd7"
-    magenta: "#ff87d7"
-    cyan: "#dea3e5"
-    white: "#b8b8b8"
+    black: '#000000'
+    red: '#ff0000'
+    green: '#38de21'
+    yellow: '#ffe50a'
+    blue: '#1460d2'
+    magenta: '#ff005d'
+    cyan: '#00bbbb'
+    white: '#bbbbbb'
+
   bright:
-    black: "#b8b8b8"
-    red: "#d78787"
-    green: "#ff9f6f"
-    yellow: "#ff5f5f"
-    blue: "#dea3e5"
-    magenta: "#d7afaf"
-    cyan: "#af5fd7"
-    white: "#757575"
+    black: '#555555'
+    red: '#f40e17'
+    green: '#3bd01d'
+    yellow: '#edc809'
+    blue: '#5555ff'
+    magenta: '#ff55ff'
+    cyan: '#6ae3fa'
+    white: '#ffffff'
 
 font:
-  size: 11
-
-background_opacity: 50
+  size: 13
