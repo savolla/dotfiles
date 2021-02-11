@@ -9,8 +9,8 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 set $mod2 Mod1
-set $terminal st
-set $browser brave
+set $terminal alacritty
+set $browser brave-browser
 set $editor emacs
 
 # set default desktop layout (default is tiling)
@@ -394,34 +394,19 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 
 bar {
-	i3bar_command i3bar
-	status_command i3status
-	position top
-	#mode hide
-	mode dock
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
-
-	bindsym button4 nop
-	bindsym button5 nop
-	strip_workspace_numbers yes
-
+    font pango:DejaVu Sans Mono, FontAwesome 12
+    position bottom
+    status_command ~/.cargo/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {
-        background #000000
-        statusline #b6b6b6
-        separator  #000000
-
-#                           border  backgr. text
-        focused_workspace  #000000 #000000 #FF0000
-        active_workspace   #000000 #000000 #a6000d
-        inactive_workspace #000000 #000000 #b6b6b6
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
     }
 }
-
 
 # Start i3blocks to display a workspace bar
 # bar
@@ -462,8 +447,8 @@ bindsym $mod+m bar mode toggle
 # Set inner/outer gaps
 #gaps inner 10
 #gaps outer -4
-gaps inner 20
-gaps outer 0
+# gaps inner 20
+# gaps outer 0
 
 # bindsym $mod+t gaps inner all set 0;gaps outer all set 0;
 # bindsym $mod+Shift+t gaps inner all set 20;gaps outer all set 0;
@@ -479,44 +464,44 @@ gaps outer 0
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+# smart_borders on
 
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
+# # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+# set $mode_gaps Gaps: (o) outer, (i) inner
+# set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+# bindsym $mod+Shift+g mode "$mode_gaps"
 
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
+# mode "$mode_gaps" {
+#         bindsym o      mode "$mode_gaps_outer"
+#         bindsym i      mode "$mode_gaps_inner"
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+# mode "$mode_gaps_inner" {
+#         bindsym plus  gaps inner current plus 5
+#         bindsym minus gaps inner current minus 5
+#         bindsym 0     gaps inner current set 0
 
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
+#         bindsym Shift+plus  gaps inner all plus 5
+#         bindsym Shift+minus gaps inner all minus 5
+#         bindsym Shift+0     gaps inner all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+# mode "$mode_gaps_outer" {
+#         bindsym plus  gaps outer current plus 5
+#         bindsym minus gaps outer current minus 5
+#         bindsym 0     gaps outer current set 0
 
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
+#         bindsym Shift+plus  gaps outer all plus 5
+#         bindsym Shift+minus gaps outer all minus 5
+#         bindsym Shift+0     gaps outer all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
 
 # EXTRA KEY BINDINGS
 # --------------------
@@ -557,29 +542,29 @@ bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
 bindsym $mod+s mode "web"
 mode "web" {
         # translate
-        bindsym t exec --no-startup-id brave https://translate.google.com, mode "default"
+        bindsym t exec --no-startup-id brave-browser https://translate.google.com, mode "default"
         # protonmail
-        bindsym p exec --no-startup-id brave https://mail.protonmail.com/login, mode "default"
+        bindsym p exec --no-startup-id brave-browser https://mail.protonmail.com/login, mode "default"
         # youtube
-        bindsym y exec --no-startup-id brave https://www.youtube.com/results, mode "default"
+        bindsym y exec --no-startup-id brave-browser https://www.youtube.com/results, mode "default"
         # google
-        bindsym g exec --no-startup-id brave https://google.com, mode "default"
+        bindsym g exec --no-startup-id brave-browser https://google.com, mode "default"
         # github account
-        bindsym s exec --no-startup-id brave https://github.com/savolla, mode "default"
+        bindsym s exec --no-startup-id brave-browser https://github.com/savolla, mode "default"
         # github search
-        bindsym Shift+S exec --no-startup-id brave https://github.com/search, mode "default"
+        bindsym Shift+S exec --no-startup-id brave-broser https://github.com/search, mode "default"
         # my website
-        bindsym i exec --no-startup-id brave https://savolla.github.io/, mode "default"
+        bindsym i exec --no-startup-id brave-browser https://savolla.github.io/, mode "default"
         # wikipedia
-        bindsym w exec --no-startup-id brave https://www.wikipedia.org/, mode "default"
+        bindsym w exec --no-startup-id brave-browser https://www.wikipedia.org/, mode "default"
         # reddit
-        bindsym r exec --no-startup-id brave https://www.reddit.com/r/unixporn/, mode "default"
+        bindsym r exec --no-startup-id brave-browser https://www.reddit.com/r/unixporn/, mode "default"
         # arch wiki
-        bindsym a exec --no-starjup-id brave https://wiki.archlinux.org/, mode "default"
+        bindsym a exec --no-starjup-id brave-browser https://wiki.archlinux.org/, mode "default"
         # hackernews
-        bindsym h exec --no-startup-id brave https://news.ycombinator.com/, mode "default"
+        bindsym h exec --no-startup-id brave-browser https://news.ycombinator.com/, mode "default"
         # book heaven
-        bindsym l exec --no-startup-id brave http://libgen.rs/, mode "default"
+        bindsym l exec --no-startup-id brave-browser http://libgen.rs/, mode "default"
 
         # exit keys mode
         bindsym Return mode "default"
