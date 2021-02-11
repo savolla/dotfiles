@@ -1,7 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 
-;; Custom Functions
+;; Custom Functions ############################################################
 (defun open-notitia()
   "Open Personal Personal Wiki file"
   (interactive)
@@ -14,6 +14,8 @@
 
 ;; Packages ####################################################################
 '(require ob-async)
+
+
 ;; Languages ###################################################################
 ;; go
 (setq lsp-gopls-hover-kind "FullDocumentation")
@@ -58,6 +60,9 @@
  (add-to-list 'erc-modules 'spelling)
  (erc-services-mode 1)
  (erc-update-modules))
+ ;; (add-to-list 'load-path "/opt/ros/noetic/share/rosemacs")
+ ;; (require 'rosemacs)
+ ;; (invoke-rosemacs)
 ;;#######################################################################################
 
 
