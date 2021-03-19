@@ -52,7 +52,7 @@ bindsym $mod+d exec --no-startup-id rofi -show combi -t c64
 bindsym $mod+z exec --no-startup-id morc_menu
 
 # Sound section
-exec --no-startup-id volumeicon
+# exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec pavucontrol
 bindsym $mod2+e exec pulseaudio-equalizer enable
 bindsym $mod2+Shift+e exec pulseaudio-equalizer disable
@@ -65,8 +65,8 @@ bindsym $mod2+Shift+e exec pulseaudio-equalizer disable
 # Screen brightness and warmness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 2; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 2; notify-send 'brightness down'"
-bindsym $mod+Shift+p exec "xbacklight -inc 10"
-bindsym $mod+Shift+o exec "xbacklight -dec 10"
+bindsym $mod+Shift+p exec "sudo xbacklight -inc 2"
+bindsym $mod+Shift+o exec "sudo xbacklight -dec 2"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
@@ -295,23 +295,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+Escape mode "kbd layout"
-mode "kbd layout" {
-        # set keyboard maps quickly
-        # Turkish layout
-        bindsym 1 exec --no-startup-id setxkbmap tr
-        # Russian layout
-        bindsym 2 exec --no-startup-id setxkbmap ru
-        # United States layout
-        bindsym 3 exec --no-startup-id setxkbmap us
-        # custom layout of mine
-        bindsym 4 exec --no-startup-id setxkbmap xy
-        # bindsym _ exec --no-startup-id setxkbmap _
-
-        # exit keys mode
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
 
 # Lock screen
 # bindsym $mod+c exec --no-startup-id blurlock
@@ -319,7 +302,7 @@ mode "kbd layout" {
 # Autostart applications
 
 #exec --no-startup-id nitrogen --restore 
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 exec_always --no-startup-id unclutter -idle 1
 exec_always --no-startup-id dunst
 exec_always --no-startup-id flameshot
@@ -393,35 +376,51 @@ set_from_resource $term_color15    color15
 # current status bar
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 
-bar {
-	i3bar_command i3bar
-	status_command i3status
-	position top
-	#mode hide
-	mode dock
+# bar {
+# 	i3bar_command i3bar
+# 	status_command i3status
+# 	position top
+# 	#mode hide
+# 	mode dock
+
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
 #	tray_output eDP1
+#
+# 	bindsym button4 nop
+# 	bindsym button5 nop
+# 	strip_workspace_numbers yes
+#
+#     colors {
+#         background #000000
+#         statusline #b6b6b6
+#         separator  #000000
+#
+# #                           border  backgr. text
+#         focused_workspace  #000000 #000000 #FF0000
+#         active_workspace   #000000 #000000 #a6000d
+#         inactive_workspace #000000 #000000 #b6b6b6
+#         binding_mode       #16a085 #2C2C2C #F9FAF9
+#         urgent_workspace   #16a085 #FDF6E3 #E5201D
+#     }
+# }
 
-	bindsym button4 nop
-	bindsym button5 nop
-	strip_workspace_numbers yes
-
+bar {
+    font pango:DejaVu Sans Mono, FontAwesome 10
+    # position bottom
+    position top
+    status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {
-        background #000000
-        statusline #b6b6b6
-        separator  #000000
-
-#                           border  backgr. text
-        focused_workspace  #000000 #000000 #FF0000
-        active_workspace   #000000 #000000 #a6000d
-        inactive_workspace #000000 #000000 #b6b6b6
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
     }
 }
-
 
 # Start i3blocks to display a workspace bar
 # bar
@@ -528,14 +527,14 @@ bindsym $mod+h workspace prev
 bindsym $mod+l workspace next
 #bindsym $mod2+k exec --no-startup-id pactl set-sink-volume 0 +5% 	# decrease sound volume
 #bindsym $mod2+j exec --no-startup-id pactl set-sink-volume 0 -5% 	# increase sound volume
-bindsym $mod+p exec --no-startup-id pactl set-sink-volume 0 +5% 	# decrease sound volume
-bindsym $mod+o exec --no-startup-id pactl set-sink-volume 0 -5% 	# increase sound volume
-bindsym $mod+Ctrl+i exec --no-startup-id pactl set-sink-mute 0 toggle 	# mute sound
+bindsym $mod+p exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) +5% # decrease sound volume
+bindsym $mod+o exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) -5% # increase sound volume
+bindsym $mod+Ctrl+i exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) toggle 	# mute sound
 bindsym $mod+Ctrl+l exec --no-startup-id cmus-remote -k +5				# +5 seconds forward
 bindsym $mod+Ctrl+k exec --no-startup-id cmus-remote -n			# next song
 bindsym $mod+Ctrl+h exec --no-startup-id cmus-remote -k -5				# -5 seconds back
 bindsym $mod+Ctrl+j exec --no-startup-id cmus-remote -r			# preivous song
-bindsym $mod+Ctrl+space exec --no-startup-id cmus-remote -u				# pause
+bindsym $mod+Ctrl+space exec --no-startup-id cmus-remote -u	# pause
 bindsym $mod+Shift+i exec --no-startup-id xcalib -invert -alter
 # Alsa key bindings
 # bindsym $mod+F11	exec --no-startup-id amixer -q set Master 2dB- unmute	# volume UP
@@ -552,6 +551,7 @@ bindsym $mod+n exec --no-startup-id mpv --volume=60 ~/aud/mus/rlx/white-noise.mp
 bindsym $mod+Shift+n exec --no-startup-id kill $(ps aux | grep white-noise | grep -v grep | awk '{ print $2 }')
 bindsym $mod+Shift+m exec --no-startup-id sh ~/.scripts/mm
 bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
+bindsym $mod+Escape exec --no-startup-id ~/.scripts/keyboard-layout.sh
 
 # # browser-fu
 bindsym $mod+s mode "web"
@@ -603,7 +603,7 @@ exec --no-startup-id xmodmap -e "keycode 64 = Shift_L"
 
 exec --no-startup-id sh ~/.scripts/battery-low-alert/battery-low-alert.sh # battery
 exec --no-startup-id sh ~/.scripts/demon.sh # my beautiful daemon >:)
-exec --no-startup-id sudo chown savolla /sys/class/backlight/intel_backlight/brightness # bright
+exec --no-startup-id sudo chmod 777 /sys/class/backlight/intel_backlight/brightness # bright
 # exec --no-startup-id pulseaudio-equalizer enable # i don't need this anymore (audio technica bro)
 exec --no-startup-id sct 6400 # warm and sweet screen
 exec --no-startup-id xrdb ~/.Xresources # initialize my own .Xresources

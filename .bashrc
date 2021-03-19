@@ -18,18 +18,6 @@ export PROMT_COMMAND="clear"
 export PATH=$PATH:$HOME/job/re/bin/:$HOME/.scripts/:$HOME/.emacs/bin/:$HOME/.scripts/process-cop:$HOME/bin/stm32cubeide
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
-# WSL options (disable when in linux env)
-#################################################################################
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{ print $2; exit; }'):0.0
-export LIBGL_ALWAYS_INDIRECT=1
-sudo /etc/init.d/dbus start &> /dev/null
-alias cdw="cd /mnt/c/Users/savolla/Desktop/savolla"
-export GDK_SCALE=0.5
-export GDK_DPI_SCALE=1.2
-xset r rate 150 200 # set x input speed
-cd
-#################################################################################
-
 # generic shortcuts
 
 o() { xdg-open "$@" & }
@@ -72,7 +60,7 @@ alias pause="process-pause.sh" # pause the process
 alias cont="process-cont.sh" # continues the process
 
 # some aliases
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME"
 alias pee='pulseaudio-equalizer enable'
 alias ped='pulseaudio-equalizer disable'
 alias pes='pulseaudio-equalizer status'

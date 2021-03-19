@@ -11,5 +11,4 @@ if [ "$WORD_COUNT" -eq 1 ]; then
     if [ ! "$IN_LIST" ]; then
         echo "$PHRASE, $MEANING" >> "$UNKNOWN_WORDS_CONTAINER"
     fi
-
 fi

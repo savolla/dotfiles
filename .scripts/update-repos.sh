@@ -20,6 +20,7 @@ git --git-dir="$DOTFILES" --work-tree="$HOME" push -u origin main
 ## notitia
 cd "$NOTITIA"
 git add -u
-git add images
+git add images/
+git add notitia/
 git commit -m "$COMMIT_MESSAGE"
 git push -u origin main
