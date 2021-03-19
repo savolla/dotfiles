@@ -54,8 +54,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 # Sound section
 # exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec pavucontrol
-bindsym $mod2+e exec pulseaudio-equalizer enable
-bindsym $mod2+Shift+e exec pulseaudio-equalizer disable
+bindsym $mod2+e exec pulseaudio-equalizer toggle
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
@@ -550,7 +549,8 @@ bindsym $mod+b exec --no-startup-id sh ~/.scripts/book-opener.sh
 bindsym $mod+n exec --no-startup-id mpv --volume=60 ~/aud/mus/rlx/white-noise.mp3
 bindsym $mod+Shift+n exec --no-startup-id kill $(ps aux | grep white-noise | grep -v grep | awk '{ print $2 }')
 bindsym $mod+Shift+m exec --no-startup-id sh ~/.scripts/mm
-bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
+# bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
+bindsym $mod+t exec --no-startup-id ~/.scripts/sticky-notes.sh
 bindsym $mod+Escape exec --no-startup-id ~/.scripts/keyboard-layout.sh
 
 # # browser-fu
@@ -588,18 +588,24 @@ mode "web" {
 
 # INITIALIZATION
 # ----------------
-exec --no-startup-id xcompmgr
+exec --no-startup-id protonvpn-tray 2> /dev/null & # start vpn
+exec --no-startup-id sudo protonvpn c --fastest # connect
+exec --no-startup-id bitwarden-desktop & # launch password manager
+
+
+exec --no-startup-id picom -b
 #exec --no-startup-id wal -n -i /home/savolla/.config/color-scheme-image # set color scheme with sxiv
 exec --no-startup-id feh --bg-scale /home/savolla/.config/background-image # set background image with sxiv 
-exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
+# exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
+exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and remap keys
 #exec --no-startup-id xset r rate 200 100 # type speed
 exec --no-startup-id xset r rate 150 100 # type speed
 
 # healing my carpal tunnel
-exec --no-startup-id xmodmap -e "keycode 108 = Escape"
-exec --no-startup-id xmodmap -e "keycode 66 = ISO_Level3_Shift"
-exec --no-startup-id xmodmap -e "keycode 50 = Alt_L"
-exec --no-startup-id xmodmap -e "keycode 64 = Shift_L"
+# exec --no-startup-id xmodmap -e "keycode 108 = Escape"
+# exec --no-startup-id xmodmap -e "keycode 66 = ISO_Level3_Shift"
+# exec --no-startup-id xmodmap -e "keycode 50 = Alt_L"
+# exec --no-startup-id xmodmap -e "keycode 64 = Shift_L"
 
 exec --no-startup-id sh ~/.scripts/battery-low-alert/battery-low-alert.sh # battery
 exec --no-startup-id sh ~/.scripts/demon.sh # my beautiful daemon >:)
