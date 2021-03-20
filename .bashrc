@@ -1,5 +1,5 @@
 #!/bin/bash
-echo -e "o TODO: change system dns to 9.9.9.9"
+echo -e "o TODO: hdmi script keybind"
 echo -e "o TODO: install age of empires online for linux"
 echo -e "o TODO: add script that opens your favorite sites and go there"
 echo -e "o TODO: add "TODO" before sticky notes string entry"
