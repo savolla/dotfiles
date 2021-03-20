@@ -87,13 +87,13 @@ bindsym --release $mod+Shift+Print exec --no-startup-id flameshot gui # select r
 # Start Applications with $mod+Fn
 bindsym $mod+F1 exec $terminal -e weechat
 # bindsym $mod+F2 exec emacsclient -c
-bindsym $mod+F2 exec emacs
+bindsym $mod+F2 exec toggle $editor
 bindsym $mod+F3 exec $terminal -e ranger
 bindsym $mod+Shift+F3 exec dolphin
 bindsym $mod+F4 exec $terminal -e cmus
 bindsym $mod+F5 exec sxiv -r -t ~/pix/*
 bindsym $mod+F6 exec $browser
-bindsym $mod+F7 exec telegram-desktop
+bindsym $mod+F7 exec toggle telegram-desktop
 bindsym $mod+F8 exec $terminal -e htop
 bindsym $mod+F9 exec retroarch
 
@@ -399,8 +399,7 @@ bindsym $mod2+d exec --no-startup-id optirun ~/gms/DF/PyLNP
 bindsym $mod2+1 exec --no-startup-id sh ~/.scripts/vocab
 bindsym $mod+b exec --no-startup-id sh ~/.scripts/book-opener.sh
 #bindsym $mod+b exec --no-startup-id ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 60 -s 1920x1080 -i :0.0 -acodec pcm_s16le -vcodec libx264 -preset ultrafast -crf 0 -threads 0 /home/$USER/vid/video-$(date --iso-8601)-$(date | awk '{ print $5 }').mkv
-bindsym $mod+n exec --no-startup-id mpv --volume=60 ~/aud/mus/rlx/white-noise.mp3
-bindsym $mod+Shift+n exec --no-startup-id kill $(ps aux | grep white-noise | grep -v grep | awk '{ print $2 }')
+bindsym $mod+n exec --no-startup-id kill $(ps aux | grep white-noise | grep -v grep | awk '{ print $2 }') 2> /dev/null || mpv --volume=60 ~/aud/mus/rlx/white-noise.mp3 &
 # bindsym $mod+Shift+m exec --no-startup-id sh ~/.scripts/mm
 # bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
 

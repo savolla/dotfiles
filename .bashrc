@@ -1,7 +1,8 @@
 #!/bin/bash
-echo -e "o use secondary clipboard in default case of url-opener script"
+echo -e "o IDEA: xbacklight + external light resistor to adjust your monitor brightness and also sound adjuster. IoT project"
+echo -e "o find a way to extract brave site settings and try to use sync bookmarks"
+echo -e "o add battery status on status bar"
 echo -e "o TODO: install age of empires online for linux"
-echo -e "o TODO: use or operator to toggle commands. this is a good idea thou"
 
 #/ ___|  __ ___   _____ | | | __ _   | |__   __ _ ___| |__  _ __ ___
 #\___ \ / _` \ \ / / _ \| | |/ _` |  | '_ \ / _` / __| '_ \| '__/ __|

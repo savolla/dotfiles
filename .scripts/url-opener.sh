@@ -2,11 +2,13 @@
 set -euo pipefail
 
 WEB_BROWSER="$(whereis brave | cut -d ' ' -f 2)"
-SITES="archwiki\ntranslate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlibrary\nsearx\nstarpage\n"
+SITES="archwiki\ntranslate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlibrary\nsearx\nstarpage\npiratebay\n"
 
 CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
 case $CHOICE in
+    piratebay)
+        $WEB_BROWSER https://thepiratebay.org/index.html ;;
     translate)
         $WEB_BROWSER https://translate.google.com/ ;;
     protonmail)
@@ -34,8 +36,7 @@ case $CHOICE in
     zlib)
         $WEB_BROWSER https://1lib.nl/ ;;
     *)
-        echo -e $CHOICE | xsel -i
-        notify-send "clipboard ready:\n$CHOICE"
-        $WEB_BROWSER https://startpage.com/
+        # $WEB_BROWSER https://html.duckduckgo.com/html/
+        $WEB_BROWSER https://duckduckgo.com/?q="$CHOICE"&t=h_&ia=web
         ;;
 esac
