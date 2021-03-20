@@ -95,7 +95,7 @@ bindsym $mod+F5 exec sxiv -r -t ~/pix/*
 bindsym $mod+F6 exec $browser
 bindsym $mod+F7 exec telegram-desktop
 bindsym $mod+F8 exec $terminal -e htop
-bindsym $mod+Shift+F8 exec retroarch
+bindsym $mod+F9 exec retroarch
 
 # this one is soooo important
 focus_follows_mouse no
@@ -146,22 +146,13 @@ bindsym $mod+space focus mode_toggle
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-# Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:
-
-# ws1 is window-porn panel
+# ws1 
 set $ws1 1: 
 # ws2 is for doom emacs
 set $ws2 2: 
@@ -189,28 +180,6 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
-# Move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-bindsym $mod+Ctrl+9 move container to workspace $ws9
-
-# Move to workspace with focused container
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
-
 # Open applications on specific workspaces
 assign [title="weechat"] $ws1
 assign [instance="emacs"] $ws2
@@ -234,12 +203,10 @@ for_window [instance="zathura"] floating enable, resize set 800 1000, move posit
 # title of
 for_window [title="QEMU"] move container to workspace $ws9
 for_window [title="sxiv"] floating enable border pixel 0
-# for_window [title="PyLNP"] floating enable, resize set 600 900, move container to workspace $ws8, move position 1303 30
 #
 # class of
 for_window [class="Galculator"] floating enable border pixel 0
 for_window [class="GParted"] floating enable border normal
-for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="mpv"] floating enable, resize set 1280 720, move position center, sticky enable, border pixel 0
 for_window [class="Telegram"] move scratchpad, scratchpad show, sticky enable, resize set 478 602, move position 1303 77
@@ -247,9 +214,6 @@ for_window [class="VirtualBox"] move container to workspace $ws9
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -294,10 +258,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-
-# Lock screen
-# bindsym $mod+c exec --no-startup-id blurlock
-
 # Autostart applications
 
 #exec --no-startup-id nitrogen --restore 
@@ -306,18 +266,6 @@ exec_always --no-startup-id unclutter -idle 1
 exec_always --no-startup-id dunst
 exec_always --no-startup-id flameshot
 
-# Color palette used for the terminal ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground
 set_from_resource $term_color0     color0
@@ -337,74 +285,6 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
-## POE status bar
-## Start i3bar to display a workspace bar (plus the system information i3status if available)
-#bar {
-#	i3bar_command i3bar
-#	status_command i3status
-#	position top
-#	#mode hide
-#	mode dock
-#
-### please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-##	tray_output primary
-##	tray_output eDP1
-#
-#	bindsym button4 nop
-#	bindsym button5 nop
-#	#font xft:URWGothic-Book 12
-#	#font xft:Awesome 13
-#	#font pango:DejaVu Sans Mono 10
-#	font xft:TerminessTTFNerdFontMono 12
-#	strip_workspace_numbers yes
-#
-#    colors {
-#        background #150505
-#        statusline #af6025
-#        separator  #240e0e
-#
-##                           border  backgr. text
-#        focused_workspace  #240e0e #150505 #cdcd5e
-#        active_workspace   #000000 #900090 #FDF6E3
-#        inactive_workspace #240e0e #150505 #af6025
-#        binding_mode       #16a085 #2C2C2C #F9FAF9
-#        urgent_workspace   #16a085 #FDF6E3 #E5201D
-#    }
-#}
-
-# current status bar
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
-
-# bar {
-# 	i3bar_command i3bar
-# 	status_command i3status
-# 	position top
-# 	#mode hide
-# 	mode dock
-
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
-#
-# 	bindsym button4 nop
-# 	bindsym button5 nop
-# 	strip_workspace_numbers yes
-#
-#     colors {
-#         background #000000
-#         statusline #b6b6b6
-#         separator  #000000
-#
-# #                           border  backgr. text
-#         focused_workspace  #000000 #000000 #FF0000
-#         active_workspace   #000000 #000000 #a6000d
-#         inactive_workspace #000000 #000000 #b6b6b6
-#         binding_mode       #16a085 #2C2C2C #F9FAF9
-#         urgent_workspace   #16a085 #FDF6E3 #E5201D
-#     }
-# }
-
 bar {
     font pango:DejaVu Sans Mono, FontAwesome 10
     # position bottom
@@ -421,24 +301,6 @@ bar {
     }
 }
 
-# Start i3blocks to display a workspace bar
-# bar
-# {
-#   position top
-#   status_command i3blocks
-#   i3bar_command i3bar
-#   font pango: SpaceMono Nerd Font Regular 11
-#   colors
-#   {
-# #                   Border Background Text
-#     focused_workspace   $fg    $fg        $bg
-#     active_workspace    $bg    $bg        $purple
-#     inactive_workspace  $bg    $bg        $cyan
-#     urgent_workspace    $bg    $bg        $magenta
-#     background          $bg
-#     }
-# }
-
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 
@@ -453,19 +315,8 @@ bindsym $mod+m bar mode toggle
 
   client.background       #2B2C2B
 
-##############################
-#### settings for i3-gaps: ###
-##############################
-
-# Set inner/outer gaps
-#gaps inner 10
-#gaps outer -4
-gaps inner 20
-gaps outer 0
-
 # bindsym $mod+t gaps inner all set 0;gaps outer all set 0;
 # bindsym $mod+Shift+t gaps inner all set 20;gaps outer all set 0;
-
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -473,11 +324,13 @@ gaps outer 0
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-#smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
+smart_gaps on
+gaps inner 20
+gaps outer 0
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -529,16 +382,16 @@ bindsym $mod+l workspace next
 bindsym $mod+p exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) +5% # decrease sound volume
 bindsym $mod+o exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) -5% # increase sound volume
 bindsym $mod+Ctrl+i exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) toggle 	# mute sound
-bindsym $mod+Ctrl+l exec --no-startup-id cmus-remote -k +5				# +5 seconds forward
-bindsym $mod+Ctrl+k exec --no-startup-id cmus-remote -n			# next song
-bindsym $mod+Ctrl+h exec --no-startup-id cmus-remote -k -5				# -5 seconds back
-bindsym $mod+Ctrl+j exec --no-startup-id cmus-remote -r			# preivous song
-bindsym $mod+Ctrl+space exec --no-startup-id cmus-remote -u	# pause
+bindsym $mod+Ctrl+l exec --no-startup-id cmus-remote -k +5 # +5 seconds forward
+bindsym $mod+Ctrl+k exec --no-startup-id cmus-remote -n # next song
+bindsym $mod+Ctrl+h exec --no-startup-id cmus-remote -k -5 # -5 seconds back
+bindsym $mod+Ctrl+j exec --no-startup-id cmus-remote -r # preivous song
+bindsym $mod+Ctrl+space exec --no-startup-id cmus-remote -u # pause
 bindsym $mod+Shift+i exec --no-startup-id xcalib -invert -alter
 # Alsa key bindings
-# bindsym $mod+F11	exec --no-startup-id amixer -q set Master 2dB- unmute	# volume UP
-# bindsym $mod+F12	exec --no-startup-id amixer -q set Master 2dB+ unmute	# volume DOWN
-# bindsym $mod+F10	exec --no-startup-id amixer -q set Master 2dB+ mute	    # mute
+# bindsym $mod+F11 exec --no-startup-id amixer -q set Master 2dB- unmute # volume UP
+# bindsym $mod+F12 exec --no-startup-id amixer -q set Master 2dB+ unmute # volume DOWN
+# bindsym $mod+F10 exec --no-startup-id amixer -q set Master 2dB+ mute   # mute
 bindsym $mod2+u exec --no-startup-id screenkey -s small --mods-mod win -f Hermit # quickly showing what you type
 bindsym $mod2+Shift+u exec --no-startup-id pkill -f screenkey
 bindsym $mod2+Shift+s exec --no-startup-id pkill -f ffmpeg
@@ -548,44 +401,14 @@ bindsym $mod+b exec --no-startup-id sh ~/.scripts/book-opener.sh
 #bindsym $mod+b exec --no-startup-id ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 60 -s 1920x1080 -i :0.0 -acodec pcm_s16le -vcodec libx264 -preset ultrafast -crf 0 -threads 0 /home/$USER/vid/video-$(date --iso-8601)-$(date | awk '{ print $5 }').mkv
 bindsym $mod+n exec --no-startup-id mpv --volume=60 ~/aud/mus/rlx/white-noise.mp3
 bindsym $mod+Shift+n exec --no-startup-id kill $(ps aux | grep white-noise | grep -v grep | awk '{ print $2 }')
-bindsym $mod+Shift+m exec --no-startup-id sh ~/.scripts/mm
+# bindsym $mod+Shift+m exec --no-startup-id sh ~/.scripts/mm
 # bindsym $mod+t exec --no-startup-id ~/.scripts/translator.sh
-bindsym $mod+t exec --no-startup-id ~/.scripts/sticky-notes.sh
-bindsym $mod+Escape exec --no-startup-id ~/.scripts/keyboard-layout.sh
-bindsym $mod+s exec --no-startup-id ~/.scripts/url-opener.sh
 
-# # browser-fu
-# bindsym $mod+s mode "web"
-# mode "web" {
-#         # translate
-#         bindsym t exec --no-startup-id brave https://translate.google.com, mode "default"
-#         # protonmail
-#         bindsym p exec --no-startup-id brave https://mail.protonmail.com/login, mode "default"
-#         # youtube
-#         bindsym y exec --no-startup-id brave https://www.youtube.com/results, mode "default"
-#         # google
-#         bindsym g exec --no-startup-id brave https://google.com, mode "default"
-#         # github account
-#         bindsym s exec --no-startup-id brave https://github.com/savolla, mode "default"
-#         # github search
-#         bindsym Shift+S exec --no-startup-id brave https://github.com/search, mode "default"
-#         # my website
-#         bindsym i exec --no-startup-id brave https://savolla.github.io/, mode "default"
-#         # wikipedia
-#         bindsym w exec --no-startup-id brave https://www.wikipedia.org/, mode "default"
-#         # reddit
-#         bindsym r exec --no-startup-id brave https://www.reddit.com/r/unixporn/, mode "default"
-#         # arch wiki
-#         bindsym a exec --no-starjup-id brave https://wiki.archlinux.org/, mode "default"
-#         # hackernews
-#         bindsym h exec --no-startup-id brave https://news.ycombinator.com/, mode "default"
-#         # book heaven
-#         bindsym l exec --no-startup-id brave http://libgen.rs/, mode "default"
-
-#         # exit keys mode
-#         bindsym Return mode "default"
-#         bindsym Escape mode "default"
-# }
+# custom script launhing
+bindsym $mod+F11       exec --no-startup-id ~/.scripts/keyboard-layout.sh # keyboard
+bindsym $mod+g         exec --no-startup-id ~/.scripts/url-opener.sh      # url
+bindsym $mod+F10       exec --no-startup-id ~/.scripts/sticky-notes.sh    # sticky notes
+bindsym $mod+Shift+F10 exec --no-startup-id ~/.scripts/hdmi-connect.sh    # hdmi
 
 # INITIALIZATION
 # ----------------

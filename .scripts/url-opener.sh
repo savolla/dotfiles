@@ -2,9 +2,9 @@
 set -euo pipefail
 
 WEB_BROWSER="$(whereis brave | cut -d ' ' -f 2)"
-SITES="translate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlibrary\nsearx\nstarpage\n"
+SITES="archwiki\ntranslate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlibrary\nsearx\nstarpage\n"
 
-CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto: ")
+CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
 case $CHOICE in
     translate)

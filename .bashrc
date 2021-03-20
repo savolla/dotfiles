@@ -1,8 +1,6 @@
 #!/bin/bash
-echo -e "o TODO: hdmi script keybind"
+echo -e "o use secondary clipboard in default case of url-opener script"
 echo -e "o TODO: install age of empires online for linux"
-echo -e "o TODO: add script that opens your favorite sites and go there"
-echo -e "o TODO: add "TODO" before sticky notes string entry"
 echo -e "o TODO: use or operator to toggle commands. this is a good idea thou"
 
 #/ ___|  __ ___   _____ | | | __ _   | |__   __ _ ___| |__  _ __ ___
