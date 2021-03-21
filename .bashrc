@@ -1,4 +1,5 @@
 #!/bin/bash
+echo -e "o protonvpn random ip every random minute"
 echo -e "o toggle pulseaudio in i3"
 echo -e "o cmus float and position"
 echo -e "o linux cpu temperature is high"

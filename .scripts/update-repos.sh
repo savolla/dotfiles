@@ -9,8 +9,8 @@
 COMMIT_MESSAGE=$(curl -s http://whatthecommit.com | perl -p0e '($_)=m{<p>(.+?)</p>}s')
 
 ## github projects:
-DOTFILES="$HOME/.dotfiles"
-NOTITIA="$HOME/txt"
+DOTFILES="$HOME/.dotfiles/.git"
+NOTITIA="$HOME/txt/.git/"
 
 ## dotfiles
 git --git-dir="$DOTFILES" --work-tree="$HOME" add -u
