@@ -87,7 +87,7 @@ bindsym --release $mod+Shift+Print exec --no-startup-id flameshot gui # select r
 # Start Applications with $mod+Fn
 bindsym $mod+F1 exec $terminal -e weechat
 # bindsym $mod+F2 exec emacsclient -c
-bindsym $mod+F2 exec toggle $editor
+bindsym $mod+F2 exec $editor
 bindsym $mod+F3 exec $terminal -e ranger
 bindsym $mod+Shift+F3 exec dolphin
 bindsym $mod+F4 exec $terminal -e cmus
