@@ -1,4 +1,5 @@
 #!/bin/bash
+echo -e "o replace wifi SSID with signal strength. the name of wifi bloats the status bar"
 echo -e "o WATCH: okan bayülgen para 3"
 echo -e "o handle weechat config files"
 echo -e "o try to play Heptaedium - Casca :)"
