@@ -2,20 +2,35 @@ theme = "modern"
 icons = "awesome"
 
 [[block]]
+block = "music"
+buttons = ["play", "next"]
+interface_name_exclude = [".*kdeconnect.*", "mpd"]
+
+[[block]]
+block = "taskwarrior"
+interval = 60
+format = "{count} open tasks ({filter_name})"
+format_singular = "{count} open task ({filter_name})"
+format_everything_done = "nothing to do!"
+warning_threshold = 10
+critical_threshold = 20
+[[block.filters]]
+name = "today"
+filter = "+PENDING +OVERDUE or +DUETODAY"
+[[block.filters]]
+name = "some-project"
+filter = "project:some-project +PENDING"
+
+[[block]]
 block = "cpu"
 interval = 1
 
-# [[block]]
-# block = "custom"
-# command = ''' acpi -t | cut -d " " -f 4 '''
-# interval = 1
 [[block]]
 block = "temperature"
 collapsed = false
 interval = 10
-format = "{min}° min, {max}° max, {average}° avg"
+format = "{average}°"
 chip = "*-isa-*"
-inputs = ["CPUTIN", "SYSTIN"]
 
 [[block]]
 block = "load"
@@ -67,3 +82,9 @@ format = "%a %d/%m %R"
 block = "keyboard_layout"
 driver = "setxkbmap"
 interval = 15
+
+[[block]]
+block = "battery"
+interval = 10
+format = "%{percentage}"
+driver = "upower"

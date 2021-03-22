@@ -2,13 +2,15 @@
 set -euo pipefail
 
 WEB_BROWSER="$(whereis brave | cut -d ' ' -f 2)"
-SITES="archwiki\ntranslate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlibrary\nsearx\nstarpage\npiratebay\n"
+SITES="archwiki\ntranslate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlibrary\nsearx\nstarpage\npiratebay\nuzem\n"
 
 CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
 case $CHOICE in
     piratebay)
         $WEB_BROWSER https://thepiratebay.org/index.html ;;
+    uzem)
+        $WEB_BROWSER https://uzemders.duzce.edu.tr/ ;;
     translate)
         $WEB_BROWSER https://translate.google.com/ ;;
     protonmail)

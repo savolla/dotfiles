@@ -54,7 +54,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 # Sound section
 # exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec pavucontrol
-bindsym $mod2+e exec pulseaudio-equalizer toggle
+bindsym $mod+Shift+F4 exec pulseaudio-equalizer toggle
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
@@ -93,7 +93,7 @@ bindsym $mod+Shift+F3 exec dolphin
 bindsym $mod+F4 exec $terminal -e cmus
 bindsym $mod+F5 exec sxiv -r -t ~/pix/*
 bindsym $mod+F6 exec $browser
-bindsym $mod+F7 exec toggle telegram-desktop
+bindsym $mod+F7 exec --no-startup-id telegram-desktop
 bindsym $mod+F8 exec $terminal -e htop
 bindsym $mod+F9 exec retroarch
 
@@ -192,17 +192,20 @@ assign [class="Brave"] $ws6
 assign [class="retroarch"] $ws8
 assign [title="Discord"] $ws8
 #assign [class=""] $ws8
-for_window [title="xawtv"] floating enable, sticky enable, resize set 100 100, move position 0 0
-
 
 # Open specific applications in floating mode
 # ---------------------------------------------------
 # instance of
 for_window [instance="mupdf"] floating enable, resize set 800 1000, move position center
 for_window [instance="zathura"] floating enable, resize set 800 1000, move position center
-# title of
+for_window [instance="scrcpy"] move scratchpad, scratchpad show, sticky enable, resize set 495 1058, move position 1425 22
+
+# terminal applications go here:
 for_window [title="QEMU"] move container to workspace $ws9
 for_window [title="sxiv"] floating enable border pixel 0
+for_window [title="xawtv"] floating enable, sticky enable, resize set 100 100, move position 0 0
+for_window [title="cmus"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
+for_window [title="htop"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
 #
 # class of
 for_window [class="Galculator"] floating enable border pixel 0
@@ -408,11 +411,12 @@ bindsym $mod+F11       exec --no-startup-id ~/.scripts/keyboard-layout.sh # keyb
 bindsym $mod+g         exec --no-startup-id ~/.scripts/url-opener.sh      # url
 bindsym $mod+F10       exec --no-startup-id ~/.scripts/sticky-notes.sh    # sticky notes
 bindsym $mod+Shift+F10 exec --no-startup-id ~/.scripts/hdmi-connect.sh    # hdmi
+bindsym $mod+F12 exec --no-startup-id ~/.scripts/open-phone               # open phone
 
 # INITIALIZATION
 # ----------------
 exec --no-startup-id protonvpn-tray 2> /dev/null & # start vpn
-exec --no-startup-id sudo protonvpn c --fastest # connect
+exec --no-startup-id ~/.scripts/flush-vpn.sh # connect
 exec --no-startup-id bitwarden-desktop & # launch password manager
 
 
