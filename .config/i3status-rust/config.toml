@@ -58,11 +58,10 @@ interval = 20
 warning = 20.0
 alert = 10.0
 
-
 [[block]]
 block = "net"
 device = "wlp2s0"
-format = "{ssid}"
+format = "{signal_strength}"
 interval = 5
 use_bits = false
 

@@ -415,9 +415,9 @@ bindsym $mod+F12 exec --no-startup-id ~/.scripts/open-phone               # open
 
 # INITIALIZATION
 # ----------------
-exec --no-startup-id protonvpn-tray 2> /dev/null & # start vpn
-exec --no-startup-id ~/.scripts/flush-vpn.sh # connect
-exec --no-startup-id bitwarden-desktop & # launch password manager
+# exec --no-startup-id protonvpn-tray 2> /dev/null & # start vpn
+# exec --no-startup-id ~/.scripts/flush-vpn.sh # connect
+# exec --no-startup-id bitwarden-desktop & # launch password manager
 
 
 exec --no-startup-id picom -b
