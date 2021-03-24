@@ -1,14 +1,5 @@
 #!/bin/bash
-echo -e "o WATCH: okan bayülgen para 3"
-echo -e "o handle weechat config files"
-echo -e "o try to play Heptaedium - Casca :)"
-echo -e "o linux cpu temperature is high"
-echo -e "o find a way to decrease phone brightness to 0"
-echo -e "o TODO: notitia tools. make them seperate files to make navigation easier"
-echo -e "o see the latest linux kernel patches to see changes"
-echo -e "o ask IRC about linux knowledge and its profit"
-echo -e "o find a way to extract brave site settings and try to use sync bookmarks"
-echo -e "o TODO: install age of empires online for linux"
+task
 
 #/ ___|  __ ___   _____ | | | __ _   | |__   __ _ ___| |__  _ __ ___
 #\___ \ / _` \ \ / / _ \| | |/ _` |  | '_ \ / _` / __| '_ \| '__/ __|
@@ -68,6 +59,7 @@ alias prs="sudo pacman -Rs" # pacman remove
 alias prf="sudo pacman -Rs" # pacman remove force
 alias pause="process-pause.sh" # pause the process
 alias cont="process-cont.sh" # continues the process
+alias t="task" # taskwarrior!
 
 # some aliases
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/.git/ --work-tree=$HOME"
