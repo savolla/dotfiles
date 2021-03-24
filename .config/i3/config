@@ -411,7 +411,8 @@ bindsym $mod+F11       exec --no-startup-id ~/.scripts/keyboard-layout.sh # keyb
 bindsym $mod+g         exec --no-startup-id ~/.scripts/url-opener.sh      # url
 bindsym $mod+F10       exec --no-startup-id ~/.scripts/sticky-notes.sh    # sticky notes
 bindsym $mod+Shift+F10 exec --no-startup-id ~/.scripts/hdmi-connect.sh    # hdmi
-bindsym $mod+F12 exec --no-startup-id ~/.scripts/open-phone               # open phone
+bindsym $mod+F12       exec --no-startup-id ~/.scripts/open-phone         # open phone
+bindsym $mod+*
 
 # INITIALIZATION
 # ----------------
