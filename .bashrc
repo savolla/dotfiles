@@ -1,4 +1,5 @@
 #!/bin/bash
+echo -e "o watch okan bayülgen ve cem yılmaz "
 task
 
 #/ ___|  __ ___   _____ | | | __ _   | |__   __ _ ___| |__  _ __ ___
