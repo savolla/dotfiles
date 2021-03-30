@@ -2,6 +2,8 @@
 # Profile file. Runs on login.
 #
 # essential programs
+TERM="xterm"
+export TERM
 export TERMINAL="st"
 export EDITOR="emacs"
 export BROWSER="brave"
