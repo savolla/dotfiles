@@ -239,25 +239,9 @@
 (setq forge-topic-list-limit '(30 . 6)) ;; limit the number of topics
 
 ;; org-roam
-(setq org-roam-index-file "notitia.org" )
-(setq org-roam-capture-templates
-      '(("d" "default" plain (function org-roam-capture--get-point)
-         "%?"
-         :file-name "${slug}"
-         :head "#+TITLE: ${title}\n"
-         :unnarrowed t)))
 (setq org-roam-directory "~/txt/roam" )
-
-(defun jsravn--open-org-roam ()
-  "Called by `org-mode-hook' to call `org-roam' if the current buffer is a roam file."
-  (remove-hook 'window-configuration-change-hook #'jsravn--open-org-roam)
-  (when (org-roam--org-roam-file-p)
-    (unless (eq 'visible (org-roam--current-visibility)) (org-roam))))
-
-(after! org-roam
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (add-hook 'window-configuration-change-hook #'jsravn--open-org-roam))))
+(setq org-roam-db-update-method 'immediate)
+(setq org-roam-encrypt-files t)
 
 ;; roam graph
 (use-package org-roam-server
