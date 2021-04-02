@@ -1,6 +1,5 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-
 ;; Custom Functions
 (defun open-notitia()
   "Open Personal Personal Wiki file"
@@ -107,6 +106,8 @@
 ;; files
 (map! :leader :desc "notitia"                 "- n w" #'open-notitia ) ;; open personal wiki
 (map! :leader :desc "todo"                    "- n t" #'open-todo ) ;; open TODO file
+(map! :leader :desc "neotree"                 "- f"   #'neotree) ;; open NERDTree :P
+
 
 ;;#######################################################################################
 
@@ -127,10 +128,10 @@
 
 ;; themes
 ;; (setq doom-theme 'doom-one) ;; option 1
-;; (setq doom-theme 'doom-gruvbox) ;; option 2
+(setq doom-theme 'doom-gruvbox) ;; option 2
 ;; (setq doom-theme 'doom-outrun-electric) ;; option 3
 ;; (setq doom-theme 'doom-dracula) ;; option 4
-(setq doom-theme 'doom-solarized-dark) ;; option 5
+;; (setq doom-theme 'doom-solarized-dark) ;; option 5
 
 ;; coding
 (setq display-line-numbers-type nil)
@@ -164,9 +165,11 @@
 
 ;; Utility ##############################################################################
 
+;; neotree
+(setq neo-window-position 'right )
+
 ;; plantuml
 (setq plantuml-output-type "png" )
-
 
 ;; vterm
 (after! vterm
@@ -181,10 +184,11 @@
 
 ;; Org
 (setq
- org-adapt-indentation nil ;; [fn::suspect]
+ org-adapt-indentation t
+ ;; org-adapt-indentation nil ;; [fn::suspect]
  org-directory "~/txt/"
- org-ellipsis " ▼ "
- org-superstar-headline-bullets-list '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷" "☷" "☷" "☷")
+ org-ellipsis "⤵"
+ org-superstar-headline-bullets-list '("◉" "○" "●" "○" "●" "○" "●")
  org-beamer-theme "[progressbar=foot]metropolis"
  org-beamer-frame-level 2
  org-hide-block-startup t)
@@ -199,12 +203,18 @@
    org-fast-tag-selection-single-key t))
 (setq org-imenu-depth 6) ;;
 (custom-set-faces! ;; set heading size
-  '(outline-1 :weight extra-bold :height 1.12)
-  '(outline-2 :weight bold :height 1.10)
-  '(outline-3 :weight bold :height 1.08)
-  '(outline-4 :weight semi-bold :height 1.06)
-  '(outline-5 :weight semi-bold :height 1.04)
-  '(outline-6 :weight semi-bold :height 1.02)
+  ;; '(outline-1 :weight semi-bold :height 1.12)
+  ;; '(outline-2 :weight semi-bold :height 1.10)
+  ;; '(outline-3 :weight semi-bold :height 1.08)
+  ;; '(outline-4 :weight semi-bold :height 1.06)
+  ;; '(outline-5 :weight semi-bold :height 1.04)
+  ;; '(outline-6 :weight semi-bold :height 1.02)
+  '(outline-1 :weight semi-bold)
+  '(outline-2 :weight semi-bold)
+  '(outline-3 :weight semi-bold)
+  '(outline-4 :weight semi-bold)
+  '(outline-5 :weight semi-bold)
+  '(outline-6 :weight semi-bold)
   '(outline-8 :weight semi-bold)
   '(outline-9 :weight semi-bold))
 
