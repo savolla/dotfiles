@@ -242,6 +242,7 @@
 (setq org-roam-directory "~/txt/roam" )
 (setq org-roam-db-update-method 'immediate)
 (setq org-roam-encrypt-files t)
+(setq org-roam-dailies-directory "~/txt/daily/")
 
 ;; roam graph
 (use-package org-roam-server
