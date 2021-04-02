@@ -14,6 +14,7 @@
 (package! neotree)
 (package! org-roam-server
   :recipe (:host github :repo "org-roam/org-roam-server"))
+(package! org-super-agenda)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
