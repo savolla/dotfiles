@@ -244,6 +244,15 @@
 (setq org-roam-encrypt-files t)
 (setq org-roam-dailies-directory "~/txt/daily/")
 
+(setq org-roam-dailies-capture-templates
+      '(("j" "journal" entry
+         #'org-roam-capture--get-point
+         "* %?"
+         :file-name "daily/%<%Y-%m-%d>"
+         :head "#+title: %<%Y-%m-%d>\n"
+         :olp ("Journal"))))
+
+
 ;; roam graph
 (use-package org-roam-server
   :ensure t
