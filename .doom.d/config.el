@@ -232,18 +232,33 @@
  ;; org-adapt-indentation nil ;; [fn::suspect]
  org-directory "~/txt/"
  org-ellipsis "⤵"
- org-superstar-headline-bullets-list '("◉" "○" "●" "○" "●" "○" "●")
+ org-superstar-headline-bullets-list '("⁖" "α" "β" "ε")
+;(setq org-superstar-headline-bullets-list '("⠁" "⠃" "⠇" "⠏" "⠟" "⠿"))
  org-beamer-theme "[progressbar=foot]metropolis"
  org-beamer-frame-level 2
  org-hide-block-startup t)
 
 (after! org
   (setq
-   org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
+   org-todo-keywords '((sequence
+                        "TODO(t)"
+                        "WAITING(w)"
+                        "IDEA(i)"
+                        "WATCH(y)"
+                        "NEXT(n)"
+                        "LATER(l)"
+                        "|"
+                        "DONE(d)"
+                        "DELEGATED(e)"
+                        "CANCELLED(c)"))
    org-log-done 'time))
 (after! org
   (setq
-   org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("@omscs" . ?o))
+   org-tag-alist '(("@work" . ?w)
+                   ("@home" . ?h)
+                   ("read" . ?r)
+                   ("@omscs" . ?o))
+
    org-fast-tag-selection-single-key t))
 (setq org-imenu-depth 6) ;;
 (custom-set-faces! ;; set heading size
