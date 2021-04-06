@@ -210,7 +210,7 @@
 ;;   (org-agenda nil "a"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; neotree
-(setq neo-window-position 'right )
+(setq neo-window-position 'left )
 
 ;; plantuml
 (setq plantuml-output-type "png" )
@@ -262,20 +262,6 @@
    org-fast-tag-selection-single-key t))
 (setq org-imenu-depth 6) ;;
 (custom-set-faces! ;; set heading size
-  ;; '(outline-1 :weight semi-bold :height 1.12)
-  ;; '(outline-2 :weight semi-bold :height 1.10)
-  ;; '(outline-3 :weight semi-bold :height 1.08)
-  ;; '(outline-4 :weight semi-bold :height 1.06)
-  ;; '(outline-5 :weight semi-bold :height 1.04)
-  ;; '(outline-6 :weight semi-bold :height 1.02)
-  ;; '(outline-1 :weight semi-bold)
-  ;; '(outline-2 :weight semi-bold)
-  ;; '(outline-3 :weight semi-bold)
-  ;; '(outline-4 :weight semi-bold)
-  ;; '(outline-5 :weight semi-bold)
-  ;; '(outline-6 :weight semi-bold)
-  ;; '(outline-8 :weight semi-bold)
-  ;; '(outline-9 :weight semi-bold)
   '(outline-1 :weight light )
   '(outline-2 :weight light )
   '(outline-3 :weight light )
@@ -284,10 +270,12 @@
   '(outline-6 :weight light )
   '(outline-8 :weight light )
   '(outline-9 :weight light )
-  '(link :weight light)
-  )
+  '(link :weight light))
 
-(after! org (setq org-export-headline-levels 6))
+(after! org
+  (setq org-export-headline-levels 6))
+
+(add-hook! 'org-mode-hook 'org-sticky-header-mode)
 
 (eval-after-load "org" ;; enable github flavored markdown
   '(require 'ox-gfm nil t))
@@ -307,7 +295,8 @@
 ;; Treemacs
 (after! treemacs
   (treemacs-follow-mode 1)
-  (setq treemacs-width 30))
+  (setq treemacs-width 30)
+  (setq treemacs-position 'right))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Company
 (after! company
@@ -331,22 +320,6 @@
          :head "#+title: %<%Y-%m-%d>\n"
          :olp ("Journal"))))
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; roam graph
-(use-package org-roam-server
-  :ensure t
-  :config
-  (setq org-roam-server-host "127.0.0.1"
-        org-roam-server-port 8080
-        org-roam-server-authenticate nil
-        org-roam-server-export-inline-images t
-        org-roam-server-serve-files nil
-        org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
-        org-roam-server-network-poll t
-        org-roam-server-network-arrows nil
-        org-roam-server-network-label-truncate t
-        org-roam-server-network-label-truncate-length 60
-        org-roam-server-network-label-wrap-length 20))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; undo
 (setq undo-limit 100 )
@@ -389,9 +362,6 @@
         +zen-mixed-pitch-modes nil
         writeroom-mode-line t
         writeroom-width 160))
-
-;; pretty code
-(setq +pretty-code-symbols nil) ;; just use pretty-code for the ligatures
 
 ;;#######################################################################################
 
