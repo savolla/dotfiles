@@ -1,4 +1,5 @@
-theme = "modern"
+# theme = "modern"
+theme = "space-villain"
 icons = "awesome"
 
 [[block]]
