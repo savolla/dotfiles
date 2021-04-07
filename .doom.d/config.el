@@ -232,8 +232,9 @@
  ;; org-adapt-indentation nil ;; [fn::suspect]
  org-directory "~/txt/"
  org-ellipsis "⤵"
- org-superstar-headline-bullets-list '("⁖" "α" "β" "ε")
+ ;; org-superstar-headline-bullets-list '("⁖" "α" "β" "ε")
 ;(setq org-superstar-headline-bullets-list '("⠁" "⠃" "⠇" "⠏" "⠟" "⠿"))
+ org-superstar-headline-bullets-list '("⚀" "⚁" "⚂" "⚃" "⚄" "⚅")
  org-beamer-theme "[progressbar=foot]metropolis"
  org-beamer-frame-level 2
  org-hide-block-startup t)
