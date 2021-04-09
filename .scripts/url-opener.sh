@@ -2,7 +2,7 @@
 set -euo pipefail
 
 WEB_BROWSER="$(whereis brave | cut -d ' ' -f 2)"
-SITES="archwiki\ntranslate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\n"
+SITES="archwiki\ntranslate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious"
 
 CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
@@ -15,8 +15,10 @@ case $CHOICE in
         $WEB_BROWSER https://translate.google.com/ ;;
     protonmail)
         $WEB_BROWSER https://mail.protonmail.com/login ;;
-    youtube)
-        $WEB_BROWSER https://www.youtube.com/results ;;
+    # youtube)
+        # $WEB_BROWSER https://www.youtube.com/results ;;
+    invidious)
+        $WEB_BROWSER https://invidious.xyz/login?referer=%2F ;;
     startpage)
         $WEB_BROWSER https://startpage.com/ ;;
     searx)
@@ -39,6 +41,7 @@ case $CHOICE in
         $WEB_BROWSER https://1lib.net/ ;;
     *)
         # $WEB_BROWSER https://html.duckduckgo.com/html/
-        $WEB_BROWSER https://duckduckgo.com/?q="$CHOICE"&t=h_&ia=web
+        # $WEB_BROWSER https://duckduckgo.com/?q="$CHOICE"&t=h_&ia=web
+        $WEB_BROWSER https://swisscows.com/web?query="$CHOICE"&region=tr-TR
         ;;
 esac
