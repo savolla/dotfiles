@@ -2,7 +2,7 @@
 set -euo pipefail
 
 WEB_BROWSER="$(whereis brave | cut -d ' ' -f 2)"
-SITES="archwiki\ntranslate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlibrary\nsearx\nstarpage\npiratebay\nuzem\n"
+SITES="archwiki\ntranslate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\n"
 
 CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
@@ -36,7 +36,7 @@ case $CHOICE in
     libgen)
         $WEB_BROWSER http://libgen.rs/ ;;
     zlib)
-        $WEB_BROWSER https://1lib.nl/ ;;
+        $WEB_BROWSER https://1lib.net/ ;;
     *)
         # $WEB_BROWSER https://html.duckduckgo.com/html/
         $WEB_BROWSER https://duckduckgo.com/?q="$CHOICE"&t=h_&ia=web
