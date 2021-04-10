@@ -40,8 +40,8 @@ case $CHOICE in
     zlib)
         $WEB_BROWSER https://1lib.net/ ;;
     *)
-        # $WEB_BROWSER https://html.duckduckgo.com/html/
+        $WEB_BROWSER https://html.duckduckgo.com/html/?q="$CHOICE"&t=h_&ia=web
         # $WEB_BROWSER https://duckduckgo.com/?q="$CHOICE"&t=h_&ia=web
-        $WEB_BROWSER https://swisscows.com/web?query="$CHOICE"&region=tr-TR
+        # $WEB_BROWSER https://swisscows.com/web?query="$CHOICE"&region=tr-TR
         ;;
 esac
