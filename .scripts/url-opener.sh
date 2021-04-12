@@ -8,37 +8,37 @@ CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
 case $CHOICE in
     piratebay)
-        $WEB_BROWSER https://thepiratebay.org/index.html ;;
+        $WEB_BROWSER "https://thepiratebay.org/index.html" ;;
     uzem)
-        $WEB_BROWSER https://uzemders.duzce.edu.tr/ ;;
+        $WEB_BROWSER "https://uzemders.duzce.edu.tr/" ;;
     translate)
-        $WEB_BROWSER https://translate.google.com/ ;;
+        $WEB_BROWSER "https://translate.google.com/" ;;
     protonmail)
-        $WEB_BROWSER https://mail.protonmail.com/login ;;
+        $WEB_BROWSER "https://mail.protonmail.com/login" ;;
     # youtube)
-        # $WEB_BROWSER https://www.youtube.com/results ;;
+        # $WEB_BROWSER "https://www.youtube.com/results" ;;
     invidious)
-        $WEB_BROWSER https://invidious.xyz/login?referer=%2F ;;
+        $WEB_BROWSER "https://invidious.xyz/login?referer=%2F" ;;
     startpage)
-        $WEB_BROWSER https://startpage.com/ ;;
+        $WEB_BROWSER "https://startpage.com/" ;;
     searx)
-        $WEB_BROWSER https://searx.ir/ ;;
+        $WEB_BROWSER "https://searx.ir/" ;;
     gitprofile)
-        $WEB_BROWSER https://github.com/savolla ;;
+        $WEB_BROWSER "https://github.com/savolla" ;;
     gitsearch)
-        $WEB_BROWSER https://github.com/search ;;
+        $WEB_BROWSER "https://github.com/search" ;;
     blog)
-        $WEB_BROWSER https://savolla.github.io/ ;;
+        $WEB_BROWSER "https://savolla.github.io/" ;;
     wikipedia)
-        $WEB_BROWSER https://www.wikipedia.org/ ;;
+        $WEB_BROWSER "https://www.wikipedia.org/" ;;
     archwiki)
-        $WEB_BROWSER https://wiki.archlinux.org/ ;;
+        $WEB_BROWSER "https://wiki.archlinux.org/" ;;
     hackernews)
-        $WEB_BROWSER https://news.ycombinator.com/ ;;
+        $WEB_BROWSER "https://news.ycombinator.com/" ;;
     libgen)
-        $WEB_BROWSER http://libgen.rs/ ;;
+        $WEB_BROWSER "http://libgen.rs/" ;;
     zlib)
-        $WEB_BROWSER https://1lib.net/ ;;
+        $WEB_BROWSER "https://1lib.net/" ;;
     news)
         $WEB_BROWSER "https://newslookup.com/results?ovs=&dp=&mt=-1&mtx=0&tp=&s=&groupby=no&cat=-1&fmt=&ut=&mkt=0&mktx=0&q=turkey&m=" ;;
     *)
