@@ -213,6 +213,7 @@ for_window [class="GParted"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="mpv"] floating enable, resize set 1280 720, move position center, sticky enable, border pixel 0
 for_window [class="Telegram"] move scratchpad, scratchpad show, sticky enable, resize set 478 602, move position 1303 77
+for_window [class="Bitwarden"] floating enable,move position 1152 25, resize set 767 496
 for_window [class="VirtualBox"] move container to workspace $ws9
 
 # switch to workspace with urgent window automatically

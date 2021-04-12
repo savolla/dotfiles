@@ -7,20 +7,20 @@ block = "music"
 buttons = ["play", "next"]
 interface_name_exclude = [".*kdeconnect.*", "mpd"]
 
-[[block]]
-block = "taskwarrior"
-interval = 60
-format = "{count} open tasks ({filter_name})"
-format_singular = "{count} open task ({filter_name})"
-format_everything_done = "nothing to do!"
-warning_threshold = 10
-critical_threshold = 20
-[[block.filters]]
-name = "today"
-filter = "+PENDING +OVERDUE or +DUETODAY"
-[[block.filters]]
-name = "some-project"
-filter = "project:some-project +PENDING"
+# [[block]]
+# block = "taskwarrior"
+# interval = 60
+# format = "{count} open tasks ({filter_name})"
+# format_singular = "{count} open task ({filter_name})"
+# format_everything_done = "nothing to do!"
+# warning_threshold = 10
+# critical_threshold = 20
+# [[block.filters]]
+# name = "today"
+# filter = "+PENDING +OVERDUE or +DUETODAY"
+# [[block.filters]]
+# name = "some-project"
+# filter = "project:some-project +PENDING"
 
 [[block]]
 block = "cpu"
