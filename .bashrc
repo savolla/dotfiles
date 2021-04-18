@@ -147,3 +147,4 @@ ida()
     cd /home/savolla/.wine/drive_c/Program\ Files/IDA\ 7.0/
 }
 
+source /usr/share/nvm/init-nvm.sh
