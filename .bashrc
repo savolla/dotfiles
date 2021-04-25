@@ -68,7 +68,7 @@ alias pes='pulseaudio-equalizer status'
 alias jerry="sudo python ~/.scripts/i3-mouse.py"
 alias f="clear"
 alias yychr="wine ~/src/yychr-non-dotnet/yychr.exe 2>/dev/null &"
-alias pg="ping google.com" # check the net
+alias pg="ping gnu.org" # check the net
 alias r="ranger"
 alias mkdir="mkdir -pv"
 weath() { curl wttr.in/$1 ;} # Check the weather (give city or leave blank).

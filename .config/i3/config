@@ -208,6 +208,7 @@ for_window [title="cmus"] floating enable, move scratchpad, scratchpad show, res
 for_window [title="htop"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
 #
 # class of
+for_window [class="Genymotion"] move scratchpad, scratchpad show, sticky enable, resize set 495 1058, move position 1650 30
 for_window [class="Galculator"] floating enable border pixel 0
 for_window [class="GParted"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
