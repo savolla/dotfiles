@@ -206,7 +206,8 @@ for_window [title="sxiv"] floating enable border pixel 0
 for_window [title="xawtv"] floating enable, sticky enable, resize set 100 100, move position 0 0
 for_window [title="cmus"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
 for_window [title="htop"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
-#
+
+
 # class of
 for_window [class="Genymotion"] move scratchpad, scratchpad show, sticky enable, resize set 495 1058, move position 1650 30
 for_window [class="Galculator"] floating enable border pixel 0
@@ -447,3 +448,6 @@ exec --no-startup-id pactl set-sink-volume 0 35% # set volume level
 # exec --no-startup-id emacs --daemon # start emacsclient
 exec --no-startup-id dunst -config /usr/share/dunst/dunstrc
 exec --no-startup-id gmtool admin start scratchphone
+
+# GUI development
+for_window [title="Breakout!"] floating enable, move scratchpad, scratchpad show, resize set 600 1000, move position 1300 30, border pixel 0
