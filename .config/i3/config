@@ -450,4 +450,4 @@ exec --no-startup-id dunst -config /usr/share/dunst/dunstrc
 exec --no-startup-id gmtool admin start scratchphone
 
 # GUI development
-for_window [title="Breakout!"] floating enable, move scratchpad, scratchpad show, resize set 600 1000, move position 1300 30, border pixel 0
+for_window [title="Breakout!"] floating enable, move scratchpad, scratchpad show, resize set 600 1020, move position 1300 30, border pixel 0
