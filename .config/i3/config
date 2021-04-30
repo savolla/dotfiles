@@ -451,3 +451,4 @@ exec --no-startup-id gmtool admin start scratchphone
 
 # GUI development
 for_window [title="Breakout!"] floating enable, move scratchpad, scratchpad show, resize set 600 1020, move position 1300 30, border pixel 0
+exec --no-startup-id xset led on # light up my fancy keyboard
