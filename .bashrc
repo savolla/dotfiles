@@ -105,7 +105,7 @@ alias l="ls"
 
 # Bash Completion
 if [ -f /etc/bash_completion ]; then
-	. /etc/bash_completion
+	./etc/bash_completion
 fi
 
 # virtual machine
