@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 cd ~/.scripts || exit
-PERIOD=1 # hours
+PERIOD=0.5 # hours
 DELAY=$(echo "3600*$PERIOD" | bc)
 
 # update github, my website and other things periodically
