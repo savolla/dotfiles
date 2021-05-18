@@ -25,13 +25,14 @@ checkDependencies $SCRIPT_DEPENCENCIES
 #############################################################################
 
 INTERNAL_OUTPUT="$(xrandr | grep " connected" | cut -f1 -d " " | head -n 1)"
-PREFERED_FONT="Input"
+# PREFERED_FONT="Input"
 
 # choices will be displayed in dmenu
 choices="laptop\ndual\nexternal\nclone"
 
 # Your choice in dmenu will determine what xrandr command to run
-chosen=$(echo -e $choices | dmenu -i -l 4 -w 250 -y 20 -fn $PREFERED_FONT)
+# chosen=$(echo -e $choices | dmenu -i -l 4 -w 250 -y 20 -fn $PREFERED_FONT)
+chosen=$(echo -e $choices | dmenu -i )
 
 # detect connected display type
 if [ `xrandr | grep VGA-1  | grep -c ' connected '` -eq 1 ];

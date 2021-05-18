@@ -1,68 +1,76 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Custom Functions
-(defun open-notitia()
-  "Open Personal Personal Wiki file"
-  (interactive)
-  (find-file "~/txt/notitia/index.org"))
+;; Place your private configuration here! Remember, you do not need to run 'doom
+;; sync' after modifying this file!
 
-(defun open-todo()
-  "Open Personal TODO file"
-  (interactive)
-  (find-file "~/txt/todo.org"))
 
-;; Packages ####################################################################
-'(require ob-async)
-;; Languages ###################################################################
-;; go
-(setq lsp-gopls-hover-kind "FullDocumentation")
+;; Some functionality uses this to identify you, e.g. GPG configuration, email
+;; clients, file templates and snippets.
+(setq user-full-name "Oleksiy Nehlyadyuk"
+      user-mail-address "savolla@protonmail.com")
 
-;; python
+;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
+;; are the three important ones:
 ;;
-;; rust
-;; (setq rustic-format-on-save t)
-;; (setq lsp-rust-all-features t)
-;; (setq lsp-rust-cfg-test t)
-(after! rustic
-  (setq rustic-lsp-server 'rls))
+;; + `doom-font'
+;; + `doom-variable-pitch-font'
+;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
+;;   presentations or streaming.
+;;
+;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
+;; font string. You generally only need these two:
+;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
+;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-;;#######################################################################################
+;; There are two ways to load a theme. Both assume the theme is installed and
+;; available. You can either set `doom-theme' or manually load a theme with the
+;; `load-theme' function. This is the default:
+(setq doom-theme 'doom-one)
 
+;; If you use `org' and don't want your org files in the default location below,
+;; change `org-directory'. It must be set before org loads!
+(setq org-directory "~/txt/")
 
-;; IRC config ###########################################################################
-;; (set-irc-server! "chat.freenode.net"
-;;   `(:tls t
-;;     :port 6697
-;;     :nick "savolla"
-;;     :sasl-username ,(+pass-get-user "irc/freenode.net")
-;;     :sasl-password (lambda (&rest _) (+pass-get-secret "irc/freenode.net"))
-;;     :channels ("#emacs")))
-(use-package erc
- :custom
- (erc-autojoin-channels-alist '(("freenode.net" "#archlinux" "#bash" "#bitcoin"
-                                 "#emacs" "#gentoo" "#i3" "#latex" "#org-mode" "#python")))
- (erc-autojoin-timing 'ident)
- (erc-fill-function 'erc-fill-static)
- (erc-fill-static-center 22)
- (erc-hide-list '("JOIN" "PART" "QUIT"))
- (erc-lurker-hide-list '("JOIN" "PART" "QUIT"))
- (erc-lurker-threshold-time 43200)
- (erc-prompt-for-nickserv-password nil)
- (erc-server-reconnect-attempts 5)
- (erc-server-reconnect-timeout 3)
- (erc-track-exclude-types '("JOIN" "MODE" "NICK" "PART" "QUIT"
-                            "324" "329" "332" "333" "353" "477"))
- :config
- (add-to-list 'erc-modules 'notifications)
- (add-to-list 'erc-modules 'spelling)
- (erc-services-mode 1)
- (erc-update-modules))
-;;#######################################################################################
+;; This determines the style of line numbers in effect. If set to `nil', line
+;; numbers are disabled. For relative line numbers, set this to `relative'.
+(setq display-line-numbers-type t)
 
 
+;; Here are some additional functions/macros that could help you configure Doom:
+;;
+;; - `load!' for loading external *.el files relative to this one
+;; - `use-package!' for configuring packages
+;; - `after!' for running code after a package has loaded
+;; - `add-load-path!' for adding directories to the `load-path', relative to
+;;   this file. Emacs searches the `load-path' when you load packages with
+;;   `require' or `use-package'.
+;; - `map!' for binding new keys
+;;
+;; To get information about any of these functions/macros, move the cursor over
+;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
+;; This will open documentation for it, including demos of how they are used.
+;;
+;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
+;; they are implemented.
 
+(setq select-enable-clipboard t) ;; enable system clipboard
 
-;; Custom Key Bindings ##################################################################
+;; vterm
+(after! vterm
+  (set-popup-rule! "*doom:vterm-popup"
+    :size 0.15
+    ;; :vslot -4
+    :select t
+    :quit nil))
+
+; Org
+(setq
+ org-adapt-indentation t
+ org-ellipsis "..."
+ org-superstar-headline-bullets-list '("⚀" "⚁" "⚂" "⚃" "⚄" "⚅")
+ org-hide-block-startup t)
+
+;; Custom Key Bindings
 ;; custom keys '-'
 (map! :leader :desc "custom keys"             "-") ;; custom bindings
 
@@ -90,9 +98,6 @@
 (map! :leader :desc "screenshot"              "- u s" #'org-screenshot-take)
 (map! :leader :desc "babel tangle"            "- u t" #'org-babel-tangle)
 
-;; workspace navigation
-(map! :leader :desc "next workspace"          "TAB l" #'+workspace:switch-next ) ;; workspace next
-(map! :leader :desc "previous workspace"      "TAB h" #'+workspace:switch-previous ) ;; workspace previous
 
 ;; org-roam
 (map! :leader :desc "tagging"                 "n r t")
@@ -108,22 +113,12 @@
 (map! :leader :desc "todo"                    "- n t" #'open-todo ) ;; open TODO file
 (map! :leader :desc "neotree"                 "- f"   #'neotree) ;; open NERDTree :P
 
-
-;;#######################################################################################
-
-
-
-
-
-;; Appearance ###########################################################################
-
 ;; splash screen
 (setq fancy-splash-image (concat doom-private-dir "splash.png")) ;; set custom splash
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu) ;; hide start menu
 (defun doom-dashboard-widget-footer ())
 
 ;; transparency
-;; (add-to-list 'default-frame-alist '(alpha . (82 . 92)))
 (add-to-list 'default-frame-alist '(alpha . (90 . 92)))
 
 ;; themes
@@ -137,161 +132,16 @@
 (setq display-line-numbers-type nil)
 
 ;; font
-;; FONT OPTION 3
-;; (setq-default line-spacing 0.25)
-;; (setq doom-font (font-spec :family "Pragmata Pro Mono" :size 18 :weight 'light)
-;;       doom-big-font (font-spec :family "Pragmata Pro Mono" :size 30)
-;;       doom-serif-font (font-spec :family "Pragmata Pro Mono" :weight 'light)
-;;       doom-variable-pitch-font (font-spec :family "Pragmata Pro Mono" :size 19))
-
-;; (setq doom-font (font-spec :family "FiraCode NF" :size 20))
-
 ;; FONT OPTION 1
-;; (setq doom-font (font-spec :family "monospace" :size 16 :weight 'semi-light)
-;;       doom-variable-pitch-font (font-spec :family "sans" :size 17))
+;; (setq doom-font (font-spec :family "Input" :size 20)
+;;       doom-variable-pitch-font (font-spec :family "Input" :size 20))
 
 ;; FONT OPTION 2
-;; (setq doom-font (font-spec :family "Fira Code" :size 17)
-;;       doom-variable-pitch-font (font-spec :family "Fira Code" :size 17))
-;;
-;; FONT OPTION 4
-(setq doom-font (font-spec :family "Input" :size 20)
-      doom-variable-pitch-font (font-spec :family "Input" :size 20))
-
-;;#######################################################################################
-
-
-
-
-;; Utility ##############################################################################
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; super agenda
-;; (let ((org-super-agenda-groups
-;;        '(;; Each group has an implicit boolean OR operator between its selectors.
-;;          (:name "Today"  ; Optionally specify section name
-;;                 :time-grid t  ; Items that appear on the time grid
-;;                 :todo "TODAY")  ; Items that have this TODO keyword
-;;          (:name "Important"
-;;                 ;; Single arguments given alone
-;;                 :tag "bills"
-;;                 :priority "A")
-;;          ;; Set order of multiple groups at once
-;;          (:order-multi (2 (:name "Shopping in town"
-;;                                  ;; Boolean AND group matches items that match all subgroups
-;;                                  :and (:tag "shopping" :tag "@town"))
-;;                           (:name "Food-related"
-;;                                  ;; Multiple args given in list with implicit OR
-;;                                  :tag ("food" "dinner"))
-;;                           (:name "Personal"
-;;                                  :habit t
-;;                                  :tag "personal")
-;;                           (:name "Space-related (non-moon-or-planet-related)"
-;;                                  ;; Regexps match case-insensitively on the entire entry
-;;                                  :and (:regexp ("space" "NASA")
-;;                                                ;; Boolean NOT also has implicit OR between selectors
-;;                                                :not (:regexp "moon" :tag "planet")))))
-;;          ;; Groups supply their own section names when none are given
-;;          (:todo "WAITING" :order 8)  ; Set order of this section
-;;          (:todo ("SOMEDAY" "TO-READ" "CHECK" "TO-WATCH" "WATCHING")
-;;                 ;; Show this group at the end of the agenda (since it has the
-;;                 ;; highest number). If you specified this group last, items
-;;                 ;; with these todo keywords that e.g. have priority A would be
-;;                 ;; displayed in that group instead, because items are grouped
-;;                 ;; out in the order the groups are listed.
-;;                 :order 9)
-;;          (:priority<= "B"
-;;                       ;; Show this section after "Today" and "Important", because
-;;                       ;; their order is unspecified, defaulting to 0. Sections
-;;                       ;; are displayed lowest-number-first.
-;;                       :order 1)
-;;          ;; After the last group, the agenda will display items that didn't
-;;          ;; match any of these groups, with the default order position of 99
-;;          )))
-;;   (org-agenda nil "a"))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; neotree
-(setq neo-window-position 'left )
+(setq doom-font (font-spec :family "Fira Code" :size 20)
+      doom-variable-pitch-font (font-spec :family "Fira Code" :size 20))
 
 ;; plantuml
 (setq plantuml-output-type "png" )
-
-;; vterm
-(after! vterm
-  (set-popup-rule! "*doom:vterm-popup"
-    :size 0.15
-    ;; :vslot -4
-    :select t
-    :quit nil))
-
-;; Anki
-(setq anki-editor-create-decks t)
-
-;; Org
-(setq
- org-adapt-indentation t
- ;; org-adapt-indentation nil ;; [fn::suspect]
- org-directory "~/txt/"
- org-ellipsis "⤵"
- ;; org-superstar-headline-bullets-list '("⁖" "α" "β" "ε")
-;(setq org-superstar-headline-bullets-list '("⠁" "⠃" "⠇" "⠏" "⠟" "⠿"))
- org-superstar-headline-bullets-list '("⚀" "⚁" "⚂" "⚃" "⚄" "⚅")
- org-beamer-theme "[progressbar=foot]metropolis"
- org-beamer-frame-level 2
- org-hide-block-startup t)
-
-(after! org
-  (setq
-   org-todo-keywords '((sequence
-                        "TODO(t)"
-                        "WAITING(w)"
-                        "IDEA(i)"
-                        "WATCH(y)"
-                        "NEXT(n)"
-                        "LATER(l)"
-                        "|"
-                        "DONE(d)"
-                        "DELEGATED(e)"
-                        "CANCELLED(c)"))
-   org-log-done 'time))
-(after! org
-  (setq
-   org-tag-alist '(("@work" . ?w)
-                   ("@home" . ?h)
-                   ("read" . ?r)
-                   ("@omscs" . ?o))
-
-   org-fast-tag-selection-single-key t))
-(setq org-imenu-depth 6) ;;
-(custom-set-faces! ;; set heading size
-  '(outline-1 :weight light )
-  '(outline-2 :weight light )
-  '(outline-3 :weight light )
-  '(outline-4 :weight light )
-  '(outline-5 :weight light )
-  '(outline-6 :weight light )
-  '(outline-8 :weight light )
-  '(outline-9 :weight light )
-  '(link :weight light))
-
-(after! org
-  (setq org-export-headline-levels 6))
-
-(add-hook! 'org-mode-hook 'org-sticky-header-mode)
-
-(eval-after-load "org" ;; enable github flavored markdown
-  '(require 'ox-gfm nil t))
-
-;; Projectile
-(setq projectile-project-search-path '("~/dev/")) ;; auto discover projects
-(defun +private/projectile-invalidate-cache (&rest _args) ;; clear caches when switching branches
-  (projectile-invalidate-cache nil))
-(advice-add 'magit-checkout
-            :after #'+private/projectile-invalidate-cache)
-(advice-add 'magit-branch-and-checkout
-            :after #'+private/projectile-invalidate-cache)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Deft
-(setq deft-directory org-roam-directory)
 
 ;; Treemacs
 (after! treemacs
@@ -299,179 +149,25 @@
   (setq treemacs-width 30)
   (setq treemacs-position 'right))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Company
+;; Company
 (after! company
   (remove-hook 'evil-normal-state-entry-hook #'company-abort)) ;; prevent mini blocks disappearence
 (setq company-idle-delay 0)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Magit
-(setq forge-topic-list-limit '(30 . 6)) ;; limit the number of topics
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; org-roam
-(setq org-roam-directory "~/txt/roam" )
-(setq org-roam-db-update-method 'immediate)
-(setq org-roam-encrypt-files t)
-(setq org-roam-dailies-directory "~/txt/daily/")
-
-(setq org-roam-dailies-capture-templates
-      '(("j" "journal" entry
-         #'org-roam-capture--get-point
-         "* %?"
-         :file-name "daily/%<%Y-%m-%d>"
-         :head "#+title: %<%Y-%m-%d>\n"
-         :olp ("Journal"))))
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; undo
 (setq undo-limit 100 )
-;;#######################################################################################
-
-
-
-;; Editing ##############################################################################
-
-;; undo
 (setq evil-want-fine-undo t) ; undo more pleasant
-
-;; autosave
-(setq auto-save-default nil)
-;; (setq auto-save-visited-interval 30) ; Save after 30s of idle time.
-;; (auto-save-visited-mode t)
-;; (add-hook! '(doom-switch-buffer-hook
-;;              doom-switch-window-hook)
-;;   (if (buffer-file-name) (save-some-buffers t))) ; avoid saving when switching to a non-file buffer
-;; (add-function :after after-focus-change-function
-;;               (lambda () (save-some-buffers t)))
-
-;; column filling
-;;(setq-default fill-column 80) ;; max 80 characters per line
-;; (add-hook! '(text-mode-hook prog-mode-hook conf-mode-hook)
-;;            #'display-fill-column-indicator-mode)
 
 ;; window split options
 (setq evil-vsplit-window-right t ;; automatic focus when splitted
       evil-split-window-below t) ;; automatic focus when splitted
 (setq split-width-threshold 240)
-(setq select-enable-clipboard t) ;; enable system clipboard
 
 ;; workspace
+(map! :leader :desc "next workspace"          "TAB l" #'+workspace:switch-next ) ;; workspace next
+(map! :leader :desc "previous workspace"      "TAB h" #'+workspace:switch-previous ) ;; workspace previous
 (setq +workspaces-on-switch-project-behavior t) ;; always open a new workspace when opening new project
 
-;; zen mode
-(after! writeroom-mode
-  (setq +zen-text-scale 0
-        +zen-mixed-pitch-modes nil
-        writeroom-mode-line t
-        writeroom-width 160))
-
-;;#######################################################################################
-
-
-
-
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
-(setq user-full-name "Oleksiy Nehlyadyuk"
-      user-mail-address "savolla@protonmail.com")
-
-;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
-;; are the three important ones:
-;;
-;; + `doom-font'
-;; + `doom-variable-pitch-font'
-;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;;
-;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
-;; font string. You generally only need these two:
-;;
-
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-;; (setq doom-theme 'doom-tomorrow-night)
-;;
-
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-
-
-;; Here are some additional functions/macros that could help you configure Doom:
-;;
-;; - `load!' for loading external *.el files relative to this one
-;; - `use-package!' for configuring packages
-;; - `after!' for running code after a package has loaded
-;; - `add-load-path!' for adding directories to the `load-path', relative to
-;;   this file. Emacs searches the `load-path' when you load packages with
-;;   `require' or `use-package'.
-;; - `map!' for binding new keys
-;;
-;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
-;; This will open documentation for it, including demos of how they are used.
-;;
-;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
-;; they are implemented.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#1E2029" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
- '(custom-safe-themes
-   (quote
-    ("bc836bf29eab22d7e5b4c142d201bcce351806b7c1f94955ccafab8ce5b20208" "2f1518e906a8b60fac943d02ad415f1d8b3933a5a7f75e307e6e9a26ef5bf570" "e1ef2d5b8091f4953fe17b4ca3dd143d476c106e221d92ded38614266cea3c8b" "632694fd8a835e85bcc8b7bb5c1df1a0164689bc6009864faed38a9142b97057" "912cac216b96560654f4f15a3a4d8ba47d9c604cbc3b04801e465fb67a0234f0" "e2acbf379aa541e07373395b977a99c878c30f20c3761aac23e9223345526bcc" default)))
- '(fci-rule-color "#5B6268")
- '(jdee-db-active-breakpoint-face-colors (cons "#1B2229" "#51afef"))
- '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
- '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
- '(objed-cursor-color "#ff6c6b")
- '(package-selected-packages
-   (quote
-    (plantuml-mode terminal-toggle howm nlinum-relative nlinum-hl)))
- '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
- '(rustic-ansi-faces
-   ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
- '(vc-annotate-background "#282c34")
- '(vc-annotate-color-map
-   (list
-    (cons 20 "#98be65")
-    (cons 40 "#b4be6c")
-    (cons 60 "#d0be73")
-    (cons 80 "#ECBE7B")
-    (cons 100 "#e6ab6a")
-    (cons 120 "#e09859")
-    (cons 140 "#da8548")
-    (cons 160 "#d38079")
-    (cons 180 "#cc7cab")
-    (cons 200 "#c678dd")
-    (cons 220 "#d974b7")
-    (cons 240 "#ec7091")
-    (cons 260 "#ff6c6b")
-    (cons 280 "#cf6162")
-    (cons 300 "#9f585a")
-    (cons 320 "#6f4e52")
-    (cons 340 "#5B6268")
-    (cons 360 "#5B6268")))
- '(vc-annotate-very-old-color nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-(setq elfeed-db-directory "~/txt/.elfeed" )
-
-;; Startup
-;; ---------------------------
-(+workspace/rename "Main" )
-(+workspace/new "2nd Brain" )
-(find-file "~/txt/notitia/index.org")
-(evil-window-vsplit)
-(find-file "~/txt/todo.org")
-(+workspace/switch-to-0)
+;; rust
+(setq
+ racer-rust-src-path "/usr/bin")

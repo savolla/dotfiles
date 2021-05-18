@@ -9,7 +9,7 @@
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 set $mod2 Mod1
-set $terminal st
+set $terminal alacritty
 set $browser brave
 set $editor emacs
 
@@ -64,8 +64,8 @@ bindsym $mod+Shift+F4 exec pulseaudio-equalizer toggle
 # Screen brightness and warmness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 2; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 2; notify-send 'brightness down'"
-bindsym $mod+Shift+p exec "sudo xbacklight -inc 2"
-bindsym $mod+Shift+o exec "sudo xbacklight -dec 2"
+bindsym $mod+Shift+p exec "light -A 2"
+bindsym $mod+Shift+o exec "light -U 2"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
@@ -383,10 +383,10 @@ bindsym $mod+w exec nmcli r wifi on
 bindsym $mod+Shift+w exec nmcli r wifi off
 bindsym $mod+h workspace prev
 bindsym $mod+l workspace next
-#bindsym $mod2+k exec --no-startup-id pactl set-sink-volume 0 +5% 	# decrease sound volume
-#bindsym $mod2+j exec --no-startup-id pactl set-sink-volume 0 -5% 	# increase sound volume
-bindsym $mod+p exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) +5% # decrease sound volume
-bindsym $mod+o exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) -5% # increase sound volume
+bindsym $mod+p exec --no-startup-id pactl set-sink-volume 0 +5% 	# decrease sound volume
+bindsym $mod+o exec --no-startup-id pactl set-sink-volume 0 -5% 	# increase sound volume
+# bindsym $mod+p exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) +5% # decrease sound volume
+# bindsym $mod+o exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) -5% # increase sound volume
 bindsym $mod+Ctrl+i exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) toggle 	# mute sound
 bindsym $mod+Ctrl+l exec --no-startup-id cmus-remote -k +5 # +5 seconds forward
 bindsym $mod+Ctrl+k exec --no-startup-id cmus-remote -n # next song
@@ -443,12 +443,13 @@ exec --no-startup-id sh ~/.scripts/demon.sh # my beautiful daemon >:)
 exec --no-startup-id sudo chmod 777 /sys/class/backlight/intel_backlight/brightness # bright
 # exec --no-startup-id pulseaudio-equalizer enable # i don't need this anymore (audio technica bro)
 exec --no-startup-id sct 6400 # warm and sweet screen
-exec --no-startup-id xrdb ~/.Xresources # initialize my own .Xresources
+# exec --no-startup-id xrdb ~/.Xresources # initialize my own .Xresources
 exec --no-startup-id pactl set-sink-volume 0 35% # set volume level
 # exec --no-startup-id emacs --daemon # start emacsclient
-exec --no-startup-id dunst -config /usr/share/dunst/dunstrc
-exec --no-startup-id gmtool admin start scratchphone
+# exec --no-startup-id dunst -config /usr/share/dunst/dunstrc
+# exec --no-startup-id gmtool admin start scratchphone
+exec --no-startup-id xset led on # light up my fancy keyboard
+exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and remap keys
 
 # GUI development
-for_window [title="Breakout!"] floating enable, move scratchpad, scratchpad show, resize set 600 1020, move position 1300 30, border pixel 0
-exec --no-startup-id xset led on # light up my fancy keyboard
+# for_window [title="Breakout!"] floating enable, move scratchpad, scratchpad show, resize set 600 1020, move position 1300 30, border pixel 0

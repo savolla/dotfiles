@@ -1,5 +1,4 @@
-# theme = "modern"
-theme = "space-villain"
+theme = "solarized-dark"
 icons = "awesome"
 
 [[block]]
@@ -7,47 +6,41 @@ block = "music"
 buttons = ["play", "next"]
 interface_name_exclude = [".*kdeconnect.*", "mpd"]
 
-# [[block]]
-# block = "taskwarrior"
-# interval = 60
-# format = "{count} open tasks ({filter_name})"
-# format_singular = "{count} open task ({filter_name})"
-# format_everything_done = "nothing to do!"
-# warning_threshold = 10
-# critical_threshold = 20
-# [[block.filters]]
-# name = "today"
-# filter = "+PENDING +OVERDUE or +DUETODAY"
-# [[block.filters]]
-# name = "some-project"
-# filter = "project:some-project +PENDING"
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_total_used_percents}"
+format_swap = "{swap_used_percents}"
+[block.theme_overrides]
+idle_bg = "#666666"
+idle_fg = "#ffffff"
 
 [[block]]
 block = "cpu"
 interval = 1
-
-[[block]]
-block = "temperature"
-collapsed = false
-interval = 10
-format = "{average}°"
-chip = "*-isa-*"
+[block.theme_overrides]
+idle_bg = "#444444"
+idle_fg = "#ffffff"
 
 [[block]]
 block = "load"
 interval = 1
 format = "{1m}"
+[block.theme_overrides]
+idle_bg = "#222222"
+idle_fg = "#ffffff"
 
 [[block]]
-block = "memory"
-display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
-
-[[block]]
-block = "docker"
-interval = 2
-format = "{running}/{total}"
+block = "nvidia_gpu"
+label = "GPU"
+show_temperature = false
+show_memory = false
+show_clocks = false
+interval = 1
+[block.theme_overrides]
+idle_bg = "#0e3801"
+idle_fg = "#ffffff"
 
 [[block]]
 block = "disk_space"
@@ -58,33 +51,34 @@ unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
+[block.theme_overrides]
+idle_fg = "#ffffff"
 
 [[block]]
 block = "net"
 device = "wlp2s0"
-format = "{signal_strength}"
+format = "{ssid} {signal_strength} {ip}"
 interval = 5
-use_bits = false
-
-[[block]]
-block = "backlight"
-device = "intel_backlight"
+[block.theme_overrides]
+idle_bg = "#123456"
+idle_fg = "#abcdef"
 
 [[block]]
 block = "sound"
+max_vol = 100
+[block.theme_overrides]
+idle_bg = "#561250"
+idle_fg = "#ffffff"
 
 [[block]]
 block = "time"
 interval = 60
-format = "%a %d/%m %R"
-
-[[block]]
-block = "keyboard_layout"
-driver = "setxkbmap"
-interval = 15
+[block.theme_overrides]
+idle_bg = "#185612"
+idle_fg = "#ffffff"
 
 [[block]]
 block = "battery"
 interval = 10
-format = "%{percentage}"
-driver = "upower"
+format = "{percentage} {time}"
+
