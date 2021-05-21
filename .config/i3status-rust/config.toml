@@ -6,6 +6,16 @@ block = "music"
 buttons = ["play", "next"]
 interface_name_exclude = [".*kdeconnect.*", "mpd"]
 
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+format = "{average}"
+# chip = "*-isa-*"
+chip = "*-isa-*"
+[block.theme_overrides]
+idle_bg = "#666666"
+idle_fg = "#ffffff"
 
 [[block]]
 block = "memory"
