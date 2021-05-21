@@ -23,7 +23,7 @@ display_type = "memory"
 format_mem = "{mem_total_used_percents}"
 format_swap = "{swap_used_percents}"
 [block.theme_overrides]
-idle_bg = "#666666"
+idle_bg = "#555555"
 idle_fg = "#ffffff"
 
 [[block]]
@@ -38,7 +38,7 @@ block = "load"
 interval = 1
 format = "{1m}"
 [block.theme_overrides]
-idle_bg = "#222222"
+idle_bg = "#333333"
 idle_fg = "#ffffff"
 
 [[block]]
