@@ -173,3 +173,27 @@
  racer-rust-src-path "/usr/bin")
 
 ;; org-roam
+(setq org-roam-directory "~/txt/roam"
+      org-roam-dailies-directory "~/txt/roam/daily"
+      org-roam-db-update-method 'immediate)
+
+(setq org-roam-capture-templates
+      '(("d" "default" plain #'org-roam-capture--get-point
+         :file-name "%<%Y-%m-%d>-${slug}"
+         :head "#+title: ${title}\n#+ROAM_TAGS: %^{org-roam-tags}\n#+created: %u\n#+last_modified: %U\n%?"
+         :unnarrowed t
+         :jump-to-captured t)
+
+        ("l" "clipboard" plain #'org-roam-capture--get-point "%i%a"
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n#+created: %u\n#+last_modified: %U\n#+ROAM_TAGS: %? \n"
+         :unnarrowed t
+         :prepend t
+         :jump-to-captured t)
+
+        ("s" "sermon" plain #'org-roam-capture--get-point (file "~/org-roam/diary/sermon-template.txt")
+         :file-name "%<%Y-%m-%d>_sermon_${slug}"
+         :head "#+title: ${Title of the Message}\n#+ROAM_TAGS: Sermon\n#+DATE: %T\n#+VENUE: ${Venue}\n#+FORMAT: ${Format}\n#+STARTUP: showall\n#+DESCRIPTION: ${Main concept of service}\n#+OPTIONS: \\n:t\n"
+         :unnarrowed t
+         :immediate-finish t
+         :jump-to-captured t)))
