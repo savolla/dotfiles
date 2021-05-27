@@ -171,3 +171,5 @@
 ;; rust
 (setq
  racer-rust-src-path "/usr/bin")
+
+;; org-roam
