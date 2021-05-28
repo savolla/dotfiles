@@ -178,15 +178,15 @@
       org-roam-dailies-directory "~/txt/roam/daily"
       org-roam-db-update-method 'immediate)
 (setq org-roam-capture-templates
-      '(("d" "default" plain #'org-roam-capture--get-point
-         :file-name "%<%Y-%m-%d>-${slug}"
-         :head "#+title: ${title}\n#+ROAM_TAGS: %^{org-roam-tags}\n#+created: %u\n#+last_modified: %U\n%?"
+      '(("f" "default" plain #'org-roam-capture--get-point (file "~/txt/roam/facts")
+         :file-name "fact-%<%Y%m%d%H%M%S>"
+         :head "#+title: ${title}\n#+ROAM_TAGS: fact %^{org-roam-tags}\n#+created: %u\n#+last_modified: %U\n%?"
          :unnarrowed t
          :jump-to-captured t)
 
         ("l" "clipboard" plain #'org-roam-capture--get-point "%i%a"
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+title: ${title}\n#+created: %u\n#+last_modified: %U\n#+ROAM_TAGS: %? \n"
+         :head "#+TITLE: ${title}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n#+ROAM_TAGS: %? \n"
          :unnarrowed t
          :prepend t
          :jump-to-captured t)
