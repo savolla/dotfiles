@@ -100,10 +100,10 @@
 
 
 ;; org-roam
-(map! :leader :desc "tagging"                 "n r t")
-(map! :leader :desc "add tag"                 "n r t a" #'org-roam-tag-add)
-(map! :leader :desc "delete tag"              "n r t d" #'org-roam-tag-delete)
-(map! :leader :desc "roam server"             "n r G" #'org-roam-server-mode)
+(map! :leader :desc "add tag"                 "a t a" #'org-roam-tag-add)
+(map! :leader :desc "delete tag"              "a t d" #'org-roam-tag-delete)
+(map! :leader :desc "roam server"             "a s" #'org-roam-server-mode)
+(map! :leader :desc "roam find file"          "a f" #'org-roam-find-file)
 
 ;; general
 (map! :leader :desc "ranger"                  "o - " #'ranger ) ;; ranger
@@ -176,7 +176,6 @@
 (setq org-roam-directory "~/txt/roam"
       org-roam-dailies-directory "~/txt/roam/daily"
       org-roam-db-update-method 'immediate)
-
 (setq org-roam-capture-templates
       '(("d" "default" plain #'org-roam-capture--get-point
          :file-name "%<%Y-%m-%d>-${slug}"
