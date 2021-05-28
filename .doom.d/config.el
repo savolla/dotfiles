@@ -178,7 +178,7 @@
       org-roam-dailies-directory "~/txt/roam/daily"
       org-roam-db-update-method 'immediate)
 (setq org-roam-capture-templates
-      '(("f" "default" plain #'org-roam-capture--get-point (file "~/txt/roam/facts")
+      '(("f" "default" plain #'org-roam-capture--get-point (directory "~/txt/roam/facts")
          :file-name "fact-%<%Y%m%d%H%M%S>"
          :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %^{org-roam-tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n%?"
          :unnarrowed t
