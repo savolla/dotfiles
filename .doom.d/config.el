@@ -180,13 +180,13 @@
 (setq org-roam-capture-templates
       '(("f" "default" plain #'org-roam-capture--get-point (directory "~/txt/roam/facts")
          :file-name "fact-%<%Y%m%d%H%M%S>"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %^{org-roam-tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n%?"
+         :head "#+title: ${title}\n#+roam_tags: fact %^{org-roam-tags}\n#+created: %u\n#+last_modified: %U\n%?"
          :unnarrowed t
          :jump-to-captured t)
 
-        ("c" "concept" plain #'org-roam-capture--get-point (file "~/txt/roam/concepts")
+        ("c" "concept" plain #'org-roam-capture--get-point (directory "~/txt/roam/concepts")
          :file-name "concept-%<%Y%m%d%H%M%S>"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: concept %^{org-roam-tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n%?"
+         :head "#+title: ${title}\n#+roam_tags: concept %^{org-roam-tags}\n#+created: %u\n#+last_modified: %U\n* what is this?\n%?\n* why is important?\n* when to use?\n* how to use?\n"
          :unnarrowed t
          :jump-to-captured t)
 
@@ -196,10 +196,3 @@
          :unnarrowed t
          :prepend t
          :jump-to-captured t)
-
-        ("s" "sermon" plain #'org-roam-capture--get-point (file "~/org-roam/diary/sermon-template.txt")
-         :file-name "%<%Y-%m-%d>_sermon_${slug}"
-         :head "#+title: ${Title of the Message}\n#+ROAM_TAGS: Sermon\n#+DATE: %T\n#+VENUE: ${Venue}\n#+FORMAT: ${Format}\n#+STARTUP: showall\n#+DESCRIPTION: ${Main concept of service}\n#+OPTIONS: \\n:t\n"
-         :unnarrowed t
-         :immediate-finish t
-         :jump-to-captured t)))
