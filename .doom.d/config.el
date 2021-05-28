@@ -180,7 +180,13 @@
 (setq org-roam-capture-templates
       '(("f" "default" plain #'org-roam-capture--get-point (file "~/txt/roam/facts")
          :file-name "fact-%<%Y%m%d%H%M%S>"
-         :head "#+title: ${title}\n#+ROAM_TAGS: fact %^{org-roam-tags}\n#+created: %u\n#+last_modified: %U\n%?"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %^{org-roam-tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n%?"
+         :unnarrowed t
+         :jump-to-captured t)
+
+        ("c" "concept" plain #'org-roam-capture--get-point (file "~/txt/roam/concepts")
+         :file-name "concept-%<%Y%m%d%H%M%S>"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: concept %^{org-roam-tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n%?"
          :unnarrowed t
          :jump-to-captured t)
 
