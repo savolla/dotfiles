@@ -102,8 +102,9 @@
 ;; org-roam
 (map! :leader :desc "add tag"                 "a t a" #'org-roam-tag-add)
 (map! :leader :desc "delete tag"              "a t d" #'org-roam-tag-delete)
-(map! :leader :desc "roam server"             "a s" #'org-roam-server-mode)
-(map! :leader :desc "roam find file"          "a f" #'org-roam-find-file)
+(map! :leader :desc "insert link"             "a l "  #'org-roam-insert)
+(map! :leader :desc "roam server"             "a s"   #'org-roam-server-mode)
+(map! :leader :desc "roam find file"          "a f"   #'org-roam-find-file)
 
 ;; general
 (map! :leader :desc "ranger"                  "o - " #'ranger ) ;; ranger
