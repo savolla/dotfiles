@@ -100,12 +100,11 @@
 
 
 ;; org-roam
-(map! :leader :desc "add tag"                 "a t a" #'org-roam-tag-add)
-(map! :leader :desc "delete tag"              "a t d" #'org-roam-tag-delete)
-(map! :leader :desc "insert link"             "a i "  #'org-roam-insert)
+(map! :leader :desc "add tag"                 "a a"   #'org-roam-tag-add)
+(map! :leader :desc "insert link"             "a i"   #'org-roam-insert)
 (map! :leader :desc "roam server"             "a s"   #'org-roam-server-mode)
 (map! :leader :desc "roam find file"          "a f"   #'org-roam-find-file)
-(map! :leader :desc "backlinks"               "a l"   #'org-roam-buffer-toggle-display)
+(map! :leader :desc "backlinks"               "a b"   #'org-roam-buffer-toggle-display)
 (map! :leader :desc "capture"                 "a c"   #'org-roam-capture)
 
 ;; general
@@ -180,15 +179,15 @@
       org-roam-dailies-directory "~/txt/roam/daily"
       org-roam-db-update-method 'immediate)
 (setq org-roam-capture-templates
-      '(("f" "default" plain #'org-roam-capture--get-point
+      '(("f" "fact" plain #'org-roam-capture--get-point
          :file-name "fact-%<%Y%m%d%H%M%S>"
-         :head "#+title: ${title}\n#+roam_tags: fact %^{org-roam-tags}\n#+created: %u\n#+last_modified: %U\n%?"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n%?"
          :unnarrowed t
          :jump-to-captured t)
 
         ("c" "concept" plain #'org-roam-capture--get-point
          :file-name "concept-%<%Y%m%d%H%M%S>"
-         :head "#+title: ${title}\n#+roam_tags: concept %^{org-roam-tags}\n#+created: %u\n#+last_modified: %U\n* what is this?\n%?\n* why is important?\n* when to use?\n* how to use?\n"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: concept %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n* what is ${title}?\n%?\n* why is important?\n* when to use ${title}?\n* how to use?\n"
          :unnarrowed t
          :jump-to-captured t)
 
