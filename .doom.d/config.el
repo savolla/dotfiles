@@ -184,7 +184,6 @@
     :quit nil))
 (setq org-roam-directory "~/txt/roam"
       org-roam-dailies-directory "~/txt/roam/daily"
-      org-roam-db-update-method 'immediate
       org-roam-completion-ignore-case t
       org-roam-enable-headline-linking t
       org-roam-index-file "index.org"
