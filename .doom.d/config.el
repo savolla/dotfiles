@@ -68,6 +68,7 @@
  org-adapt-indentation t
  org-ellipsis "..."
  org-superstar-headline-bullets-list '("⚀" "⚁" "⚂" "⚃" "⚄" "⚅")
+ org-id-link-to-org-use-id t ;; needed for org-roam
  org-hide-block-startup t)
 
 ;; Custom Key Bindings
