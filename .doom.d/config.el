@@ -193,48 +193,48 @@
         (
          "f" "fact" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-fact"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %?\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: fact\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n%?"
          :unnarrowed t
          :jump-to-captured t
         )
         (
          "d" "daily" plain #'org-roam-capture--get-point
          :file-name "daily/%<%Y%m%d%H%M%S>-daily"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-daily\n#+ROAM_TAGS: daily\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source ::\n\n%?"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-daily\n#+STARTUP: overview\n#+ROAM_TAGS: daily\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source ::\n\n%?"
          :unnarrowed t
         )
         (
          "t" "tip" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-tip"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %?\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source ::\n\n#+begin_quote\n\n#+end_quote"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-tip\n#+STARTUP: overview\n#+ROAM_TAGS: fact %?\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source ::\n\n#+begin_quote\n\n#+end_quote"
          :unnarrowed t
         )
         (
          "c" "concept" plain #'org-roam-capture--get-point
          :file-name "${title}"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n* what is it?\n%?\n* why is important?\n* when to use?\n* how to use?\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n* what is it?\n%?\n* why is important?\n* when to use?\n* how to use?\n"
          :unnarrowed t
         )
         (
          "p" "person" plain #'org-roam-capture--get-point
          :file-name "person/${title}"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n* who is it?\n%?\n*contact information\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U- reference ::\n- phone ::\n- mail ::\n- lives ::\n* who is it?\n%?\n"
          :unnarrowed t
         )
-        ;; (
-        ;;  "s" "snippet" plain #'org-roam-capture--get-point
-        ;;  :file-name "snippet-%<%Y%m%d%H%M%S>"
-        ;;  :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
-        ;;  :unnarrowed t
-        ;;  :jump-to-captured t
-        ;; )
-        ;; (
-        ;;  "Q" "quote" plain #'org-roam-capture--get-point
-        ;;  :file-name "concept-%<%Y%m%d%H%M%S>"
-        ;;  :head "#+TITLE: ${title}\n#+ROAM_TAGS: quote %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
-        ;;  :unnarrowed t
-        ;;  :jump-to-captured t
-        ;; )
+        (
+         "s" "snippet" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-snippet"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
+         :unnarrowed t
+         :jump-to-captured t
+        )
+        (
+         "h" "howto" plain #'org-roam-capture--get-point
+         :file-name "concept-%<%Y%m%d%H%M%S>"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: quote %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
+         :unnarrowed t
+         :jump-to-captured t
+        )
         ;; (
         ;;  "h" "howto" plain #'org-roam-capture--get-point
         ;;  :file-name "howto-%<%Y%m%d%H%M%S>"
