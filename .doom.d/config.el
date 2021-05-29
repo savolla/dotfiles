@@ -183,7 +183,8 @@
     :quit nil))
 (setq org-roam-directory "~/txt/roam"
       org-roam-dailies-directory "~/txt/roam/daily"
-      org-roam-db-update-method 'immediate)
+      org-roam-db-update-method 'immediate
+      )
 ;; (setq org-roam-capture-templates
 ;;       '(
 ;;         (
