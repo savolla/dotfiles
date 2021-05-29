@@ -193,7 +193,7 @@
         (
          "f" "fact" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-fact"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n%?"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %?\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n"
          :unnarrowed t
          :jump-to-captured t
         )
@@ -206,12 +206,12 @@
         (
          "t" "tip" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-tip"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %?\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source ::\n\n#+begin_quote\n\n#+end_quote"
          :unnarrowed t
         )
         (
          "c" "concept" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-concept"
+         :file-name "${title}"
          :head "#+TITLE: ${title}\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n* what is it?\n%?\n* why is important?\n* when to use?\n* how to use?\n"
          :unnarrowed t
         )
