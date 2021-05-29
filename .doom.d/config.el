@@ -224,14 +224,15 @@
         (
          "s" "snippet" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-snippet"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
+         ;; :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${1:language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src $1 \n%?\n#+end_src"
          :unnarrowed t
          :jump-to-captured t
         )
         (
          "h" "howto" plain #'org-roam-capture--get-point
-         :file-name "concept-%<%Y%m%d%H%M%S>"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: quote %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
+         :file-name "%<%Y%m%d%H%M%S>-howto"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n* how to %?"
          :unnarrowed t
          :jump-to-captured t
         )
