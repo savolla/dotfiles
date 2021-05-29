@@ -184,50 +184,50 @@
 (setq org-roam-directory "~/txt/roam"
       org-roam-dailies-directory "~/txt/roam/daily"
       org-roam-db-update-method 'immediate)
-(setq org-roam-capture-templates
-      '(
-        (
-         "f" "fact" plain #'org-roam-capture--get-point
-         :file-name "fact-%<%Y%m%d%H%M%S>"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
-         :unnarrowed t
-         :jump-to-captured t
-        )
-        (
-         "t" "tip" plain #'org-roam-capture--get-point
-         :file-name "tip-%<%Y%m%d%H%M%S>"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
-         :unnarrowed t
-         :prepend t
-         :jump-to-captured t
-        )
-        (
-         "c" "concept" plain #'org-roam-capture--get-point
-         :file-name "concept-%<%Y%m%d%H%M%S>"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: concept %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n* what is it?\n%?\n* why is important?\n* when to use?\n* how to use?\n"
-         :unnarrowed t
-         :jump-to-captured t
-        )
-        (
-         "s" "snippet" plain #'org-roam-capture--get-point
-         :file-name "snippet-%<%Y%m%d%H%M%S>"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
-         :unnarrowed t
-         :jump-to-captured t
-        )
-        (
-         "Q" "quote" plain #'org-roam-capture--get-point
-         :file-name "concept-%<%Y%m%d%H%M%S>"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: quote %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
-         :unnarrowed t
-         :jump-to-captured t
-        )
-        (
-         "h" "howto" plain #'org-roam-capture--get-point
-         :file-name "howto-%<%Y%m%d%H%M%S>"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: howto %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
-         :unnarrowed t
-         :jump-to-captured t
-        )
-       )
-      )
+;; (setq org-roam-capture-templates
+;;       '(
+;;         (
+;;          "f" "fact" plain #'org-roam-capture--get-point
+;;          :file-name "fact-%<%Y%m%d%H%M%S>"
+;;          :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
+;;          :unnarrowed t
+;;          :jump-to-captured t
+;;         )
+;;         (
+;;          "t" "tip" plain #'org-roam-capture--get-point
+;;          :file-name "tip-%<%Y%m%d%H%M%S>"
+;;          :head "#+TITLE: ${title}\n#+ROAM_TAGS: fact %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
+;;          :unnarrowed t
+;;          :prepend t
+;;          :jump-to-captured t
+;;         )
+;;         (
+;;          "c" "concept" plain #'org-roam-capture--get-point
+;;          :file-name "concept-%<%Y%m%d%H%M%S>"
+;;          :head "#+TITLE: ${title}\n#+ROAM_TAGS: concept %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n* what is it?\n%?\n* why is important?\n* when to use?\n* how to use?\n"
+;;          :unnarrowed t
+;;          :jump-to-captured t
+;;         )
+;;         (
+;;          "s" "snippet" plain #'org-roam-capture--get-point
+;;          :file-name "snippet-%<%Y%m%d%H%M%S>"
+;;          :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
+;;          :unnarrowed t
+;;          :jump-to-captured t
+;;         )
+;;         (
+;;          "Q" "quote" plain #'org-roam-capture--get-point
+;;          :file-name "concept-%<%Y%m%d%H%M%S>"
+;;          :head "#+TITLE: ${title}\n#+ROAM_TAGS: quote %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
+;;          :unnarrowed t
+;;          :jump-to-captured t
+;;         )
+;;         (
+;;          "h" "howto" plain #'org-roam-capture--get-point
+;;          :file-name "howto-%<%Y%m%d%H%M%S>"
+;;          :head "#+TITLE: ${title}\n#+ROAM_TAGS: howto %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
+;;          :unnarrowed t
+;;          :jump-to-captured t
+;;         )
+;;        )
+;;       )
