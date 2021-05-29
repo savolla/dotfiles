@@ -224,8 +224,8 @@
         (
          "s" "snippet" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-snippet"
-         ;; :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${1:language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src $1 \n%?\n#+end_src"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
+         ;; :head "#+TITLE: ${title}\n#+ROAM_TAGS: %^{language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src %^{language} \n%?\n#+end_src"
          :unnarrowed t
          :jump-to-captured t
         )
