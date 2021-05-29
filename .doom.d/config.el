@@ -108,6 +108,11 @@
 (map! :leader :desc "backlinks"               "a b"   #'org-roam-buffer-toggle-display)
 (map! :leader :desc "capture"                 "a c"   #'org-roam-capture)
 
+;; deft
+(setq deft-directory "~/txt/roam"
+      deft-extensions '("md" "org")
+      deft-recursive t)
+
 ;; general
 (map! :leader :desc "ranger"                  "o - " #'ranger ) ;; ranger
 
@@ -193,7 +198,7 @@
         (
          "f" "fact" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-fact"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: fact\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n%?"
+         :head "#+TITLE: ${file-name}\n#+STARTUP: overview\n#+ROAM_TAGS: fact\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n%?"
          :unnarrowed t
          :jump-to-captured t
         )
