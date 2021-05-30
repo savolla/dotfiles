@@ -223,7 +223,7 @@
         (
          "p" "person" plain #'org-roam-capture--get-point
          :file-name "person/${title}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- reference ::\n- phone ::\n- mail ::\n- lives ::\n\n* who is it?\n%?\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- reference ::\n- phone ::\n- mail ::\n- website ::\n- lives ::\n\n* who is ${title}?\n%?\n"
          :unnarrowed t
         )
         (
