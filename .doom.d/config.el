@@ -217,7 +217,7 @@
         (
          "c" "concept" plain #'org-roam-capture--get-point
          :file-name "${title}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n* what is it?\n%?\n#* why is important?\n#* when to use?\n#* how to use?\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n\n* References\n+ "
          :unnarrowed t
         )
         (
