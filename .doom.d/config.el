@@ -76,7 +76,7 @@
         (
          "c" "claim" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-claim"
-         :head "#+TITLE: ${file-name}\n#+STARTUP: overview\n#+ROAM_TAGS: claim\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n* Resources\n+ "
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-claim\n#+STARTUP: overview\n#+ROAM_TAGS: claim\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n* Resources\n+ "
          :unnarrowed t
          )
         (
@@ -87,14 +87,14 @@
          )
         (
          "f" "fleeting" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-fleeting.org"
-         :head "#+STARTUP: overview\n#+ROAM_TAGS: fleeting\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n* Resources\n+ "
+         :file-name "%<%Y%m%d%H%M%S>-fleeting"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview\n#+ROAM_TAGS: fleeting\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n* Resources\n+ "
          :unnarrowed t
          )
         (
          "t" "tip" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-tip"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-tip\n#+STARTUP: overview\n#+ROAM_TAGS: tip\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n\n#+end_quote\n* Resources\n+ "
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-tip\n#+STARTUP: overview\n#+ROAM_TAGS: tip\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n%?\n#+end_quote\n\n* Resources\n+ "
          :unnarrowed t
          )
         (
@@ -106,19 +106,19 @@
         (
          "p" "person" plain #'org-roam-capture--get-point
          :file-name "person/${title}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- reference ::\n- phone ::\n- mail ::\n- website ::\n- lives ::\n\n* who is ${title}?\n%?\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- website ::   \n-blog ::      \n- social ::    \n- lives ::     \n- phone ::     \n- mail ::      \n- reference ::\n\n* who is ${title}?\n%?\n"
          :unnarrowed t
          )
         (
          "s" "snippet" plain #'org-roam-capture--get-point
          :file-name "snippets/%<%Y%m%d%H%M%S>-snippet"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-snippet\n#+ROAM_TAGS: ${language} snippet\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_src ${language}\n%?\n#+end_src\n\n* Resources\n+ "
          :unnarrowed t
          )
         (
          "h" "howto" plain #'org-roam-capture--get-point
          :file-name "howto/%<%Y%m%d%H%M%S>-howto"
-         :head "#+TITLE: ${title}\n#+ROAM_TAGS: howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* How to %?\n* Resources\n+ "
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-howto\n#+ROAM_TAGS: howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* How to %?\n\n* Resources\n+ "
          :unnarrowed t
          )
         )
