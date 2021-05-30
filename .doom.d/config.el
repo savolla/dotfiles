@@ -100,7 +100,7 @@
         (
          "k" "concept" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-concept"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- Founder of ${title} is \n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n# * Examples of ${title}\n\n* References\n+ "
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n# * Examples of ${title}\n* Founder(s) of ${title}\n\n* References\n+ "
          :unnarrowed t
          )
         (
@@ -133,6 +133,19 @@
     ;; :vslot -4
     :select t
     :quit nil))
+
+;; org-roam-server
+(setq org-roam-server-host "127.0.0.1"
+      org-roam-server-port 8080
+      org-roam-server-authenticate nil
+      org-roam-server-export-inline-images t
+      org-roam-server-serve-files nil
+      org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
+      org-roam-server-network-poll t
+      org-roam-server-network-arrows nil
+      org-roam-server-network-label-truncate t
+      org-roam-server-network-label-truncate-length 60
+      org-roam-server-network-label-wrap-length 20)
 
 ; Org
 (setq
