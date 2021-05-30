@@ -106,13 +106,13 @@
         (
          "p" "person" plain #'org-roam-capture--get-point
          :file-name "person/${title}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- website ::   \n-blog ::      \n- social ::    \n- lives ::     \n- phone ::     \n- mail ::      \n- reference ::\n\n* who is ${title}?\n%?\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n- website   ::\t\n- blog      ::\t\n- social    ::\t\n- lives     ::\n- phone     ::\n- mail      ::\n- reference ::\n\n* who is ${title}?\n%?\n"
          :unnarrowed t
          )
         (
          "s" "snippet" plain #'org-roam-capture--get-point
          :file-name "snippets/%<%Y%m%d%H%M%S>-snippet"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-snippet\n#+ROAM_TAGS: ${language} snippet\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_src ${language}\n%?\n#+end_src\n\n* Resources\n+ "
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-snippet\n#+ROAM_TAGS: howto ${language} snippet\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_src ${language}\n%?\n#+end_src\n\n* Resources\n+ "
          :unnarrowed t
          )
         (
