@@ -53,6 +53,77 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; org-roam
+(add-hook 'after-init-hook 'org-roam-mode)
+(after! org-roam-capture
+  (set-popup-rule! "CAPTURE-*"
+    :size 0.9
+    ;; :vslot -4
+    :select t
+    :quit nil))
+(setq org-roam-directory "~/txt/roam"
+      org-roam-dailies-directory "~/txt/roam/fleeting"
+      org-roam-index-file "index.org"
+      )
+
+(setq org-roam-capture-templates
+      '(
+        ("d" "default" plain (function org-roam--capture-get-point)
+         "%?"
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+title: ${title}\n"
+         :unnarrowed t)
+        (
+         "c" "claim" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-claim"
+         :head "#+TITLE: ${file-name}\n#+STARTUP: overview\n#+ROAM_TAGS: claim\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n* Resources\n+ "
+         :unnarrowed t
+         )
+        (
+         "m" "moc" plain #'org-roam-capture--get-point
+         :file-name "${title}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: moc\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?"
+         :unnarrowed t
+         )
+        (
+         "f" "fleeting" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-fleeting.org"
+         :head "#+STARTUP: overview\n#+ROAM_TAGS: fleeting\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n* Resources\n+ "
+         :unnarrowed t
+         )
+        (
+         "t" "tip" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-tip"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-tip\n#+STARTUP: overview\n#+ROAM_TAGS: tip\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n\n#+end_quote\n* Resources\n+ "
+         :unnarrowed t
+         )
+        (
+         "k" "concept" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-concept"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n\n* References\n+ "
+         :unnarrowed t
+         )
+        (
+         "p" "person" plain #'org-roam-capture--get-point
+         :file-name "person/${title}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- reference ::\n- phone ::\n- mail ::\n- website ::\n- lives ::\n\n* who is ${title}?\n%?\n"
+         :unnarrowed t
+         )
+        (
+         "s" "snippet" plain #'org-roam-capture--get-point
+         :file-name "snippets/%<%Y%m%d%H%M%S>-snippet"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
+         :unnarrowed t
+         )
+        (
+         "h" "howto" plain #'org-roam-capture--get-point
+         :file-name "howto/%<%Y%m%d%H%M%S>-howto"
+         :head "#+TITLE: ${title}\n#+ROAM_TAGS: howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* How to %?\n* Resources\n+ "
+         :unnarrowed t
+         )
+        )
+      )
+
 (setq select-enable-clipboard t) ;; enable system clipboard
 
 ;; vterm
@@ -181,75 +252,3 @@
 (setq
  racer-rust-src-path "/usr/bin")
 
-;; org-roam
-(after! org-roam-capture
-  (set-popup-rule! "CAPTURE-*"
-    :size 0.9
-    ;; :vslot -4
-    :select t
-    :quit nil))
-(setq org-roam-directory "~/txt/roam"
-      org-roam-dailies-directory "~/txt/roam/daily"
-      org-roam-completion-ignore-case t
-      org-roam-enable-headline-linking t
-      org-roam-index-file "index.org"
-      )
-(setq org-roam-capture-templates
-      '(
-        ;; (
-        ;;  "c" "claim" plain #'org-roam-capture--get-point
-        ;;  :file-name "claims/%<%Y%m%d%H%M%S>-claim"
-        ;;  :head "#+TITLE: ${file-name}\n#+STARTUP: overview\n#+ROAM_TAGS: claim\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n* Resources\n+ "
-        ;;  :unnarrowed t
-        ;; )
-        (
-         "m" "moc" plain #'org-roam-capture--get-point
-         :file-name "${title}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: moc\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?"
-         :unnarrowed t
-        )
-        (
-         "f" "fleeting" plain #'org-roam-capture--get-point
-         :file-name "fleetings/%<%Y%m%d%H%M%S>-fleeting"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview\n#+ROAM_TAGS: fleeting\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n* Resources\n+ "
-         :unnarrowed t
-        )
-        ;; (
-        ;;  "t" "tip" plain #'org-roam-capture--get-point
-        ;;  :file-name "tips/%<%Y%m%d%H%M%S>-tip"
-        ;;  :head "#+TITLE: %<%Y%m%d%H%M%S>-tip\n#+STARTUP: overview\n#+ROAM_TAGS: tip\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n\n#+end_quote\n* Resources\n+ "
-        ;;  :unnarrowed t
-        ;; )
-        ;; (
-        ;;  "k" "concept" plain #'org-roam-capture--get-point
-        ;;  :file-name "%<%Y%m%d%H%M%S>-concept"
-        ;;  :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n\n* References\n+ "
-        ;;  :unnarrowed t
-        ;; )
-        ;; (
-        ;;  "p" "person" plain #'org-roam-capture--get-point
-        ;;  :file-name "person/${title}"
-        ;;  :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- reference ::\n- phone ::\n- mail ::\n- website ::\n- lives ::\n\n* who is ${title}?\n%?\n"
-        ;;  :unnarrowed t
-        ;; )
-        ;; (
-        ;;  "s" "snippet" plain #'org-roam-capture--get-point
-        ;;  :file-name "snippets/%<%Y%m%d%H%M%S>-snippet"
-        ;;  :head "#+TITLE: ${title}\n#+ROAM_TAGS: ${language} snippet howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_src ${language}\n%?\n#+end_src"
-        ;;  :unnarrowed t
-        ;; )
-        ;; (
-        ;;  "h" "howto" plain #'org-roam-capture--get-point
-        ;;  :file-name "howto/%<%Y%m%d%H%M%S>-howto"
-        ;;  :head "#+TITLE: ${title}\n#+ROAM_TAGS: howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* How to %?\n* Resources\n+ "
-        ;;  :unnarrowed t
-        ;; )
-        ;; (
-        ;;  "h" "howto" plain #'org-roam-capture--get-point
-        ;;  :file-name "howto-%<%Y%m%d%H%M%S>"
-        ;;  :head "#+TITLE: ${title}\n#+ROAM_TAGS: howto %^{tags}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n#+begin_quote\n%?\n#+end_quote"
-        ;;  :unnarrowed t
-        ;;  :jump-to-captured t
-        ;; )
-       )
-      )
