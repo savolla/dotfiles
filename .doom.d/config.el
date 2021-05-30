@@ -107,6 +107,7 @@
 (map! :leader :desc "roam find file"          "a f"   #'org-roam-find-file)
 (map! :leader :desc "backlinks"               "a b"   #'org-roam-buffer-toggle-display)
 (map! :leader :desc "capture"                 "a c"   #'org-roam-capture)
+(map! :leader :desc "jump to top"             "a j"   #'org-roam-jump-to-index)
 
 ;; deft
 (setq deft-directory "~/txt/roam"
@@ -196,22 +197,29 @@
 (setq org-roam-capture-templates
       '(
         (
-         "f" "fact" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-fact"
-         :head "#+TITLE: ${file-name}\n#+STARTUP: overview\n#+ROAM_TAGS: fact\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source :: ${source}\n\n%?"
+         "c" "claim" plain #'org-roam-capture--get-point
+         :file-name "claims/%<%Y%m%d%H%M%S>-claim"
+         :head "#+TITLE: ${file-name}\n#+STARTUP: overview\n#+ROAM_TAGS: claim\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n* Resources\n+ "
          :unnarrowed t
          :jump-to-captured t
         )
         (
-         "d" "daily" plain #'org-roam-capture--get-point
-         :file-name "daily/%<%Y%m%d%H%M%S>-daily"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-daily\n#+STARTUP: overview\n#+ROAM_TAGS: daily\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source ::\n\n%?"
+         "m" "moc" plain #'org-roam-capture--get-point
+         :file-name "${title}"
+         :head "#+TITLE: ${file-name}\n#+STARTUP: overview\n#+ROAM_TAGS: moc\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?"
+         :unnarrowed t
+         :jump-to-captured t
+        )
+        (
+         "f" "fleeting" plain #'org-roam-capture--get-point
+         :file-name "fleetings/%<%Y%m%d%H%M%S>-fleeting"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview\n#+ROAM_TAGS: fleeting\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n* Resources\n+ "
          :unnarrowed t
         )
         (
          "t" "tip" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-tip"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-tip\n#+STARTUP: overview\n#+ROAM_TAGS: fact %?\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n- source ::\n\n#+begin_quote\n\n#+end_quote"
+         :file-name "tips/%<%Y%m%d%H%M%S>-tip"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-tip\n#+STARTUP: overview\n#+ROAM_TAGS: tip\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n\n#+end_quote\n* Resources\n+ "
          :unnarrowed t
         )
         (
