@@ -81,7 +81,7 @@
          )
         (
          "m" "moc" plain #'org-roam-capture--get-point
-         :file-name "${title}"
+         :file-name "%<%Y%m%d%H%M%S>-moc"
          :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: moc\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?"
          :unnarrowed t
          )
