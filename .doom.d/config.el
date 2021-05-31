@@ -101,7 +101,7 @@
         (
          "k" "concept" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-concept"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n# * Examples of ${title}\n* Founder(s) of ${title}\n\n* References\n+ "
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_ALIAS: \"${title}\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n# * Examples of ${title}\n* Founder(s) of ${title}\n\n* References\n+ "
          :unnarrowed t
          )
         (
