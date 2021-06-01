@@ -74,18 +74,18 @@
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n"
          :unnarrowed t)
-        (
-         "c" "claim" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-claim"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-claim\n#+STARTUP: overview\n#+ROAM_TAGS: claim\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n* Resources\n+ "
-         :unnarrowed t
-         )
-        (
-         "m" "moc" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-moc"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: moc\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?"
-         :unnarrowed t
-         )
+        ;; (
+        ;;  "c" "claim" plain #'org-roam-capture--get-point
+        ;;  :file-name "%<%Y%m%d%H%M%S>-claim"
+        ;;  :head "#+TITLE: %<%Y%m%d%H%M%S>-claim\n#+STARTUP: overview\n#+ROAM_TAGS: claim\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n* Resources\n+ "
+        ;;  :unnarrowed t
+        ;;  )
+        ;; (
+        ;;  "m" "moc" plain #'org-roam-capture--get-point
+        ;;  :file-name "%<%Y%m%d%H%M%S>-moc"
+        ;;  :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: moc\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?"
+        ;;  :unnarrowed t
+        ;;  )
         (
          "b" "book" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-book"
@@ -98,18 +98,24 @@
          :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview\n#+ROAM_TAGS: fleeting\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n* Resources\n+ "
          :unnarrowed t
          )
+        ;; (
+        ;;  "t" "tip" plain #'org-roam-capture--get-point
+        ;;  :file-name "%<%Y%m%d%H%M%S>-tip"
+        ;;  :head "#+TITLE: %<%Y%m%d%H%M%S>-tip\n#+STARTUP: overview\n#+ROAM_TAGS: tip\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n%?\n#+end_quote\n\n* Resources\n+ "
+        ;;  :unnarrowed t
+        ;;  )
         (
-         "t" "tip" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-tip"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-tip\n#+STARTUP: overview\n#+ROAM_TAGS: tip\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n%?\n#+end_quote\n\n* Resources\n+ "
-         :unnarrowed t
-         )
-        (
-         "k" "concept" plain #'org-roam-capture--get-point
+         "c" "concept" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-concept"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_ALIAS: \"${title}\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n# * Examples of ${title}\n* Founder(s) of ${title}\n\n* References\n+\n\n* Claim\n* Anecdote\n** Story\n** Stat\n** Study\n** Chart\n* Name\n** Place\n** People\n** Event\n** Date\n* Tip\n* Howto\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_ALIAS: \"${title}\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n# * Examples of ${title}\n* Founder(s) of ${title}\n\n* References\n+\n\n#* MOC\n#* Claim\n#* Anecdote\n#** Story\n#** Stat\n#** Study\n#** Chart\n#* Name\n#** Place\n#** People\n#** Event\n#** Date\n#* Tip\n#* Howto\n"
          :unnarrowed t
          )
+        ;; (
+        ;;  "k" "concept" plain #'org-roam-capture--get-point
+        ;;  :file-name "%<%Y%m%d%H%M%S>-concept"
+        ;;  :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_ALIAS: \"${title}\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n# * Examples of ${title}\n* Founder(s) of ${title}\n\n* References\n+\n\n* Claim\n* Anecdote\n** Story\n** Stat\n** Study\n** Chart\n* Name\n** Place\n** People\n** Event\n** Date\n* Tip\n* Howto\n"
+        ;;  :unnarrowed t
+        ;;  )
         (
          "p" "person" plain #'org-roam-capture--get-point
          :file-name "person/${title}"
