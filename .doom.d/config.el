@@ -57,7 +57,7 @@
 (add-hook 'after-init-hook 'org-roam-mode)
 (after! org-roam-capture
   (set-popup-rule! "CAPTURE-*"
-    :size 0.9
+    :size 0.5
     ;; :vslot -4
     :select t
     :quit nil))
