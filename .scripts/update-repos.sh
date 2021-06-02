@@ -28,7 +28,6 @@ git push -u origin main
 
 ## braindump
 cd "$BRAINDUMP"
-git add -u
-git add images/
+git add *
 git commit -m "$COMMIT_MESSAGE"
 git push -u origin main
