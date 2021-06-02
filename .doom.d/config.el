@@ -106,7 +106,7 @@
         ;;  )
         (
          "c" "concept" plain #'org-roam-capture--get-point
-         :file-name "${title}"
+         :file-name "%<%Y%m%d%H%M%S>-person"
          :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_ALIAS: \"${title}\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* TL;DR\n** What Is ${title}?\n%?\n# ** Why Is ${title} Important?\n# ** When To Use ${title}?\n# ** How To Use ${title}?\n# ** Examples of ${title}\n** Founder(s) of ${title}\n** References\n+\n\n* §\n# ** MOC\n# ** Claim\n# ** Anecdote\n# *** Story\n# *** Stat\n# *** Study\n# *** Chart\n# ** Name\n# *** Place\n# *** People\n# *** Event\n# *** Date\n# ** Tip\n# ** Howto\n"
          :unnarrowed t
          )
@@ -118,7 +118,7 @@
         ;;  )
         (
          "p" "person" plain #'org-roam-capture--get-point
-         :file-name "${title}"
+         :file-name "%<%Y%m%d%H%M%S>-person"
          :head "#+TITLE: ${title}\n#+STARTUP: overview inlineimages\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n- website   ::\t\n- blog      ::\t\n- social    ::\t\n- lives     ::\n- phone     ::\n- mail      ::\n- reference ::\n\n* Who Is ${title}?\n%?\n"
          :unnarrowed t
          )
