@@ -118,19 +118,19 @@
         ;;  )
         (
          "p" "person" plain #'org-roam-capture--get-point
-         :file-name "person/${title}"
+         :file-name "${title}"
          :head "#+TITLE: ${title}\n#+STARTUP: overview inlineimages\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n- website   ::\t\n- blog      ::\t\n- social    ::\t\n- lives     ::\n- phone     ::\n- mail      ::\n- reference ::\n\n* Who Is ${title}?\n%?\n"
          :unnarrowed t
          )
         (
          "s" "snippet" plain #'org-roam-capture--get-point
-         :file-name "snippets/%<%Y%m%d%H%M%S>-snippet"
+         :file-name "%<%Y%m%d%H%M%S>-snippet"
          :head "#+TITLE: %<%Y%m%d%H%M%S>-snippet\n#+ROAM_TAGS: howto ${language} snippet\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_src ${language}\n%?\n#+end_src\n\n* Resources\n+ "
          :unnarrowed t
          )
         (
          "w" "web element" plain #'org-roam-capture--get-point
-         :file-name "howto/%<%Y%m%d%H%M%S>-web"
+         :file-name "%<%Y%m%d%H%M%S>-web"
          :head "#+TITLE: %<%Y%m%d%H%M%S>-howto\n#+ROAM_TAGS: howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* How to %?\n\n* Resources\n+ "
          :unnarrowed t
          )
