@@ -74,12 +74,12 @@
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n"
          :unnarrowed t)
-        ;; (
-        ;;  "c" "claim" plain #'org-roam-capture--get-point
-        ;;  :file-name "%<%Y%m%d%H%M%S>-claim"
-        ;;  :head "#+TITLE: %<%Y%m%d%H%M%S>-claim\n#+STARTUP: overview\n#+ROAM_TAGS: claim\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n* Resources\n+ "
-        ;;  :unnarrowed t
-        ;;  )
+        (
+         "f" "claim" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-claim"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: claim\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n* Resources\n+ "
+         :unnarrowed t
+         )
         ;; (
         ;;  "m" "moc" plain #'org-roam-capture--get-point
         ;;  :file-name "%<%Y%m%d%H%M%S>-moc"
