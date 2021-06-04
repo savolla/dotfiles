@@ -87,6 +87,12 @@
         ;;  :unnarrowed t
         ;;  )
         (
+         "h" "howto" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-howto"
+         :head "#+TITLE: ${title}\n#+STARTUP: showeverything\n#+ROAM_TAGS: howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?"
+         :unnarrowed t
+         )
+        (
          "b" "book" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-book"
          :head "#+TITLE: ${title}\n#+AUTHOR:%?\n#+STARTUP: overview\n#+ROAM_TAGS: book\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* note\n* concept\n* claim\n* anecdote\n** story\n** stat\n** study\n** chart\n* name\n** place\n** people\n** event\n** date\n* tip\n* howto"
@@ -106,7 +112,7 @@
         ;;  )
         (
          "c" "concept" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-person"
+         :file-name "%<%Y%m%d%H%M%S>-concept"
          :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_ALIAS: \"${title}\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* TL;DR\n** What Is ${title}?\n%?\n# ** Why Is ${title} Important?\n# ** When To Use ${title}?\n# ** How To Use ${title}?\n# ** Examples of ${title}\n** Founder(s) of ${title}\n** References\n+\n\n* §\n# ** MOC\n# ** Claim\n# ** Anecdote\n# *** Story\n# *** Stat\n# *** Study\n# *** Chart\n# ** Name\n# *** Place\n# *** People\n# *** Event\n# *** Date\n# ** Tip\n# ** Howto\n"
          :unnarrowed t
          )
