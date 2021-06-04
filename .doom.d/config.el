@@ -95,7 +95,7 @@
         (
          "b" "book" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-book"
-         :head "#+TITLE: ${title}\n#+AUTHOR:%?\n#+STARTUP: overview\n#+ROAM_TAGS: book\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* note\n* concept\n* claim\n* anecdote\n** story\n** stat\n** study\n** chart\n* name\n** place\n** people\n** event\n** date\n* tip\n* howto"
+         :head "#+TITLE: ${title}\n#+AUTHOR: %?\n#+STARTUP: overview inlineimages\n#+ROAM_TAGS: book\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* note\n* concept\n* claim\n* anecdote\n** story\n** stat\n** study\n** chart\n* name\n** place\n** people\n** event\n** date\n* tip\n* howto"
          :unnarrowed t
          )
         (
