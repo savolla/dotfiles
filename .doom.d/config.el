@@ -124,7 +124,7 @@
         ;;  )
         (
          "p" "person" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-person"
+         :file-name "${slug}"
          :head "#+TITLE: ${title}\n#+STARTUP: overview inlineimages\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n- website   ::\t\n- blog      ::\t\n- social    ::\t\n- lives     ::\n- phone     ::\n- mail      ::\n- reference ::\n\n* Who Is ${title}?\n%?\n"
          :unnarrowed t
          )
