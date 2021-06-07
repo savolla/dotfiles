@@ -186,11 +186,11 @@ assign [instance="emacs"] $ws2
 #assign [class=""] $ws3
 #assign [class=""] $ws4
 #assign [class=""] $ws5
-assign [class="qutebrowser"] $ws6
+# assign [class="qutebrowser"] $ws6
 assign [class="Brave"] $ws6
 #assign [class="Telegram"] $ws7
 assign [class="retroarch"] $ws8
-assign [title="Discord"] $ws8
+# assign [title="Discord"] $ws8
 #assign [class=""] $ws8
 
 # Open specific applications in floating mode
@@ -321,8 +321,8 @@ bindsym $mod+m bar mode toggle
 
   client.background       #2B2C2B
 
-# bindsym $mod+t gaps inner all set 0;gaps outer all set 0;
-# bindsym $mod+Shift+t gaps inner all set 20;gaps outer all set 0;
+bindsym $mod+t gaps inner all set 0;gaps outer all set 0;
+bindsym $mod+Shift+t gaps inner all set 20;gaps outer all set 0;
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -334,7 +334,7 @@ bindsym $mod+m bar mode toggle
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
-# smart_gaps on
+smart_gaps on
 gaps inner 20
 gaps outer 0
 
