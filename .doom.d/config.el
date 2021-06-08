@@ -61,11 +61,11 @@
     ;; :vslot -4
     :select t
     :quit nil))
-(setq org-roam-directory "~/txt/zattel"
-      ;; org-roam-directory "~/txt/roam"
+(setq org-roam-directory "~/txt/roam"
+      ;; org-roam-directory "~/txt/zattel"
       ;; org-roam-directory "~/txt/jethros-braindump"
       org-roam-dailies-directory "~/txt/roam/fleeting"
-      ;; org-roam-index-file "index.org"
+      org-roam-index-file "index.org"
       )
 
 (setq org-roam-capture-templates
