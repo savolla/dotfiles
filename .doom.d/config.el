@@ -72,11 +72,25 @@
       '(
         ;; info types tags:   argument, story, study, chart, place, people, event, event, tip, howto, melody
         (
+        ;; -----------------------------------------------------------------------------------------------------------------------------------------
          "f" "fleeting" plain #'org-roam-capture--get-point
-         :file-name "fleeting/%<%Y%m%d%H%M%S>-fleeting-${SRC(insp|book|article|podcast|video)}"
+         :file-name "%<%Y%m%d%H%M%S>-fleeting-${SRC(insp|book|article|podcast|video)}"
          :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: ${SRC(insp|book|article|podcast|video)} fleeting \n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
          :unnarrowed t
          )
+        (
+         "l" "literature" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-literature"
+         :head "%x"
+         :unnarrowed t
+         )
+        (
+         "p" "permanent" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-permanent-${slug}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: permanent\n#+CREATED: %u\n#+LAST_MODIFIED:\n\n%?\n\n- references ::\n\n# Find tags by asking;\n1) Topic tag: What are related words to this note?\nContext tag: What is the main idea of this note?"
+         :unnarrowed t
+         )
+        ;; -----------------------------------------------------------------------------------------------------------------------------------------
         (
          "m" "melody" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-melody-${riff|lick:}"
@@ -86,7 +100,7 @@
         (
          "c" "concept" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-concept-${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: concept permanent ${source(B,V,A,P,I): }\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# + \[\[roam:why is ${title} important\]\]\n# + \[\[roam:when to use ${title}\]\]\n# + \[\[roam:how to use ${title}\]\]\n# + \[\[roam:examples of ${title}\]\]\n# + \[\[roam:founder of ${title}\]\]\n\n- references ::\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: concept permanent ${source(B,V,A,P,I): }\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# + \[\[roam:why is ${title} important\]\]\n# + \[\[roam:when to use ${title}\]\]\n# + \[\[roam:how to use ${title}\]\]\n# + \[\[roam:examples of ${title}\]\]\n# + \[\[roam:founder of ${title}\]\]\n\n- references ::\n"
          :unnarrowed t
          )
         (
@@ -258,8 +272,8 @@
 (map! :leader :desc "screenshot"              "- u s" #'org-screenshot-take)
 (map! :leader :desc "babel tangle"            "- u t" #'org-babel-tangle)
 
-(defun org-roam-convert-to-literature-note ()
-(shell-command "mv" buffer-file-name "%<%Y%m%d%H%M%S>-literature.org"))
+;; (defun org-roam-convert-to-literature-note ()
+;; (shell-command "mv" buffer-file-name "%<%Y%m%d%H%M%S>-literature.org"))
 
 ;; org-roam
 (map! :leader :desc "add tag"                 "a a"   #'org-roam-tag-add)
@@ -269,7 +283,7 @@
 (map! :leader :desc "backlinks"               "a b"   #'org-roam-buffer-toggle-display)
 (map! :leader :desc "capture"                 "a c"   #'org-roam-capture)
 (map! :leader :desc "jump to top"             "a j"   #'org-roam-jump-to-index)
-(map! :leader :desc "convet to literature"    "a l"   #'org-roam-convert-to-literature-note)
+;; (map! :leader :desc "convet to literature"    "a l"   #'org-roam-convert-to-literature-note)
 
 
 ;; deft
