@@ -81,6 +81,7 @@
          :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: claim\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n* Resources\n+ "
          :unnarrowed t
          )
+
         ;; (
         ;;  "m" "moc" plain #'org-roam-capture--get-point
         ;;  :file-name "%<%Y%m%d%H%M%S>-moc"
@@ -114,7 +115,8 @@
         (
          "c" "concept" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_ALIAS: \"${title}\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* TL;DR\n** What Is ${title}?\n%?\n# ** Why Is ${title} Important?\n# ** When To Use ${title}?\n# ** How To Use ${title}?\n# ** Examples of ${title}\n# ** Founder(s) of ${title}\n** References\n+ \n\n* §\n# ** MOC\n# ** Claim\n# ** Concept\n# ** Anecdote\n# *** Story\n# *** Stat\n# *** Study\n# *** Chart\n# ** Name\n# *** Place\n# *** People\n# *** Event\n# *** Date\n# ** Tip\n# ** Howto\n"
+         ;; :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_ALIAS: \"${title}\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* TL;DR\n** What Is ${title}?\n%?\n# ** Why Is ${title} Important?\n# ** When To Use ${title}?\n# ** How To Use ${title}?\n# ** Examples of ${title}\n# ** Founder(s) of ${title}\n** References\n+ \n\n* §\n# ** MOC\n# ** Claim\n# ** Concept\n# ** Anecdote\n# *** Story\n# *** Stat\n# *** Study\n# *** Chart\n# ** Name\n# *** Place\n# *** People\n# *** Event\n# *** Date\n# ** Tip\n# ** Howto\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# + \[\[roam:why is ${title} important\]\]\n# + \[\[roam:when to use ${title}\]\]\n# + \[\[roam:how to use ${title}\]\]\n# + \[\[roam:examples of ${title}\]\]\n# + \[\[roam:founder of ${title}\]\]\n\n- references ::\n"
          :unnarrowed t
          )
         ;; (
