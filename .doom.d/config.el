@@ -70,31 +70,24 @@
 
 (setq org-roam-capture-templates
       '(
-        ;; -----------------------------------------------------Note Types---------------------------------------------------------------------
         (
          "f" "fleeting" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-fleeting"
-         :head "# Copy before turning into literature note\n#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting \n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
+         :head "# You want to remember this Permanently!\n# You might use it in your Blog, Lectures, Job or even Book!\n#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting \n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "l" "literature" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-literature"
-         :head "# Literature = Expanded version of the Fleeting Note\n#Extra tags; argument, tip, howto, story, study, chart, people, event, place\n%x"
+         :head "# Literature = Expanded version of the Fleeting Note\n# Extra tags; argument, tip, howto, story, study, chart, people, event, place\n#+TITLE: %<%Y%m%d%H%M%S>-literature\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: literature\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "p" "permanent" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-permanent-${slug}"
-         :head "# Title must come at the end\n#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: permanent\n#+CREATED: %u\n#+LAST_MODIFIED:\n\n# You can link multiple Concepts and Permanent Notes!\n%?\n\n- see also ::\n#Continuation or Related notes here\n\n- references ::\n\n# Find tags by asking;\n1) Topic tag: What are related words to this note?\nContext tag: What is the main idea of this note?"
+         :head "# Title must come at the end\n#+TITLE: ${title}\n#+STARTUP: overview\n# Find tags by asking;\n# 1) Topic tag: What are related words to this note?\n# 2) Context tag: What is the main idea of this note?\n#+ROAM_TAGS: permanent\n#+CREATED: %u\n#+LAST_MODIFIED:\n\n# You can link multiple Concepts and Permanent Notes!\n%?\n\n- see also ::\n#Continuation or Related notes here\n\n- references ::\n"
          :unnarrowed t
          )
-        ;; -------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-        ;; -----------------------------------------------------Note Connection Methods---------------------------------------------------------
         (
          "k" "keyword" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-keyword-${slug}"
@@ -113,13 +106,6 @@
          :head "#+TITLE: \n#+STARTUP: overview\n#+ROAM_TAGS: bridge\n#+CREATED: %u\n#+LAST_MODIFIED:\n%?\n\n- see also ::\n#Continuation or Related notes here\n\n- references ::\n"
          :unnarrowed t
          )
-         ;; -------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-        ;; -----------------------------------------------------Note Connection Methods---------------------------------------------------------
         (
          "m" "melody" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-melody-${riff|lick:}"
@@ -134,12 +120,11 @@
          :unnarrowed t
          )
         (
-         "q" "quote" plain #'org-roam-capture--get-point
+         "Q" "quote" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-quote"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-quote\n#+STARTUP: overview latexpreview\n#+ROAM_TAGS: quote permanent\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote%? - #+end_quote\n\n- see also ::\n[[roam:Quotes]]\n\n- references ::\n"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-quote\n#+STARTUP: overview latexpreview\n#+ROAM_TAGS: quote permanent\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote%? -\n#+end_quote\n\n- see also ::\n+ [[roam:Quotes]]\n\n- references ::\n"
          :unnarrowed t
          )
-        (
         ;; (
         ;;  "a" "claim" plain #'org-roam-capture--get-point
         ;;  :file-name "%<%Y%m%d%H%M%S>-claim"
@@ -236,7 +221,6 @@
         ;;  :unnarrowed t
         ;;  )
         )
-      )
       )
 
 (setq select-enable-clipboard t) ;; enable system clipboard
