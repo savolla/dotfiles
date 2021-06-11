@@ -258,9 +258,8 @@
 (map! :leader :desc "screenshot"              "- u s" #'org-screenshot-take)
 (map! :leader :desc "babel tangle"            "- u t" #'org-babel-tangle)
 
-((defun org-roam-convert-to-literature-note ()
-(shell-command "~/.scripts/convert-to-literature-note.sh" buffer-file-name)
-  ))
+(defun org-roam-convert-to-literature-note ()
+(shell-command "mv" buffer-file-name "%<%Y%m%d%H%M%S>-literature.org"))
 
 ;; org-roam
 (map! :leader :desc "add tag"                 "a a"   #'org-roam-tag-add)
