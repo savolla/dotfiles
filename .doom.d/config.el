@@ -101,7 +101,7 @@
         ;;  :unnarrowed t
         ;;  )
         ;;
-        ;; Information types:   argument, story, study, chart, place, people, event, date, tip, howto, riff, lick
+        ;; Information types:   argument, story, study, chart, place, people, event, date, tip, howto, melody
         ;; Information sources: inspiration, book, article, podcast, video
         (
          "f" "fleeting" plain #'org-roam-capture--get-point
@@ -140,24 +140,36 @@
          :unnarrowed t
          )
 
-        ;;
+
+        ;; Info Types
         (
          "c" "concept" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
-         ;; :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_ALIAS: \"${title}\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* TL;DR\n** What Is ${title}?\n%?\n# ** Why Is ${title} Important?\n# ** When To Use ${title}?\n# ** How To Use ${title}?\n# ** Examples of ${title}\n# ** Founder(s) of ${title}\n** References\n+ \n\n* §\n# ** MOC\n# ** Claim\n# ** Concept\n# ** Anecdote\n# *** Story\n# *** Stat\n# *** Study\n# *** Chart\n# ** Name\n# *** Place\n# *** People\n# *** Event\n# *** Date\n# ** Tip\n# ** Howto\n"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# + \[\[roam:why is ${title} important\]\]\n# + \[\[roam:when to use ${title}\]\]\n# + \[\[roam:how to use ${title}\]\]\n# + \[\[roam:examples of ${title}\]\]\n# + \[\[roam:founder of ${title}\]\]\n\n- references ::\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: concept permanent ${source(B,V,A,P,I): }\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# + \[\[roam:why is ${title} important\]\]\n# + \[\[roam:when to use ${title}\]\]\n# + \[\[roam:how to use ${title}\]\]\n# + \[\[roam:examples of ${title}\]\]\n# + \[\[roam:founder of ${title}\]\]\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "p" "person" plain #'org-roam-capture--get-point
-         :file-name "${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview inlineimages\n#+ROAM_TAGS: person\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n- website   ::\t\n- blog      ::\t\n- social    ::\t\n- lives     ::\n- phone     ::\n- mail      ::\n- reference ::\n\n* Who Is ${title}?\n%?\n"
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: person permanent ${source(B,V,A,P,I): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n- website   ::\t\n- social    ::\n- mail      ::\n\n- references ::\n"
          :unnarrowed t
          )
         (
-         "s" "snippet" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-snippet"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-snippet\n#+ROAM_TAGS: howto ${language} snippet\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_src ${language}\n%?\n#+end_src\n\n* Resources\n+ "
+         "h" "howto" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-howto"
+         :head "#+TITLE:\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: howto permanent ${source(B,V,A,P,I): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n- website   ::\t\n- blog      ::\t\n- social    ::\t\n- lives     ::\n- phone     ::\n- mail      ::\n- reference ::\n\n* Who Is ${title}?\n%?\n"
+         :unnarrowed t
+         )
+        (
+         "m" "melody" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-melody"
+         :head "#+TITLE:\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: melody permanent ${tpye(riff, lick): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n"
+         :unnarrowed t
+         )
+        (
+         "t" "tip" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-tip"
+         :head "#+TITLE:\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: tip permanent\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
          :unnarrowed t
          )
         )
