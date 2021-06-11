@@ -79,20 +79,26 @@
          )
         (
          "m" "melody" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-${riff|lick:}"
+         :file-name "%<%Y%m%d%H%M%S>-melody-${riff|lick:}"
          :head "#+TITLE: %<%Y%m%d%H%M%S>-${riff|lick:}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: melody permanent ${riff|lick:}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n1 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n2 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n3 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n4 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n5 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n6 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n7 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n"
          :unnarrowed t
          )
         (
          "c" "concept" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :file-name "%<%Y%m%d%H%M%S>-concept-${slug}"
          :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: concept permanent ${source(B,V,A,P,I): }\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# + \[\[roam:why is ${title} important\]\]\n# + \[\[roam:when to use ${title}\]\]\n# + \[\[roam:how to use ${title}\]\]\n# + \[\[roam:examples of ${title}\]\]\n# + \[\[roam:founder of ${title}\]\]\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "k" "keyword" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :file-name "%<%Y%m%d%H%M%S>-keyword-${slug}"
          :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: keyword\n#+CREATED: %u\n#+LAST_MODIFIED:\n\n[[roam:${title}]]\n"
+         :unnarrowed t
+         )
+        (
+         "i" "index" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: index\n#+CREATED: %u\n#+LAST_MODIFIED:\n%?"
          :unnarrowed t
          )
         ;; (
@@ -261,6 +267,7 @@
 (map! :leader :desc "backlinks"               "a b"   #'org-roam-buffer-toggle-display)
 (map! :leader :desc "capture"                 "a c"   #'org-roam-capture)
 (map! :leader :desc "jump to top"             "a j"   #'org-roam-jump-to-index)
+(map! :leader :desc "convet to literature"    "a l"   #'org-roam-convert-to-literature-note)
 
 ;; deft
 (setq deft-directory "~/txt/roam"
