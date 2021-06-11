@@ -74,7 +74,8 @@
          "%?"
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
          :head "#+title: ${title}\n"
-         :unnarrowed t)
+         :unnarrowed t
+         )
         ;; (
         ;;  "a" "claim" plain #'org-roam-capture--get-point
         ;;  :file-name "%<%Y%m%d%H%M%S>-claim"
@@ -99,49 +100,47 @@
         ;;  :head "#+TITLE: ${title}\n#+AUTHOR: %?\n#+STARTUP: overview inlineimages\n#+ROAM_TAGS: book\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* note\n* concept\n* claim\n* anecdote\n** story\n** stat\n** study\n** chart\n* name\n** place\n** people\n** event\n** date\n* tip\n* howto"
         ;;  :unnarrowed t
         ;;  )
+        ;;
+        ;; Information types:   argument, story, study, chart, place, people, event, date, tip, howto, riff, lick
+        ;; Information sources: inspiration, book, article, podcast, video
         (
          "f" "fleeting" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-fleeting"
-         ;; :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview\n#+ROAM_TAGS: fleeting\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n* Resources\n+ "
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
+         :file-name "fleeting/%<%Y%m%d%H%M%S>-fleeting"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting inspiration\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
          :unnarrowed t
          )
         (
-         "b" "book-fleeting" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-fleeting-book"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting book\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n-P%?\n\n- references ::\n"
+         "a" "argument-fleeting" plain #'org-roam-capture--get-point
+         :file-name "fleeting/%<%Y%m%d%H%M%S>-fleeting-argument"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting argument\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n-P%? :: \n\n- references ::\n"
          :unnarrowed t
          )
         (
          "v" "video-fleeting" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-fleeting"
+         :file-name "fleeting/%<%Y%m%d%H%M%S>-fleeting-video"
          :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting video\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n-P%?\n\n- references ::\n%x"
          :unnarrowed t
          )
         (
          "p" "podcast-fleeting" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-fleeting"
+         :file-name "fleeting/%<%Y%m%d%H%M%S>-fleeting-podcast"
          :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting podcast\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n-P%?\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "a" "article-fleeting" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-fleeting"
+         :file-name "fleeting/%<%Y%m%d%H%M%S>-fleeting-article"
          :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting article\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n-P%?\n\n- references ::\n%x"
          :unnarrowed t
          )
         (
          "w" "walking-fleeting" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-fleeting"
+         :file-name "fleeting/%<%Y%m%d%H%M%S>-fleeting-walking"
          :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting walking\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n-P%?\n\n- references ::\n%x"
          :unnarrowed t
          )
-        ;; (
-        ;;  "t" "tip" plain #'org-roam-capture--get-point
-        ;;  :file-name "%<%Y%m%d%H%M%S>-tip"
-        ;;  :head "#+TITLE: %<%Y%m%d%H%M%S>-tip\n#+STARTUP: overview\n#+ROAM_TAGS: tip\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n%?\n#+end_quote\n\n* Resources\n+ "
-        ;;  :unnarrowed t
-        ;;  )
+
+        ;;
         (
          "c" "concept" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
@@ -149,12 +148,6 @@
          :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# + \[\[roam:why is ${title} important\]\]\n# + \[\[roam:when to use ${title}\]\]\n# + \[\[roam:how to use ${title}\]\]\n# + \[\[roam:examples of ${title}\]\]\n# + \[\[roam:founder of ${title}\]\]\n\n- references ::\n"
          :unnarrowed t
          )
-        ;; (
-        ;;  "k" "concept" plain #'org-roam-capture--get-point
-        ;;  :file-name "%<%Y%m%d%H%M%S>-concept"
-        ;;  :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_ALIAS: \"${title}\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* What Is ${title}?\n%?\n# * Why Is ${title} Important?\n# * When To Use ${title}?\n# * How To Use ${title}?\n# * Examples of ${title}\n* Founder(s) of ${title}\n\n* References\n+\n\n* Claim\n* Anecdote\n** Story\n** Stat\n** Study\n** Chart\n* Name\n** Place\n** People\n** Event\n** Date\n* Tip\n* Howto\n"
-        ;;  :unnarrowed t
-        ;;  )
         (
          "p" "person" plain #'org-roam-capture--get-point
          :file-name "${slug}"
@@ -165,12 +158,6 @@
          "s" "snippet" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-snippet"
          :head "#+TITLE: %<%Y%m%d%H%M%S>-snippet\n#+ROAM_TAGS: howto ${language} snippet\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_src ${language}\n%?\n#+end_src\n\n* Resources\n+ "
-         :unnarrowed t
-         )
-        (
-         "w" "web element" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-web"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-howto\n#+ROAM_TAGS: howto\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n* How to %?\n\n* Resources\n+ "
          :unnarrowed t
          )
         )
