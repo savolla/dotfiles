@@ -101,7 +101,7 @@
         ;;  :unnarrowed t
         ;;  )
         ;;
-        ;; Information types:   argument, story, study, chart, place, people, event, date, tip, howto, melody
+        ;; Information types:   argument, story, study, chart, place, people, event, event, tip, howto, melody
         ;; Information sources: inspiration, book, article, podcast, video
         (
          "f" "fleeting" plain #'org-roam-capture--get-point
@@ -143,33 +143,51 @@
 
         ;; Info Types
         (
-         "c" "concept" plain #'org-roam-capture--get-point
+         "C" "concept" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
          :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: concept permanent ${source(B,V,A,P,I): }\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+ROAM_TAGS: concept\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# + \[\[roam:why is ${title} important\]\]\n# + \[\[roam:when to use ${title}\]\]\n# + \[\[roam:how to use ${title}\]\]\n# + \[\[roam:examples of ${title}\]\]\n# + \[\[roam:founder of ${title}\]\]\n\n- references ::\n"
          :unnarrowed t
          )
         (
-         "p" "person" plain #'org-roam-capture--get-point
+         "P" "person" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: person permanent ${source(B,V,A,P,I): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n- website   ::\t\n- social    ::\n- mail      ::\n\n- references ::\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: person permanent name ${source(B,V,A,P,I): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n- website   ::\t\n- social    ::\n- mail      ::\n\n- references ::\n"
          :unnarrowed t
          )
         (
-         "h" "howto" plain #'org-roam-capture--get-point
+         "H" "howto" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-howto"
          :head "#+TITLE:\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: howto permanent ${source(B,V,A,P,I): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n- website   ::\t\n- blog      ::\t\n- social    ::\t\n- lives     ::\n- phone     ::\n- mail      ::\n- reference ::\n\n* Who Is ${title}?\n%?\n"
          :unnarrowed t
          )
         (
-         "m" "melody" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-melody"
-         :head "#+TITLE:\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: melody permanent ${tpye(riff, lick): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n"
+         "M" "melody" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-${riff|lick:}"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-${riff|lick:}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: melody permanent ${riff|lick:}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n1 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n2 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n3 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n4 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n5 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n6 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n7 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n"
          :unnarrowed t
          )
         (
-         "t" "tip" plain #'org-roam-capture--get-point
+         "T" "tip" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-tip"
-         :head "#+TITLE:\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: tip permanent\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
+         :head "#+TITLE:\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: tip permanent ${source(B,V,A,P,I): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
+         :unnarrowed t
+         )
+        (
+         "N" "name" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-${place|event:}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: ${place|event:} permanent name ${source(B,V,A,P,I): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
+         :unnarrowed t
+         )
+        (
+         "E" "evidence" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-${chart|study|story:}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: ${chart|study|story:} permanent evidence ${source(B,V,A,P,I): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
+         :unnarrowed t
+         )
+        (
+         "A" "argument" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-argument"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: ${chart|study|story:} permanent evidence ${source(B,V,A,P,I): }\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
          :unnarrowed t
          )
         )
