@@ -71,26 +71,54 @@
 (setq org-roam-capture-templates
       '(
         ;; info types tags:   argument, story, study, chart, place, people, event, event, tip, howto, melody
+        ;; -----------------------------------------------------Note Types---------------------------------------------------------------------
         (
-        ;; -----------------------------------------------------------------------------------------------------------------------------------------
          "f" "fleeting" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-fleeting-${SRC(insp|book|article|podcast|video)}"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: ${SRC(insp|book|article|podcast|video)} fleeting \n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting \n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "l" "literature" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-literature"
-         :head "%x"
+         :head "# Literature = Expanded version of the Fleeting Note\n#Add one of; argument, tip, howto, story, study, chart, people, event, place\n%x"
          :unnarrowed t
          )
         (
          "p" "permanent" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-permanent-${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: permanent\n#+CREATED: %u\n#+LAST_MODIFIED:\n\n%?\n\n- references ::\n\n# Find tags by asking;\n1) Topic tag: What are related words to this note?\nContext tag: What is the main idea of this note?"
+         :head "# Title must come at the end\n#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: permanent\n#+CREATED: %u\n#+LAST_MODIFIED:\n\n# You can link multiple Concepts and Permanent Notes!\n%?\n\n- see also ::\n#Continuation or Related notes here\n\n- references ::\n\n# Find tags by asking;\n1) Topic tag: What are related words to this note?\nContext tag: What is the main idea of this note?"
          :unnarrowed t
          )
-        ;; -----------------------------------------------------------------------------------------------------------------------------------------
+        ;; -------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+        ;; -----------------------------------------------------Note Connection Methods---------------------------------------------------------
+         "k" "keyword" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-keyword-${slug}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: keyword\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n[[roam:${title}]]\n"
+         :unnarrowed t
+         )
+        (
+         "i" "index" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: index\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n"
+         :unnarrowed t
+         )
+        (
+         "b" "bridge" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-bridge-${slug}"
+         :head "#+TITLE: \n#+STARTUP: overview\n#+ROAM_TAGS: bridge\n#+CREATED: %u\n#+LAST_MODIFIED:\n%?\n\n- see also ::\n#Continuation or Related notes here\n\n- references ::\n"
+         :unnarrowed t
+         )
+         ;; -------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
         (
          "m" "melody" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-melody-${riff|lick:}"
@@ -104,17 +132,12 @@
          :unnarrowed t
          )
         (
-         "k" "keyword" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-keyword-${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: keyword\n#+CREATED: %u\n#+LAST_MODIFIED:\n\n[[roam:${title}]]\n"
+         "q" "quote" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-quote"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: concept permanent ${source(B,V,A,P,I): }\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# + \[\[roam:why is ${title} important\]\]\n# + \[\[roam:when to use ${title}\]\]\n# + \[\[roam:how to use ${title}\]\]\n# + \[\[roam:examples of ${title}\]\]\n# + \[\[roam:founder of ${title}\]\]\n\n- references ::\n"
          :unnarrowed t
          )
         (
-         "i" "index" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: index\n#+CREATED: %u\n#+LAST_MODIFIED:\n%?"
-         :unnarrowed t
-         )
         ;; (
         ;;  "a" "claim" plain #'org-roam-capture--get-point
         ;;  :file-name "%<%Y%m%d%H%M%S>-claim"
