@@ -79,13 +79,13 @@
         (
          "l" "literature" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-literature"
-         :head "# Literature = Expanded version of the Fleeting Note\n# Extra tags; argument, tip, howto, story, study, chart, people, event, place\n#+TITLE: %<%Y%m%d%H%M%S>-literature\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: literature\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
+         :head "# Literature = Expanded version of the Fleeting Note\n# Extra tags; argument, tip, howto, story, study, chart, people, event, location\n#+TITLE: %<%Y%m%d%H%M%S>-literature\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: literature\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "p" "permanent" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-permanent-${slug}"
-         :head "# Title must come at the end\n#+TITLE: ${title}\n#+STARTUP: overview\n# Find tags by asking;\n# 1) Topic tag: What are related words to this note?\n# 2) Context tag: What is the main idea of this note?\n#+ROAM_TAGS: permanent\n#+CREATED: %u\n#+LAST_MODIFIED:\n\n# You can link multiple Concepts and Permanent Notes!\n%?\n\n- see also ::\n#Continuation or Related notes here\n\n- references ::\n"
+         :head "# Title must come at the end\n#+TITLE: ${title}\n#+STARTUP: overview\n# Find tags by asking;\n# 1) Topic tag: What are related words to this note?\n# 2) Context tag: What is the main idea of this note?\n#+ROAM_TAGS: permanent\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n# You can link multiple Concepts and Permanent Notes!\n%?\n\n- see also ::\n# Continuation or Related notes here\n\n- references ::\n"
          :unnarrowed t
          )
         (
@@ -102,27 +102,26 @@
          )
         (
          "b" "bridge" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-bridge-${slug}"
-         :head "#+TITLE: \n#+STARTUP: overview\n#+ROAM_TAGS: bridge\n#+CREATED: %u\n#+LAST_MODIFIED:\n%?\n\n- see also ::\n#Continuation or Related notes here\n\n- references ::\n"
+         :file-name "%<%Y%m%d%H%M%S>-bridge"
+         :head "#+TITLE: \n#+STARTUP: overview\n#+ROAM_TAGS: bridge\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n%?\n\n- see also ::\n# Continuation or Related notes here\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "m" "melody" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-melody-${riff|lick:}"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-${riff|lick:}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: melody permanent ${riff|lick:}\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n1 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n2 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n3 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n4 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n5 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n6 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n7 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n\n+ [[roam:Melody]]"
-
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-${riff|lick:}\n#+STARTUP: overview\n#+ROAM_TAGS: permanent ${riff|lick} melody \n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n# Describe the melody a little bit\n%?\n\n1 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n2 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n3 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n4 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n5 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n6 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n7 |----.----.----.----|----.----.----.----|----.----.----.----|----.----.----.----|\n\n- see also ::\n  + [[roam:Melody]]"
          :unnarrowed t
          )
         (
          "c" "concept" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-concept-${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: concept permanent\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# + \[\[roam:why is ${title} important\]\]\n# + \[\[roam:when to use ${title}\]\]\n# + \[\[roam:how to use ${title}\]\]\n# + \[\[roam:examples of ${title}\]\]\n# + \[\[roam:founder of ${title}\]\]\n+ [[roam:Concept]]\n\n- references ::\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: concept permanent\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n#  + \[\[roam:why is ${title} important\]\]\n#  + \[\[roam:when to use ${title}\]\]\n#  + \[\[roam:how to use ${title}\]\]\n#  + \[\[roam:examples of ${title}\]\]\n#  + \[\[roam:founder of ${title}\]\]\n  + [[roam:Concept]]\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "Q" "quote" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-quote"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-quote\n#+STARTUP: overview latexpreview\n#+ROAM_TAGS: quote permanent\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote%? -\n#+end_quote\n\n- see also ::\n+ [[roam:Quotes]]\n\n- references ::\n"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-quote\n#+STARTUP: overview latexpreview\n#+ROAM_TAGS: quote permanent\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n%? -\n#+end_quote\n\n- see also ::\n  + [[roam:Quotes]]\n\n- references ::\n"
          :unnarrowed t
          )
         ;; (
@@ -319,10 +318,11 @@
 
 ;; themes
 ;; (setq doom-theme 'doom-one) ;; option 1
-(setq doom-theme 'doom-gruvbox) ;; option 2
+;; (setq doom-theme 'doom-gruvbox) ;; option 2
 ;; (setq doom-theme 'doom-outrun-electric) ;; option 3
 ;; (setq doom-theme 'doom-dracula) ;; option 4
 ;; (setq doom-theme 'doom-solarized-dark) ;; option 5
+(setq doom-theme 'doom-badger) ;; option 6
 
 ;; coding
 (setq display-line-numbers-type nil)
