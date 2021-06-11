@@ -258,6 +258,9 @@
 (map! :leader :desc "screenshot"              "- u s" #'org-screenshot-take)
 (map! :leader :desc "babel tangle"            "- u t" #'org-babel-tangle)
 
+((defun org-roam-convert-to-literature-note ()
+(shell-command "~/.scripts/convert-to-literature-note.sh" buffer-file-name)
+  ))
 
 ;; org-roam
 (map! :leader :desc "add tag"                 "a a"   #'org-roam-tag-add)
@@ -268,6 +271,7 @@
 (map! :leader :desc "capture"                 "a c"   #'org-roam-capture)
 (map! :leader :desc "jump to top"             "a j"   #'org-roam-jump-to-index)
 (map! :leader :desc "convet to literature"    "a l"   #'org-roam-convert-to-literature-note)
+
 
 ;; deft
 (setq deft-directory "~/txt/roam"
