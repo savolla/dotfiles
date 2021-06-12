@@ -97,7 +97,7 @@
         (
          "i" "index" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: index\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: index\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n  + [[roam:Cortex]]"
          :unnarrowed t
          )
         (
