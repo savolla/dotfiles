@@ -91,7 +91,7 @@
         (
          "k" "keyword" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-keyword-${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: keyword\n#+CREATED: %u\n#+LAST_MODIFIED: %U"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: keyword\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n- see also ::\n  [[roam:Keyword]]"
          :unnarrowed t
          )
         (
@@ -121,7 +121,13 @@
         (
          "Q" "quote" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-quote"
-         :head "#+TITLE: %<%Y%m%d%H%M%S>-quote\n#+STARTUP: overview latexpreview\n#+ROAM_TAGS: quote permanent\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n%? - [[roam:quote]] of \n#+end_quote\n\n- see also ::\n\n- references ::\n"
+         :head "#+TITLE: %<%Y%m%d%H%M%S>-quote\n#+STARTUP: overview latexpreview\n#+ROAM_TAGS: quote permanent archive\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n#+begin_quote\n%? - [[roam:quote]] by \n#+end_quote\n\n- see also ::\n\n- references ::\n"
+         :unnarrowed t
+         )
+        (
+         "P" "person" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: person name permanent resource\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n- website ::\t\n- social ::\n- mail ::\n\n- see also ::\n  + [[roam:Person]]\n\n- references ::\n"
          :unnarrowed t
          )
         ;; (
