@@ -65,7 +65,7 @@
       ;; org-roam-directory "~/txt/zattel"
       ;; org-roam-directory "~/txt/jethros-braindump"
       org-roam-dailies-directory "~/txt/roam/fleeting"
-      ;; org-roam-index-file "index.org"
+      org-roam-index-file "cortex.org"
       )
 
 (setq org-roam-capture-templates
@@ -103,7 +103,7 @@
         (
          "b" "bridge" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-bridge"
-         :head "#+TITLE: \n#+STARTUP: overview\n#+ROAM_TAGS: bridge\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n%?\n\n- see also ::\n# Continuation or Related notes here\n\n- references ::\n"
+         :head "#+TITLE: \n#+STARTUP: overview\n#+ROAM_TAGS: bridge\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n# Continuation or Related notes here\n\n- references ::\n"
          :unnarrowed t
          )
         (
@@ -127,7 +127,13 @@
         (
          "P" "person" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-${slug}"
-         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: person name permanent resource\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n- website ::\t\n- social ::\n- mail ::\n\n- see also ::\n  + [[roam:Person]]\n\n- references ::\n"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: person name permanent resource\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- website ::\t\n- social ::\n- mail ::\n\n- see also ::\n  + [[roam:Person]]\n\n- references ::\n"
+         :unnarrowed t
+         )
+        (
+         "B" "book" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :head "#+TITLE: ${title}\n#+AUTHOR: ${author}\n#+STARTUP: overview\n#+ROAM_TAGS: book index\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n  + [[roam:Book]]\n  + [[roam:${author}]]"
          :unnarrowed t
          )
         ;; (
