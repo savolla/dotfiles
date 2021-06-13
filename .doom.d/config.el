@@ -66,6 +66,7 @@
       ;; org-roam-directory "~/txt/jethros-braindump"
       org-roam-dailies-directory "~/txt/roam/fleeting"
       org-roam-index-file "cortex.org"
+      org-roam-prefer-id-links t
       )
 
 (setq org-roam-capture-templates
@@ -96,7 +97,7 @@
          )
         (
          "i" "index" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :file-name "%<%Y%m%d%H%M%S>-index-${slug}"
          :head "#+TITLE: ${title}\n#+STARTUP: overview\n#+ROAM_TAGS: index\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n"
          :unnarrowed t
          )
@@ -126,20 +127,26 @@
          )
         (
          "P" "person" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :file-name "%<%Y%m%d%H%M%S>-person-${slug}"
          :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: person name permanent resource\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- website ::\t\n- social ::\n- mail ::\n\n- see also ::\n  + [[roam:Person]]\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "B" "book" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-${slug}"
+         :file-name "%<%Y%m%d%H%M%S>-book-${slug}"
          :head "#+TITLE: ${title}\n#+AUTHOR: ${author}\n#+STARTUP: overview\n#+ROAM_TAGS: book index\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n  + [[roam:Book]]\n  + [[roam:${author}]]"
          :unnarrowed t
          )
         (
          "t" "tool" plain #'org-roam-capture--get-point
-         :file-name "%<%Y%m%d%H%M%S>-concept-${slug}"
+         :file-name "%<%Y%m%d%H%M%S>-tool-${slug}"
          :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: tool permanent\n#+ROAM_ALIAS: \"what is ${title}\" \"what ${title} is\"\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n#  + [[roam:why is ${title} important]]\n#  + [[roam:when to use ${title}]]\n#  + [[roam:how to use ${title}]]\n#  + [[roam:install ${title}]]\n#  + [[roam:${title} shortcuts]]\n  + [[roam:Tool]]\n\n- references ::\n"
+         :unnarrowed t
+         )
+        (
+         "L" "location" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-concept-${slug}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: concept permanent\n#+ROAM_ALIAS: \"${title}\" \"what is ${title}\" \"what ${title} is\"\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n#  + \[\[roam:why is ${title} important\]\]\n#  + \[\[roam:where is ${title}\]\]\n  + [[roam:Location]]\n\n- references ::\n"
          :unnarrowed t
          )
         ;; (
