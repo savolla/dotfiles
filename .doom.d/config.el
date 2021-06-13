@@ -74,19 +74,19 @@
         (
          "f" "fleeting" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-fleeting"
-         :head "# You want to remember this Permanently!\n# You might use it in your Blog, Lectures, Job or even Book!\n#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting \n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
+         :head "# You want to remember this Permanently!\n# You might use it in your Blog, Lectures, Job or even Book!\n#+TITLE: %<%Y%m%d%H%M%S>-fleeting\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: fleeting \n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n\t+ [[roam:Fleeting Notes]]\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "l" "literature" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-literature"
-         :head "# Literature = Expanded version of the Fleeting Note\n# Extra tags; argument, tip, howto, story, study, chart, people, event, location\n#+TITLE: %<%Y%m%d%H%M%S>-literature\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: literature\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- references ::\n"
+         :head "# Literature = Expanded version of the Fleeting Note\n# Extra tags; argument, tip, howto, story, study, chart, people, event, location\n#+TITLE: %<%Y%m%d%H%M%S>-literature\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: literature\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n\t+ [[roam:Literature Notes]]\n\n- references ::\n"
          :unnarrowed t
          )
         (
          "p" "permanent" plain #'org-roam-capture--get-point
          :file-name "%<%Y%m%d%H%M%S>-permanent-${slug}"
-         :head "# Title must come at the end\n#+TITLE: ${title}\n#+STARTUP: overview\n# Find tags by asking;\n# 1) Topic tag: What are related words to this note?\n# 2) Context tag: What is the main idea of this note?\n#+ROAM_TAGS: permanent\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n# You can link multiple Concepts and Permanent Notes!\n%?\n\n- see also ::\n# Continuation or Related notes here\n\n- references ::\n"
+         :head "# Title must come at the end\n#+TITLE: ${title}\n#+STARTUP: overview\n# Find tags by asking;\n# 1) Topic tag: What are related words to this note?\n# 2) Context tag: What is the main idea of this note?\n#+ROAM_TAGS: permanent\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n# You can link multiple Concepts and Permanent Notes!\n%?\n\n - see also ::\n# Continuation or Related notes here\n\t+ [[roam:Permanent Notes]]\n\n- references ::\n"
          :unnarrowed t
          )
         (
