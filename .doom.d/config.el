@@ -66,7 +66,7 @@
       ;; org-roam-directory "~/txt/jethros-braindump"
       org-roam-dailies-directory "~/txt/roam/fleeting"
       org-roam-index-file "cortex.org"
-      org-roam-prefer-id-links t
+      org-roam-prefer-id-links nil
       )
 
 (setq org-roam-capture-templates
