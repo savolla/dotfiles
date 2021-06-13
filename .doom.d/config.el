@@ -136,6 +136,12 @@
          :head "#+TITLE: ${title}\n#+AUTHOR: ${author}\n#+STARTUP: overview\n#+ROAM_TAGS: book index\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n  + [[roam:Book]]\n  + [[roam:${author}]]"
          :unnarrowed t
          )
+        (
+         "t" "tool" plain #'org-roam-capture--get-point
+         :file-name "%<%Y%m%d%H%M%S>-concept-${slug}"
+         :head "#+TITLE: ${title}\n#+STARTUP: overview latexpreview inlineimages\n#+ROAM_TAGS: tool permanent\n#+ROAM_ALIAS: \"what is ${title}\" \"what ${title} is\"\n#+CREATED: %u\n#+LAST_MODIFIED: %U\n\n%?\n\n- see also ::\n#  + [[roam:why is ${title} important]]\n#  + [[roam:when to use ${title}]]\n#  + [[roam:how to use ${title}]]\n#  + [[roam:install ${title}]]\n#  + [[roam:${title} shortcuts]]\n  + [[roam:Tool]]\n\n- references ::\n"
+         :unnarrowed t
+         )
         ;; (
         ;;  "a" "claim" plain #'org-roam-capture--get-point
         ;;  :file-name "%<%Y%m%d%H%M%S>-claim"
