@@ -21,6 +21,7 @@
 ;; (setq doom-theme 'doom-dracula) ;; option 4
 ;; (setq doom-theme 'doom-solarized-dark) ;; option 5
 (setq doom-theme 'doom-badger) ;; option 6
+;; (setq doom-theme 'doom-acario-dark) ;; option 7
 
 
 ;; vterm Configuration
@@ -68,7 +69,8 @@
 
 
 ;; Splash Screen Configuraion
-(setq fancy-splash-image (concat doom-private-dir "splash.png")) ;; set custom splash
+;; (setq fancy-splash-image (concat doom-private-dir "splash.png")) ;; set custom splash
+(setq fancy-splash-image (concat doom-private-dir "gravatar-savolla.png")) ;; set custom splash
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu) ;; hide start menu
 (defun doom-dashboard-widget-footer ())
 
