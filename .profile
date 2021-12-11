@@ -1,8 +1,8 @@
-ibus-daemon -d -x
 export EDITOR=/usr/bin/nvim
-export BROWSER=brave
-export TERM=alacritty
-export MAIL=thunderbird
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 . "$HOME/.cargo/env"
+export BROWSER=/usr/bin/brave
+export TERM=/usr/bin/kitty
+export EDITOR=/usr/bin/emacs
+export SHELL=/usr/bin/bash
