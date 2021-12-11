@@ -21,6 +21,7 @@ sudo pacman -S \
     ttf-fira-code \
     tmux \
     htop \
+    ccls \
     --needed
 
 # Place all contents inside .config

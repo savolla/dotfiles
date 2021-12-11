@@ -20,8 +20,9 @@
 ;; (setq doom-theme 'doom-outrun-electric) ;; option 3
 ;; (setq doom-theme 'doom-dracula) ;; option 4
 ;; (setq doom-theme 'doom-solarized-dark) ;; option 5
-(setq doom-theme 'doom-badger) ;; option 6
+;; (setq doom-theme 'doom-badger) ;; option 6
 ;; (setq doom-theme 'doom-acario-dark) ;; option 7
+(setq doom-theme 'doom-tomorrow-night) ;; option 8
 
 
 ;; vterm Configuration
@@ -111,3 +112,10 @@
 
 ;; disable cl is deprecated warning. TODO: delete this soon
 (setq byte-compile-warnings '(cl-functions))
+
+
+;; Enable ccls for all c++ files, and platformio-mode only
+;; when needed (platformio.ini present in project root).
+(add-hook 'c++-mode-hook (lambda ()
+                           (lsp-deferred)
+                           (platformio-conditionally-enable)))
