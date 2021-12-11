@@ -105,3 +105,7 @@
 (map! :leader :desc "string sort"             "- u a" #'sort-lines ) ;; ranger
 (map! :leader :desc "screenshot"              "- u s" #'org-screenshot-take)
 (map! :leader :desc "babel tangle"            "- u t" #'org-babel-tangle)
+
+
+;; disable cl is deprecated warning. TODO: delete this soon
+(setq byte-compile-warnings '(cl-functions))
