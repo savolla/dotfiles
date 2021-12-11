@@ -26,6 +26,7 @@ for dotfile in .config/*; do
     mv "$dotfile" "$USER"/.config
 done
 
+# place all single files in home
 mv ./.doom.d ~/
 mv ./.scripts ~/
 mv ./.bashrc ~/
