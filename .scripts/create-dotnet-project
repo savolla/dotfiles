@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-dotnet new globaljson --output $1
-dotnet new mvc --no-https --output $1
