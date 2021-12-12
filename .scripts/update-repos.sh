@@ -14,6 +14,7 @@ DOTFILES="$HOME/project/dev/dotfiles/.git"
 # BRAINDUMP="$HOME/txt/roam"
 
 ## dotfiles
+git --git-dir="$DOTFILES" checkout kvm
 git --git-dir="$DOTFILES" add -u
 git --git-dir="$DOTFILES" commit -m "$COMMIT_MESSAGE"
 git --git-dir="$DOTFILES" push -u origin main
