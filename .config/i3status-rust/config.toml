@@ -5,6 +5,7 @@ icons = "awesome"
 # block = "music"
 # buttons = ["play", "next"]
 # interface_name_exclude = [".*kdeconnect.*", "mpd"]
+#
 
 # [[block]]
 # block = "temperature"
