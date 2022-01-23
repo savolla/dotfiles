@@ -10,17 +10,17 @@ COMMIT_MESSAGE=$(curl -s http://whatthecommit.com | perl -p0e '($_)=m{<p>(.+?)</
 
 ## github projects:
 DOTFILES="$HOME/project/dotfiles"
-NOTITIA="$HOME/project/notitia/.git/"
+NOTITIA="$HOME/project/notitia"
 # BRAINDUMP="$HOME/txt/roam"
 
 ## dotfiles
-cd "$DOTFILES"
-git add -u
+cd "$DOTFILES" || exit
+git add --all
 git commit -m "$COMMIT_MESSAGE"
 git push -u origin main
 
 ## notitia
-cd "$NOTITIA"
+cd "$NOTITIA" || exit
 git add -u
 git add images/
 git add notitia/
