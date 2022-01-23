@@ -1,2 +1,0 @@
-#!/bin/bash
-gcc -g -o program $1 && clear && ./program && rm program

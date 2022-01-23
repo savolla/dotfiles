@@ -1,8 +1,0 @@
-#!/bin/bash
-
-workon()
-{
-	zathura $1 2> /dev/null & emacs notes.org
-}
-
-workon $1

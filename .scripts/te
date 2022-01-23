@@ -1,5 +1,0 @@
-if [ $1 == '-b' ]; then
-	trans --brief :en "$2"
-else
-	trans :en "$1"
-fi
