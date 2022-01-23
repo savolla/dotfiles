@@ -6,7 +6,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 BLOG_PATH="$HOME/txt/blog"
-GITHUB_PAGES="$HOME/dev/web/savolla.github.io"
+GITHUB_PAGES="$HOME/project/savolla.github.io"
 COMMIT_MESSAGE=$(curl -s http://whatthecommit.com | perl -p0e '($_)=m{<p>(.+?)</p>}s')
 
 # generate my blog

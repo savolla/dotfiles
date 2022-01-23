@@ -6,6 +6,6 @@ DELAY=$(echo "3600*$PERIOD" | bc)
 # update github, my website and other things periodically
 while true; do
         ./update-repos.sh   # update all github repos
-        ./update-blog.sh    # update my blog
+        # ./update-blog.sh    # update my blog
         sleep "$DELAY"
     done

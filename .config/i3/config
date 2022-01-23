@@ -3,7 +3,8 @@ set $mod Mod4
 set $mod2 Mod1
 set $terminal kitty
 set $browser brave
-set $editor nvim
+set $editor emacs
+set $FILE_MANAGER thunar
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -84,7 +85,7 @@ bindsym $mod+F1 exec $terminal -e ~/.scripts/show-i3-keyboard-shortcuts.sh
 bindsym $mod+F2 exec $editor
 bindsym $mod+F3 exec $terminal -e ranger
 # bindsym $mod+Shift+F3 exec dolphin
-bindsym $mod+Shift+F3 exec pcmanfm
+bindsym $mod+Shift+F3 exec $FILE_MANAGER
 bindsym $mod+F4 exec $terminal -e cmus
 bindsym $mod+F5 exec sxiv -r -t ~/pix/*
 bindsym $mod+F6 exec $browser
@@ -288,7 +289,7 @@ set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 10
+    font pango:DejaVu Sans Mono, FontAwesome 8
     # position bottom
     position top
     status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
@@ -385,11 +386,11 @@ bindsym $mod+l workspace next
 # bindsym $mod+o exec --no-startup-id amixer -q sset 'Master' 5%- 	# decrease sound volume
 
 # use these while using pulseaudio
-# bindsym $mod+p exec --no-startup-id pactl set-sink-volume 0 +5% 	# decrease sound volume
-# bindsym $mod+o exec --no-startup-id pactl set-sink-volume 0 -5% 	# increase sound volume
-bindsym $mod+p exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) +5% # decrease sound volume
-bindsym $mod+o exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) -5% # increase sound volume
-bindsym $mod+Ctrl+i exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) toggle 	# mute sound
+bindsym $mod+p exec --no-startup-id pactl set-sink-volume 0 +5% 	# decrease sound volume
+bindsym $mod+o exec --no-startup-id pactl set-sink-volume 0 -5% 	# increase sound volume
+# bindsym $mod+p exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) +5% # decrease sound volume
+# bindsym $mod+o exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) -5% # increase sound volume
+# bindsym $mod+Ctrl+i exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) toggle 	# mute sound
 
 bindsym $mod+Ctrl+l exec --no-startup-id cmus-remote -k +5 # +5 seconds forward
 bindsym $mod+Ctrl+k exec --no-startup-id cmus-remote -n # next song
@@ -425,11 +426,14 @@ bindsym $mod+F12 exec --no-startup-id ~/.scripts/open-phone         # open phone
 # exec --no-startup-id protonvpn-tray 2> /dev/null & # start vpn
 # exec --no-startup-id ~/.scripts/flush-vpn.sh # connect
 # exec --no-startup-id bitwarden-desktop & # launch password manager
-
+# exec --no-startup-id xrandr -s 1280x720
+# exec --no-startup-id xrandr -s 1920x1080
 
 exec --no-startup-id picom -b
 #exec --no-startup-id wal -n -i /home/savolla/.config/color-scheme-image # set color scheme with sxiv
+exec --no-startup-id xrandr -s 1920x1080
 exec --no-startup-id feh --bg-scale /home/savolla/.config/background-image # set background image with sxiv
+exec --no-startup-id i3 restart
 # exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
 exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and remap keys
 #exec --no-startup-id xset r rate 200 100 # type speed
@@ -456,3 +460,5 @@ exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and rema
 
 # GUI development
 # for_window [title="Breakout!"] floating enable, move scratchpad, scratchpad show, resize set 600 1020, move position 1300 30, border pixel 0
+
+# exec --no-startup-id xrandr -s 1920x1080

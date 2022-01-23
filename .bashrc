@@ -120,3 +120,8 @@ alias screencast="ffmpeg -f alsa\
 alias create-python-environment="python -m venv --upgrade-deps ./venv"
 alias activate-python-environment="chmod +x ./venv/bin/activate && source ./venv/bin/activate"
 alias install-python-requirements="sudo pip install -r requirements.txt"
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION

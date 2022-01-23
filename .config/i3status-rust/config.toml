@@ -1,21 +1,21 @@
 theme = "solarized-dark"
 icons = "awesome"
 
-[[block]]
-block = "music"
-buttons = ["play", "next"]
-interface_name_exclude = [".*kdeconnect.*", "mpd"]
+# [[block]]
+# block = "music"
+# buttons = ["play", "next"]
+# interface_name_exclude = [".*kdeconnect.*", "mpd"]
 
-[[block]]
-block = "temperature"
-collapsed = false
-interval = 10
-format = "{average}"
+# [[block]]
+# block = "temperature"
+# collapsed = false
+# interval = 10
+# format = "{average}"
+# # chip = "*-isa-*"
 # chip = "*-isa-*"
-chip = "*-isa-*"
-[block.theme_overrides]
-idle_bg = "#666666"
-idle_fg = "#ffffff"
+# [block.theme_overrides]
+# idle_bg = "#666666"
+# idle_fg = "#ffffff"
 
 [[block]]
 block = "memory"
@@ -41,16 +41,16 @@ format = "{1m}"
 idle_bg = "#333333"
 idle_fg = "#ffffff"
 
-[[block]]
-block = "nvidia_gpu"
-label = "GPU"
-show_temperature = false
-show_memory = false
-show_clocks = false
-interval = 1
-[block.theme_overrides]
-idle_bg = "#0e3801"
-idle_fg = "#ffffff"
+# [[block]]
+# block = "nvidia_gpu"
+# label = "GPU"
+# show_temperature = false
+# show_memory = false
+# show_clocks = false
+# interval = 1
+# [block.theme_overrides]
+# idle_bg = "#0e3801"
+# idle_fg = "#ffffff"
 
 [[block]]
 block = "disk_space"
@@ -66,8 +66,8 @@ idle_fg = "#ffffff"
 
 [[block]]
 block = "net"
-device = "wlp2s0"
-format = "{ssid} {signal_strength} {ip}"
+device = "enp1s0"
+format = "IP: {ip}"
 interval = 5
 [block.theme_overrides]
 idle_bg = "#123456"
@@ -87,8 +87,7 @@ interval = 60
 idle_bg = "#185612"
 idle_fg = "#ffffff"
 
-[[block]]
-block = "battery"
-interval = 10
-format = "{percentage} {time}"
-
+# [[block]]
+# block = "battery"
+# interval = 10
+# format = "{percentage} {time}"

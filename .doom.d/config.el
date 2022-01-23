@@ -6,8 +6,8 @@
 
 
 ;; Font Configuration
-(setq doom-font (font-spec :family "Fira Code" :size 18)
-      doom-variable-pitch-font (font-spec :family "Fira Code" :size 19))
+(setq doom-font (font-spec :family "Fira Code" :size 20)
+      doom-variable-pitch-font (font-spec :family "Fira Code" :size 20))
 
 
 ;; Transparency Configuration
@@ -17,12 +17,13 @@
 ;; Theme Configuration
 ;; (setq doom-theme 'doom-one) ;; option 1
 ;; (setq doom-theme 'doom-gruvbox) ;; option 2
-;; (setq doom-theme 'doom-outrun-electric) ;; option 3
+(setq doom-theme 'doom-outrun-electric) ;; option 3
 ;; (setq doom-theme 'doom-dracula) ;; option 4
 ;; (setq doom-theme 'doom-solarized-dark) ;; option 5
 ;; (setq doom-theme 'doom-badger) ;; option 6
 ;; (setq doom-theme 'doom-acario-dark) ;; option 7
-(setq doom-theme 'doom-tomorrow-night) ;; option 8
+;; (setq doom-theme 'doom-tomorrow-night) ;; option 8
+;; (setq doom-theme 'doom-oceanic-next) ;; option 9
 
 
 ;; vterm Configuration
@@ -37,12 +38,67 @@
 ; Org configuration
 (setq
  org-adapt-indentation t
- org-directory "~/org/"
+ ;; org-directory "~/project/notitia"
  org-ellipsis "..."
  org-superstar-headline-bullets-list '("⚀" "⚁" "⚂" "⚃" "⚄" "⚅")
  ;; org-id-link-to-org-use-id t ;; needed for org-roam
  org-hide-block-startup t)
 
+;; roam configuration
+(setq
+ org-roam-directory "~/org/roam"
+ org-roam-completion-everywhere t
+ org-roam-capture-templates
+ '(
+   ("d" "default" plain
+   "%?"
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n")
+   :unnarrowed t)
+
+   ("x" "fix" plain
+   "%?"
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :fact:")
+   :unnarrowed t)
+
+   ("f" "fact" plain
+   "%?"
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :fact:")
+   :unnarrowed t)
+
+   ("h" "how to" plain
+   "%?"
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :how_to:")
+   :unnarrowed t)
+
+   ("y" "why" plain
+   "%?"
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :why:")
+   :unnarrowed t)
+
+   ("c" "which" plain
+   "%?"
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :which:")
+   :unnarrowed t)
+
+   ("e" "where" plain
+   "%?"
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :where:")
+   :unnarrowed t)
+
+   ("o" "who" plain
+   "%?"
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :who_is:")
+   :unnarrowed t)
+
+   ("n" "when" plain
+   "%?"
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :when:")
+   :unnarrowed t)
+
+   ("w" "what is" plain
+   "%?"
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :what_is:")
+   :unnarrowed t)))
 
 ;; Treemacs Configuration
 (after! treemacs
@@ -50,6 +106,10 @@
   (setq treemacs-width 30)
   (setq treemacs-position 'right))
 
+;; Deft Configuration
+(setq deft-directory "~/org/roam"
+      deft-extensions '("org")
+      deft-recursive t)
 
 ;; Company Configuration
 (after! company

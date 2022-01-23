@@ -9,9 +9,9 @@
 COMMIT_MESSAGE=$(curl -s http://whatthecommit.com | perl -p0e '($_)=m{<p>(.+?)</p>}s')
 
 ## github projects:
-DOTFILES="$HOME/.git"
-NOTITIA="$HOME/txt"
-BRAINDUMP="$HOME/txt/roam"
+DOTFILES="$HOME/project/dotfiles/.git/"
+NOTITIA="$HOME/project/notitia/.git/"
+# BRAINDUMP="$HOME/txt/roam"
 
 ## dotfiles
 git --git-dir="$DOTFILES" --work-tree="$HOME" add -u
@@ -26,8 +26,8 @@ git add notitia/
 git commit -m "$COMMIT_MESSAGE"
 git push -u origin main
 
-## braindump
-cd "$BRAINDUMP"
-git add *
-git commit -m "$COMMIT_MESSAGE"
-git push -u origin main
+# ## braindump
+# cd "$BRAINDUMP"
+# git add *
+# git commit -m "$COMMIT_MESSAGE"
+# git push -u origin main
