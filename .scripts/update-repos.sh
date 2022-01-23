@@ -14,18 +14,22 @@ NOTITIA="$HOME/project/notitia"
 # BRAINDUMP="$HOME/txt/roam"
 
 ## dotfiles
+echo "LOG: Entering dotfiles"
 cd "$DOTFILES" || exit
 git add --all
 git commit -m "$COMMIT_MESSAGE"
 git push -u origin main
+echo "LOG: finished dotfiles"
 
 ## notitia
+echo "LOG: Entering notitia"
 cd "$NOTITIA" || exit
 git add -u
 git add images/
 git add notitia/
 git commit -m "$COMMIT_MESSAGE"
 git push -u origin main
+echo "LOG: finished notitia"
 
 # ## braindump
 # cd "$BRAINDUMP"
