@@ -8,6 +8,8 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput se
 export PROMT_COMMAND="clear"
 export PATH="$PATH:$HOME/job/re/bin/:$HOME/.scripts/:$HOME/.emacs/bin/:$HOME/.scripts/process-cop:$HOME/bin/stm32cubeide:$HOME/.cargo/bin"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export QT_SCALE_FACTOR=0.7
+export QT_QUICK_CONTROLS_MATERIAL_THEME="Dark"
 
 # system maintenance
 alias pis="pipenv shell"
