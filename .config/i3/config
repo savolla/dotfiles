@@ -462,6 +462,7 @@ exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and rema
 # for_window [title="Breakout!"] floating enable, move scratchpad, scratchpad show, resize set 600 1020, move position 1300 30, border pixel 0
 
 # Vm settings
+exec --no-startup-id xrandr -s 1024x768
 exec --no-startup-id xrandr -s 1920x1080x50
 exec --no-startup-id i3 restart
 exec --no-startup-id feh --bg-scale /home/savolla/.config/background-image # set background image with sxiv
