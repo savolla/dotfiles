@@ -432,6 +432,7 @@ bindsym $mod+F12 exec --no-startup-id ~/.scripts/open-phone         # open phone
 exec --no-startup-id picom -b
 exec --no-startup-id telegram-desktop
 exec --no-startup-id signal-desktop
+exec --no-startup-id quassel
 #exec --no-startup-id wal -n -i /home/savolla/.config/color-scheme-image # set color scheme with sxiv
 exec --no-startup-id xrandr -s 1920x1080
 exec --no-startup-id feh --bg-scale /home/savolla/.config/background-image # set background image with sxiv

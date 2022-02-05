@@ -38,6 +38,5 @@ cp -lRf .dmenurc ~/
 cp -lRf .gdbinit ~/
 cp -lRf .profile ~/
 cp -lRf .tmux.conf ~/
-cp -lRf .tmux.conf ~/
 
 echo "dotfiles are installed on the system"
