@@ -47,7 +47,7 @@
 
 ;; roam configuration
 (setq
- org-roam-directory "~/org/roam"
+ org-roam-directory "~/project/org/roam"
  org-roam-completion-everywhere t
  org-roam-capture-templates
  '(
@@ -108,7 +108,7 @@
   (setq treemacs-position 'right))
 
 ;; Deft Configuration
-(setq deft-directory "~/org/roam"
+(setq deft-directory "~/project/org/roam"
       deft-extensions '("org")
       deft-recursive t)
 
