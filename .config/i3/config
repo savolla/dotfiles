@@ -434,9 +434,6 @@ exec --no-startup-id telegram-desktop
 exec --no-startup-id signal-desktop
 exec --no-startup-id quassel
 #exec --no-startup-id wal -n -i /home/savolla/.config/color-scheme-image # set color scheme with sxiv
-#exec --no-startup-id xrandr -s 1920x1080
-exec --no-startup-id feh --bg-scale /home/savolla/.config/background-image # set background image with sxiv
-exec --no-startup-id i3 restart
 # exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
 exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and remap keys
 #exec --no-startup-id xset r rate 200 100 # type speed
@@ -464,4 +461,7 @@ exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and rema
 # GUI development
 # for_window [title="Breakout!"] floating enable, move scratchpad, scratchpad show, resize set 600 1020, move position 1300 30, border pixel 0
 
-# exec --no-startup-id xrandr -s 1920x1080
+# Vm settings
+exec --no-startup-id xrandr -s 1920x1080x50
+exec --no-startup-id i3 restart
+exec --no-startup-id feh --bg-scale /home/savolla/.config/background-image # set background image with sxiv
