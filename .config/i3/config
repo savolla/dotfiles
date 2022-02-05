@@ -197,16 +197,15 @@ for_window [instance="zathura"] floating enable, resize set 800 1000, move posit
 for_window [instance="scrcpy"] move scratchpad, scratchpad show, sticky enable, resize set 495 1058, move position 1425 22
 
 # terminal applications go here:
-for_window [title="QEMU"] move container to workspace $ws9
+# for_window [title="QEMU"] move container to workspace $ws9
 for_window [title="sxiv"] floating enable border pixel 0
-for_window [title="xawtv"] floating enable, sticky enable, resize set 100 100, move position 0 0
-for_window [title="cmus"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
-for_window [title="htop"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
+# for_window [title="xawtv"] floating enable, sticky enable, resize set 100 100, move position 0 0
+for_window [class="cmus"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
+for_window [class="htop"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
 
 
 # class of
 for_window [class="Genymotion"] move scratchpad, scratchpad show, sticky enable, resize set 495 1058, move position 1650 30
-for_window [class="Galculator"] floating enable border pixel 0
 for_window [class="GParted"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="mpv"] floating enable, resize set 1280 720, move position center, sticky enable, border pixel 0

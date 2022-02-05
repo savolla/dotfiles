@@ -1,0 +1,3 @@
+#!/bin/bash
+#
+echo -e "KARNA: hey $(whoami)! You need to be on either on Fedora or Centos to do that!"
