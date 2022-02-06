@@ -468,3 +468,4 @@ exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and rema
 
 # Vm settings
 exec --no-startup-id karna-fix-vm
+exec --no-startup-id karna-start-my-applications-on-startup
