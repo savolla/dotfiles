@@ -177,10 +177,10 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
 # Open applications on specific workspaces
-assign [class="Quassel"] $ws1
+assign [instance="quassel"] $ws1
 assign [class="Feedreader"] $ws7
 assign [instance="emacs"] $ws2
-assign [class="Okular"] $ws2
+assign [instance="okular"] $ws2
 assign [class="Xournalpp"] $ws2
 assign [class="Brave"] $ws3
 #assign [class=""] $ws3
