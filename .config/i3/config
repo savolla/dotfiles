@@ -178,6 +178,8 @@ bindsym $mod+9 workspace $ws9
 
 # Open applications on specific workspaces
 assign [title="weechat"] $ws1
+assign [class="Quassel"] $ws8
+assign [class="Feedreader"] $ws7
 assign [instance="emacs"] $ws2
 #assign [class=""] $ws3
 #assign [class=""] $ws4
@@ -211,9 +213,15 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="mpv"] floating enable, resize set 1280 720, move position center, sticky enable, border pixel 0
 for_window [class="Telegram"] move scratchpad,  sticky enable, resize set 478 602, move position 1303 77
 for_window [class="Signal"] move scratchpad, sticky enable, resize set 478 602, move position 1186 60
-for_window [class="Bitwarden"] floating enable,move position 1152 25, resize set 767 496
+# for_window [class="Bitwarden"] floating enable,move position 1152 25, resize set 767 496
 # for_window [class="VirtualBox"] move container to workspace $ws9
 for_window [class="Calibre"] move container to workspace $ws3
+
+exec --no-startup-id telegram-desktop
+exec --no-startup-id signal-desktop
+exec --no-startup-id quassel
+exec --no-startup-id emacs
+exec --no-startup-id feedreader
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -430,9 +438,6 @@ bindsym $mod+F12 exec --no-startup-id ~/.scripts/open-phone         # open phone
 # exec --no-startup-id xrandr -s 1920x1080
 
 exec --no-startup-id picom -b
-exec --no-startup-id telegram-desktop
-exec --no-startup-id signal-desktop
-exec --no-startup-id quassel
 #exec --no-startup-id wal -n -i /home/savolla/.config/color-scheme-image # set color scheme with sxiv
 # exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
 exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and remap keys
