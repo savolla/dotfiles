@@ -149,17 +149,20 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # ws1
-set $ws1 1: 
+# set $ws1 1: 
+set $ws1 
 # ws2 is for doom emacs
-set $ws2 2: 
+# set $ws2 2: 
+set $ws2 
 # ws3/4/5 are basic workstations
-set $ws3 3: ¹
+# set $ws3 3: ¹
+set $ws6 
 set $ws4 4: ²
 set $ws5 5: ³
 # ws6 is for surfing web
-set $ws6 6: 
-# ws7 is for telegram-desktop
-set $ws7 7: 
+# set $ws6 6: 
+# set $ws7 7: 
+set $ws7 7: 
 # ws8 is for gaming
 set $ws8 8: 
 # ws9 is for virtual machines
