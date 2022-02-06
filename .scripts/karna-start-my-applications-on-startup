@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+emacs               # Editor - ws2
+brave               # ws6    - ws6
+feedreader          # RSS    - ws7
+telegram-desktop    # Chat   - scratch
+signal-desktop      # Chat   - scratch
+foliate             # Ebook
+
+QT_SCALE_FACTOR=1
+quassel             # IRC    - ws3
+
+QT_SCALE_FACTOR=0.5
+okular              # PDF    - ws2
