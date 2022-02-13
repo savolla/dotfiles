@@ -5,7 +5,7 @@
 # @description: this script will automatically generate and update my website
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-BLOG_PATH="$HOME/txt/blog"
+BLOG_PATH="$HOME/project"
 GITHUB_PAGES="$HOME/project/savolla.github.io"
 COMMIT_MESSAGE=$(curl -s http://whatthecommit.com | perl -p0e '($_)=m{<p>(.+?)</p>}s')
 
