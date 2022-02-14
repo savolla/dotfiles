@@ -15,8 +15,8 @@ case $CHOICE in
         $WEB_BROWSER "https://translate.google.com/" ;;
     protonmail)
         $WEB_BROWSER "https://mail.protonmail.com/login" ;;
-    # youtube)
-        # $WEB_BROWSER "https://www.youtube.com/results" ;;
+     youtube)
+        $WEB_BROWSER "https://redirect.invidious.io/" ;;
     invidious)
         $WEB_BROWSER "https://invidious.xyz/login?referer=%2F" ;;
     startpage)
