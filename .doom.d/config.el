@@ -98,7 +98,7 @@
 
    ("w" "what is" plain
    "%?"
-   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :what_is:\n* facts\n*how to\n*concepts")
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :what_is:\n* facts\n* how to\n* concepts")
    :unnarrowed t)))
 
 ;; Treemacs Configuration
