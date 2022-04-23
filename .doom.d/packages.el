@@ -50,5 +50,3 @@
 ;(unpin! t)
 
 (package! platformio-mode)
-(unpin! org-roam)
-(unpin! org-roam-ui)
