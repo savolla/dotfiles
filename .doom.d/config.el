@@ -63,13 +63,21 @@
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
 
-(defun benmezger/org-roam-export-all ()
-  "Re-exports all Org-roam files to Hugo markdown."
-  (interactive)
-  (dolist (f (org-roam--list-all-files))
-    (with-current-buffer (find-file f)
-      (when (s-contains? "SETUPFILE" (buffer-string))
-        (org-hugo-export-wim-to-md)))))
+;; (defun benmezger/org-roam-export-all ()
+;;   "Re-exports all Org-roam files to Hugo markdown."
+;;   (interactive)
+;;   (with-current-buffer (find-file f)
+;;       (org-hugo-export-wim-to-md)))
+
+
+(defun process-file (f)
+    (find-file f)
+    (org-hugo-export-wim-to-md))
+
+;; (defun process-files ()
+;;     (mapc 'process-file
+;;           (directory-files org-roam-directory t ".org$")))
+
 
 (setq
  org-roam-directory "~/project/org/roam"
