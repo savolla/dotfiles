@@ -36,7 +36,7 @@
     :quit nil))
 
 ; Hugo configuration
-(setq org-hugo-base-dir "~/project/test" )
+(setq org-hugo-base-dir "~/project/savolla.github.io/content" )
 
 ; Org configuration
 (setq
@@ -63,20 +63,6 @@
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
 
-;; (defun benmezger/org-roam-export-all ()
-;;   "Re-exports all Org-roam files to Hugo markdown."
-;;   (interactive)
-;;   (with-current-buffer (find-file f)
-;;       (org-hugo-export-wim-to-md)))
-
-
-(defun process-file (f)
-    (find-file f)
-    (org-hugo-export-wim-to-md))
-
-;; (defun process-files ()
-;;     (mapc 'process-file
-;;           (directory-files org-roam-directory t ".org$")))
 
 
 (setq
