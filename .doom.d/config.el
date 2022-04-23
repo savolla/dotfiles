@@ -35,6 +35,8 @@
     :select t
     :quit nil))
 
+; Hugo configuration
+(setq org-hugo-base-dir "~/project/test" )
 
 ; Org configuration
 (setq
@@ -60,6 +62,14 @@
           org-roam-ui-follow t
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
+
+(defun benmezger/org-roam-export-all ()
+  "Re-exports all Org-roam files to Hugo markdown."
+  (interactive)
+  (dolist (f (org-roam-node-find))
+    (with-current-buffer (find-file f)
+      (when (s-contains? "SETUPFILE" (buffer-string))
+        (org-hugo-export-wim-to-md)))))
 
 (setq
  org-roam-directory "~/project/org/roam"
