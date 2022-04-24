@@ -52,7 +52,7 @@
 ;; roam configuration
 
 (setq
- org-roam-directory "~/project/org/roam"
+ org-roam-directory "~/project/braindump"
  org-roam-completion-everywhere t
  org-roam-capture-templates
  '(
