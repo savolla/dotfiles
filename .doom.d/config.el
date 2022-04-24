@@ -44,7 +44,9 @@
  ;; org-directory "~/project/notitia"
  org-ellipsis "..."
  org-superstar-headline-bullets-list '("⚀" "⚁" "⚂" "⚃" "⚄" "⚅")
- ;; org-id-link-to-org-use-id t ;; needed for org-roam
+ org-id-link-to-org-use-id t ;; needed for org-roam
+ org-startup-with-inline-images t
+ org-startup-with-latex-preview t
  org-hide-block-startup t)
 
 ;; roam configuration
