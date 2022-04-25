@@ -47,7 +47,7 @@
  org-id-link-to-org-use-id t ;; needed for org-roam
  org-startup-with-inline-images t
  org-startup-with-latex-preview t
- org-hide-block-startup t)
+ )
 
 ;; roam configuration
 
