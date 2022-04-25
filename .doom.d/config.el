@@ -36,7 +36,7 @@
     :quit nil))
 
 ; Hugo configuration
-(setq org-hugo-base-dir "~/project/savolla.github.io/content" )
+(setq org-hugo-base-dir "~/project/org/hugo-md" )
 
 ; Org configuration
 (setq
@@ -44,7 +44,7 @@
  ;; org-directory "~/project/notitia"
  org-ellipsis "..."
  org-superstar-headline-bullets-list '("⚀" "⚁" "⚂" "⚃" "⚄" "⚅")
- org-id-link-to-org-use-id t ;; needed for org-roam
+ ;; org-id-link-to-org-use-id t ;; needed for org-roam
  org-startup-with-inline-images t
  org-startup-with-latex-preview t
  )
@@ -144,7 +144,6 @@
 
 ;; plantuml Configuraion
 (setq plantuml-output-type "png" )
-
 
 ;; Custom Key Bindings
 ;; custom keys '-'
