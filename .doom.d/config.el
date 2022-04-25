@@ -148,32 +148,32 @@
 
 ;; Custom Key Bindings
 ;; custom keys '-'
-(map! :leader :desc "custom keys"             "-") ;; custom bindings
+(map! :leader :desc "savolla"             "d") ;; custom bindings
 
 ;; code 'c'
-(map! :leader :desc "code"                    "- c")
-(map! :leader :desc "toggle tagbar"           "- c t" #'lsp-ui-imenu ) ;; toggle tagbar
-(map! :leader :desc "toggle undo tree"        "- c u" #'undo-tree-visualize ) ;; toggle undo tree
-(map! :leader :desc "run gdb"                 "- c g" #'gdb ) ;; run gdb
-(map! :leader :desc "unfuck json"             "- c j" #'json-pretty-print-buffer ) ;; ranger
+(map! :leader :desc "code"                    "d c")
+(map! :leader :desc "toggle tagbar"           "d c t" #'lsp-ui-imenu ) ;; toggle tagbar
+(map! :leader :desc "toggle undo tree"        "d c u" #'undo-tree-visualize ) ;; toggle undo tree
+(map! :leader :desc "run gdb"                 "d c g" #'gdb ) ;; run gdb
+(map! :leader :desc "unfuck json"             "d c j" #'json-pretty-print-buffer ) ;; ranger
 ;; TODO: create Python specific shortcuts
 
 ;; tabs 't'
-(map! :leader :desc "tabs"                    "- t")
-(map! :leader :desc "new tab"                 "- t o" #'tab-new ) ;; new tab
-(map! :leader :desc "next tab"                "- t n" #'tab-next ) ;; next tab
-(map! :leader :desc "kill tab"                "- t k" #'tab-kill ) ;; kill tab
-(map! :leader :desc "previous tab"            "- t p" #'tab-previous ) ;; previous tab
-(map! :leader :desc "list tabs"               "- t l" #'tab-list ) ;; list all tabs
-(map! :leader :desc "toggle tabs"             "- t t" #'tab-bar-mode ) ;; toggle tab-bar-mode
+(map! :leader :desc "tabs"                    "d t")
+(map! :leader :desc "new tab"                 "d t o" #'tab-new ) ;; new tab
+(map! :leader :desc "next tab"                "d t n" #'tab-next ) ;; next tab
+(map! :leader :desc "kill tab"                "d t k" #'tab-kill ) ;; kill tab
+(map! :leader :desc "previous tab"            "d t p" #'tab-previous ) ;; previous tab
+(map! :leader :desc "list tabs"               "d t l" #'tab-list ) ;; list all tabs
+(map! :leader :desc "toggle tabs"             "d t t" #'tab-bar-mode ) ;; toggle tab-bar-mode
 
 ;; utility 'u'
-(map! :leader :desc "utility"                 "- u")
-(map! :leader :desc "open pass"               "- u p" #'pass ) ;; passwords
-(map! :leader :desc "irc"                     "- u i" #'irc ) ;; IRC
-(map! :leader :desc "string sort"             "- u a" #'sort-lines ) ;; ranger
-(map! :leader :desc "screenshot"              "- u s" #'org-screenshot-take)
-(map! :leader :desc "babel tangle"            "- u t" #'org-babel-tangle)
+(map! :leader :desc "utility"                 "d u")
+(map! :leader :desc "open pass"               "d u p" #'pass ) ;; passwords
+(map! :leader :desc "irc"                     "d u i" #'irc ) ;; IRC
+(map! :leader :desc "string sort"             "d u a" #'sort-lines ) ;; ranger
+(map! :leader :desc "screenshot"              "d u s" #'org-screenshot-take)
+(map! :leader :desc "babel tangle"            "d u t" #'org-babel-tangle)
 
 
 ;; disable cl is deprecated warning. TODO: delete this soon
