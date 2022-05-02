@@ -10,9 +10,8 @@ COMMIT_MESSAGE=$(curl -s http://whatthecommit.com | perl -p0e '($_)=m{<p>(.+?)</
 
 ## github projects:
 DOTFILES="$HOME/project/dotfiles"
-NOTITIA="$HOME/project/notitia"
 KARNA_TOOLKIT="$HOME/project/karna_toolkit"
-# BRAINDUMP="$HOME/txt/roam"
+BRAINDUMP="$HOME/project/braindump"
 
 ## dotfiles
 echo "LOG: Entering dotfiles"
@@ -22,16 +21,6 @@ git commit -m "$COMMIT_MESSAGE"
 git push -u origin main
 echo "LOG: finished dotfiles"
 
-## notitia
-echo "LOG: Entering notitia"
-cd "$NOTITIA" || exit
-git add -u
-git add images/
-git add notitia/
-git commit -m "$COMMIT_MESSAGE"
-git push -u origin main
-echo "LOG: finished notitia"
-
 ## karna_toolkit
 echo "LOG: Entering karna_toolkit"
 cd "$KARNA_TOOLKIT" || exit
@@ -40,8 +29,8 @@ git commit -m "$COMMIT_MESSAGE"
 git push -u origin main
 echo "LOG: finished karna_toolkit"
 
-# ## braindump
-# cd "$BRAINDUMP"
-# git add *
-# git commit -m "$COMMIT_MESSAGE"
-# git push -u origin main
+## braindump
+cd "$BRAINDUMP" || exit
+git add --all
+git commit -m "$COMMIT_MESSAGE"
+git push -u origin main
