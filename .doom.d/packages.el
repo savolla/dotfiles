@@ -49,6 +49,4 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! platformio-mode)
-(unpin! org-roam)
 (unpin! org-roam-ui)
