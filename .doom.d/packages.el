@@ -49,4 +49,9 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+;; (package! platformio-mode)
+(unpin! org-roam)
 (unpin! org-roam-ui)
+;; (package! org-noter-pdftools)
+(package! org-super-agenda)
+(package! org-alert)

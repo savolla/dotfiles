@@ -1,5 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+
+
 ;; Personal Info
 (setq user-full-name "Oleksiy Nehlyadyuk"
       user-mail-address "savolla@protonmail.com")
@@ -43,10 +45,11 @@
  org-adapt-indentation t
  ;; org-directory "~/project/notitia"
  org-ellipsis "..."
- org-superstar-headline-bullets-list '("⚀" "⚁" "⚂" "⚃" "⚄" "⚅")
+ ;; org-superstar-headline-bullets-list '("⚀" "⚁" "⚂" "⚃" "⚄" "⚅")
  ;; org-id-link-to-org-use-id t ;; needed for org-roam
  org-startup-with-inline-images t
  org-startup-with-latex-preview t
+ org-directory "~/project/org"
  )
 
 ;; roam configuration
@@ -63,12 +66,12 @@
 
    ("x" "fix" plain
    "%?"
-   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :fact:")
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :fix:")
    :unnarrowed t)
 
-   ("f" "fact" plain
+   ("b" "book" plain
    "%?"
-   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :fact:")
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :book:\n* fact\n* tip\n* howto\n* concept\n* snippet\n* listof")
    :unnarrowed t)
 
    ("h" "how to" plain
@@ -76,34 +79,14 @@
    :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :how_to:")
    :unnarrowed t)
 
-   ("y" "why" plain
-   "%?"
-   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :why:")
-   :unnarrowed t)
-
-   ("c" "which" plain
-   "%?"
-   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :which:")
-   :unnarrowed t)
-
-   ("e" "where" plain
-   "%?"
-   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :where:")
-   :unnarrowed t)
-
    ("o" "who" plain
    "%?"
    :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :who_is:")
    :unnarrowed t)
 
-   ("n" "when" plain
-   "%?"
-   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :when:")
-   :unnarrowed t)
-
    ("w" "what is" plain
    "%?"
-   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :what_is:\n* facts\n* how to\n* concepts")
+   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org" "#+title: ${title}\n#+filetags: :what_is:\n* fact\n* tip\n* howto\n* concept\n* snippet\n* listof")
    :unnarrowed t)))
 
 ;; Treemacs Configuration
@@ -113,7 +96,7 @@
   (setq treemacs-position 'right))
 
 ;; Deft Configuration
-(setq deft-directory "~/project/org/roam"
+(setq deft-directory "~/project/braindump"
       deft-extensions '("org")
       deft-recursive t)
 
@@ -138,12 +121,13 @@
 ;; Splash Screen Configuraion
 ;; (setq fancy-splash-image (concat doom-private-dir "splash.png")) ;; set custom splash
 (setq fancy-splash-image (concat doom-private-dir "gravatar-savolla.png")) ;; set custom splash
-(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu) ;; hide start menu
+;; (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu) ;; hide start menu
 (defun doom-dashboard-widget-footer ())
 
 
 ;; plantuml Configuraion
 (setq plantuml-output-type "png" )
+(setq org-plantuml-jar-path "~/resource/bin/plantuml-1.2022.5.jar" )
 
 ;; Custom Key Bindings
 ;; custom keys '-'
@@ -174,7 +158,6 @@
 (map! :leader :desc "screenshot"              "d u s" #'org-screenshot-take)
 (map! :leader :desc "babel tangle"            "d u t" #'org-babel-tangle)
 
-
 ;; disable cl is deprecated warning. TODO: delete this soon
 (setq byte-compile-warnings '(cl-functions))
 
@@ -182,5 +165,20 @@
 ;; Enable ccls for all c++ files, and platformio-mode only
 ;; when needed (platformio.ini present in project root).
 (add-hook 'c++-mode-hook (lambda ()
-                           (lsp-deferred)
-                           (platformio-conditionally-enable)))
+                           (lsp-deferred)))
+
+;; org-noter configuration
+(setq org-noter-auto-save-last-location t)
+
+
+;; run commands on startup
+;; (+workspace-rename "agenda")
+(defun startup-script ()
+  "savolla's personal script"
+  (find-file "~/org/todo.org")
+  (evil-window-split)
+  (find-file "~/org/journal.org")
+  ;; (+workspace:new)
+  )
+
+;; (startup-script)
