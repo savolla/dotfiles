@@ -439,7 +439,7 @@ exec --no-startup-id picom -b
 #exec --no-startup-id wal -n -i /home/savolla/.config/color-scheme-image # set color scheme with sxiv
 # exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
 exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and remap keys
-exec --no-startup-id xset r rate 200 100 # type speed
+# exec --no-startup-id xset r rate 200 100 # type speed
 # exec --no-startup-id xset r rate 150 100 # type speed
 
 # healing my carpal tunnel
