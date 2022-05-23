@@ -8,4 +8,4 @@ while true; do
         ./update-repos.sh   # update all github repos
         # ./update-blog.sh    # update my blog
         sleep "$DELAY"
-    done
+done
