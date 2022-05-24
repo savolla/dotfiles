@@ -26,7 +26,7 @@ checkDependencies $SCRIPT_DEPENCENCIES
 #############################################################################
 
 # re run below commands if i3 can't execute those
-xset r rate 150 200
+# xset r rate 150 200
 setxkbmap tr
 xmodmap -e "keycode 108 = Escape"
 xmodmap -e "keycode 66 = ISO_Level3_Shift"
