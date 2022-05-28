@@ -159,6 +159,12 @@
 (map! :leader :desc "screenshot"              "d u s" #'org-screenshot-take)
 (map! :leader :desc "babel tangle"            "d u t" #'org-babel-tangle)
 
+;; anki deck editor binds
+(map! "<f12>" #'anki-editor-cloze-region-auto-incr)
+(map! "<f11>" #'anki-editor-cloze-region-dont-incr)
+(map! "<f10>" #'anki-editor-reset-cloze-number)
+(map! "<f9>"  #'anki-editor-push-tree)
+
 ;; disable cl is deprecated warning. TODO: delete this soon
 (setq byte-compile-warnings '(cl-functions))
 
@@ -189,16 +195,12 @@
                  entry
                  (file+headline org-my-anki-file "notitia")
                  "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: notitia\n:END:\n** Front\n%?\n** Back\n%x\n"))
+
   (add-to-list 'org-capture-templates
                '("c" "Anki cloze"
                  entry
                  (file+headline org-my-anki-file "notitia")
                  "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: notitia\n:END:\n** Text\n%x\n** Extra\n"))
-  (map! org-mode-map
-         ("<f12>" . anki-editor-cloze-region-auto-incr)
-         ("<f11>" . anki-editor-cloze-region-dont-incr)
-         ("<f10>" . anki-editor-reset-cloze-number)
-         ("<f9>"  . anki-editor-push-tree))
   (setq anki-editor-create-decks t ;; Allow anki-editor to create a new deck if it doesn't exist
         anki-editor-org-tags-as-anki-tags t)
 
