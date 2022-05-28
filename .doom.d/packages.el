@@ -55,3 +55,4 @@
 ;; (package! org-noter-pdftools)
 (package! org-super-agenda)
 (package! org-alert)
+(package! anki-editor)
