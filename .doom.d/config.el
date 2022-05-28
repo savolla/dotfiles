@@ -49,18 +49,9 @@
  ;; org-id-link-to-org-use-id t ;; needed for org-roam
  org-startup-with-inline-images t
  org-startup-with-latex-preview t
- org-directory "~/project/org"
+ org-directory "~/project/org")
  (setq org-my-anki-file "~/project/flashcards/anki.org")
- (add-to-list 'org-capture-templates
-              '("b" "Anki basic"
-                entry
-                (file+headline org-my-anki-file "Dispatch Shelf")
-                "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: Mega\n:END:\n** Front\n%?\n** Back\n%x\n"))
- (add-to-list 'org-capture-templates
-              '("c" "Anki cloze"
-                entry
-                (file+headline org-my-anki-file "Dispatch Shelf")
-                "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: Mega\n:END:\n** Text\n%x\n** Extra\n"))
+
 
 ;; roam configuration
 
@@ -192,15 +183,22 @@
   )
 
 ;; (startup-script)
-(use-package anki-editor
-  :after org
-  :bind (:map org-mode-map
+(after! org
+  (add-to-list 'org-capture-templates
+               '("b" "Anki basic"
+                 entry
+                 (file+headline org-my-anki-file "notitia")
+                 "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: notitia\n:END:\n** Front\n%?\n** Back\n%x\n"))
+  (add-to-list 'org-capture-templates
+               '("c" "Anki cloze"
+                 entry
+                 (file+headline org-my-anki-file "notitia")
+                 "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: notitia\n:END:\n** Text\n%x\n** Extra\n"))
+  (map! org-mode-map
          ("<f12>" . anki-editor-cloze-region-auto-incr)
          ("<f11>" . anki-editor-cloze-region-dont-incr)
          ("<f10>" . anki-editor-reset-cloze-number)
          ("<f9>"  . anki-editor-push-tree))
-  :hook (org-capture-after-finalize . anki-editor-reset-cloze-number) ; Reset cloze-number after each capture.
-  :config
   (setq anki-editor-create-decks t ;; Allow anki-editor to create a new deck if it doesn't exist
         anki-editor-org-tags-as-anki-tags t)
 
