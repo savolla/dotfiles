@@ -1,20 +1,15 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-
-
-
+;;;
 ;; Personal Info
 (setq user-full-name "Oleksiy Nehlyadyuk"
       user-mail-address "savolla@protonmail.com")
-
 
 ;; Font Configuration
 (setq doom-font (font-spec :family "Fira Code" :size 20)
       doom-variable-pitch-font (font-spec :family "Fira Code" :size 20))
 
-
 ;; Transparency Configuration
 (add-to-list 'default-frame-alist '(alpha . (90 . 92)))
-
 
 ;; Theme Configuration
 ;; (setq doom-theme 'doom-one) ;; option 1
@@ -27,7 +22,6 @@
 ;; (setq doom-theme 'doom-tomorrow-night) ;; option 8
 ;; (setq doom-theme 'doom-oceanic-next) ;; option 9
 (setq doom-theme 'doom-old-hope) ;; option 10
-
 
 ;; vterm Configuration
 (after! vterm
@@ -50,7 +44,7 @@
  org-startup-with-inline-images t
  org-startup-with-latex-preview t
  org-directory "~/project/org")
- (setq org-my-anki-file "~/project/flashcards/anki.org")
+ (setq org-my-anki-file "~/project/braindump/anki.org")
 
 
 ;; roam configuration
@@ -190,6 +184,7 @@
 
 ;; (startup-script)
 (after! org
+  (anki-editor-mode) ;; enable anki editor mode after org mode
   (add-to-list 'org-capture-templates
                '("b" "Anki basic"
                  entry
@@ -202,7 +197,7 @@
                  (file+headline org-my-anki-file "notitia")
                  "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: notitia\n:END:\n** Text\n%x\n** Extra\n"))
   (setq anki-editor-create-decks t ;; Allow anki-editor to create a new deck if it doesn't exist
-        anki-editor-org-tags-as-anki-tags t)
+        anki-editor-org-tags-as-anki-tags nil)
 
   (defun anki-editor-cloze-region-auto-incr (&optional arg)
     "Cloze region without hint and increase card number."
@@ -227,3 +222,5 @@
   ;; Initialize
   (anki-editor-reset-cloze-number)
   )
+
+;; pdf tools settings
