@@ -50,7 +50,17 @@
  org-startup-with-inline-images t
  org-startup-with-latex-preview t
  org-directory "~/project/org"
- )
+ (setq org-my-anki-file "~/project/flashcards/anki.org")
+ (add-to-list 'org-capture-templates
+              '("b" "Anki basic"
+                entry
+                (file+headline org-my-anki-file "Dispatch Shelf")
+                "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: Mega\n:END:\n** Front\n%?\n** Back\n%x\n"))
+ (add-to-list 'org-capture-templates
+              '("c" "Anki cloze"
+                entry
+                (file+headline org-my-anki-file "Dispatch Shelf")
+                "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: Mega\n:END:\n** Text\n%x\n** Extra\n"))
 
 ;; roam configuration
 
