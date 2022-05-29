@@ -219,6 +219,7 @@ for_window [class="mpv"] floating enable, resize set 1280 720, move position cen
 for_window [class="Telegram"] move scratchpad,  sticky enable, resize set 478 602, move position 1303 77
 for_window [class="Signal"] move scratchpad, sticky enable, resize set 478 602, move position 1186 60
 for_window [class="Calibre"] move container to workspace $ws3
+for_window [class="Anki"] move scratchpad
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
