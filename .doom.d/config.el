@@ -189,13 +189,13 @@
                '("b" "Anki basic"
                  entry
                  (file+headline org-my-anki-file "notitia")
-                 "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: notitia\n:END:\n** Front\n%?\n** Back\n%x\n"))
+                 "* %<%Y.%m.%d-%H:%M:%S>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic\n:ANKI_DECK: notitia\n:END:\n** Front\n%?\n** Back\n%x\n"))
 
   (add-to-list 'org-capture-templates
                '("c" "Anki cloze"
                  entry
                  (file+headline org-my-anki-file "notitia")
-                 "* %<%H:%M>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: notitia\n:END:\n** Text\n%x\n** Extra\n"))
+                 "* %<%Y.%m.%d-%H:%M:%S>   %^g\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Cloze\n:ANKI_DECK: notitia\n:END:\n** Text\n%x\n** Extra\n"))
   (setq anki-editor-create-decks t ;; Allow anki-editor to create a new deck if it doesn't exist
         anki-editor-org-tags-as-anki-tags nil)
 
