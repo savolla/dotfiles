@@ -5,8 +5,10 @@
       user-mail-address "savolla@protonmail.com")
 
 ;; Font Configuration
-(setq doom-font (font-spec :family "Fira Code" :size 20)
-      doom-variable-pitch-font (font-spec :family "Fira Code" :size 20))
+;; (setq doom-font (font-spec :family "Fira Code" :size 20)
+;;       doom-variable-pitch-font (font-spec :family "Fira Code" :size 20))
+(setq doom-font (font-spec :family "SFMono Nerd Font Mono" :size 22 :style Medium)
+      doom-variable-pitch-font (font-spec :family "SFMono Nerd Font Mono" :size 22 :style Medium))
 
 ;; Transparency Configuration
 (add-to-list 'default-frame-alist '(alpha . (90 . 92)))
