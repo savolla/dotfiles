@@ -7,15 +7,15 @@
 ;; Font Configuration
 ;; (setq doom-font (font-spec :family "Fira Code" :size 20)
 ;;       doom-variable-pitch-font (font-spec :family "Fira Code" :size 20))
-(setq doom-font (font-spec :family "SFMono Nerd Font Mono" :size 22 :style Medium)
-      doom-variable-pitch-font (font-spec :family "SFMono Nerd Font Mono" :size 22 :style Medium))
+(setq doom-font (font-spec :family "SFMono Nerd Font Mono" :size 22 :style "Medium")
+      doom-variable-pitch-font (font-spec :family "SFMono Nerd Font Mono" :size 22 :style "Medium"))
 
 ;; Transparency Configuration
 (add-to-list 'default-frame-alist '(alpha . (90 . 92)))
 
 ;; Theme Configuration
 ;; (setq doom-theme 'doom-one) ;; option 1
-;; (setq doom-theme 'doom-gruvbox) ;; option 2
+(setq doom-theme 'doom-gruvbox) ;; option 2
 ;; (setq doom-theme 'doom-outrun-electric) ;; option 3
 ;; (setq doom-theme 'doom-dracula) ;; option 4
 ;; (setq doom-theme 'doom-solarized-dark) ;; option 5
@@ -23,7 +23,7 @@
 ;; (setq doom-theme 'doom-acario-dark) ;; option 7
 ;; (setq doom-theme 'doom-tomorrow-night) ;; option 8
 ;; (setq doom-theme 'doom-oceanic-next) ;; option 9
-(setq doom-theme 'doom-old-hope) ;; option 10
+;; (setq doom-theme 'doom-old-hope) ;; option 10
 
 ;; vterm Configuration
 (after! vterm
