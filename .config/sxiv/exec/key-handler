@@ -9,7 +9,7 @@ do
         "C-c")
                 echo -n "$file" | xclip -selection clipboard ;;
         "C-w")
-                feh --bg-scale $file && cp $file ~/.config/background-image ;;
+                feh --bg-fill $file && cp $file ~/.config/background-image ;;
         "C-p")
                 wal -n -q -i "$file" && cp $file ~/.config/color-scheme-image ;;
         esac
