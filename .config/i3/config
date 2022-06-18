@@ -2,7 +2,7 @@
 set $mod Mod4
 set $mod2 Mod1
 set $terminal kitty
-set $browser brave
+set $browser firefox
 set $editor emacs
 set $FILE_MANAGER thunar
 
@@ -181,13 +181,13 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
 # Open applications on specific workspaces
-assign [instance="quassel"] $ws1
+# assign [instance="quassel"] $ws1
 assign [instance="emacs"] $ws2
-assign [instance="okular"] $ws2
-assign [class="Xournalpp"] $ws2
-assign [class="Brave"] $ws3
-assign [class="Feedreader"] $ws7
-assign [class="Foliate"] $ws8
+# assign [instance="okular"] $ws2
+# assign [class="Xournalpp"] $ws2
+assign [class="firefox"] $ws3
+# assign [class="Feedreader"] $ws7
+# assign [class="Foliate"] $ws8
 #assign [class=""] $ws3
 #assign [class=""] $ws4
 #assign [class=""] $ws5
@@ -202,7 +202,7 @@ assign [class="Foliate"] $ws8
 # instance of
 for_window [instance="mupdf"] floating enable, resize set 800 1000, move position center
 for_window [instance="zathura"] floating enable, resize set 800 1000, move position center
-for_window [instance="scrcpy"] move scratchpad, scratchpad show, sticky enable, resize set 495 1058, move position 1425 22
+# for_window [instance="scrcpy"] move scratchpad, scratchpad show, sticky enable, resize set 495 1058, move position 1425 22
 
 # terminal applications go here:
 # for_window [title="QEMU"] move container to workspace $ws9
@@ -388,12 +388,12 @@ bindsym $mod+h workspace prev
 bindsym $mod+l workspace next
 
 # use these while using alsa
-# bindsym $mod+p exec --no-startup-id amixer -q sset 'Master' 5%+ 	# increase sound volume
-# bindsym $mod+o exec --no-startup-id amixer -q sset 'Master' 5%- 	# decrease sound volume
+bindsym $mod+p exec --no-startup-id amixer -q sset 'Master' 5%+ 	# increase sound volume
+bindsym $mod+o exec --no-startup-id amixer -q sset 'Master' 5%- 	# decrease sound volume
 
 # use these while using pulseaudio
-bindsym $mod+p exec --no-startup-id pactl set-sink-volume 0 +5% 	# decrease sound volume
-bindsym $mod+o exec --no-startup-id pactl set-sink-volume 0 -5% 	# increase sound volume
+# bindsym $mod+p exec --no-startup-id pactl set-sink-volume 0 +5% 	# decrease sound volume
+# bindsym $mod+o exec --no-startup-id pactl set-sink-volume 0 -5% 	# increase sound volume
 # bindsym $mod+p exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) +5% # decrease sound volume
 # bindsym $mod+o exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) -5% # increase sound volume
 # bindsym $mod+Ctrl+i exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) toggle 	# mute sound

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-WEB_BROWSER="$(whereis brave | cut -d ' ' -f 2)"
+WEB_BROWSER="$(whereis firefox | cut -d ' ' -f 2)"
 SITES="archwiki\ntranslate\nprotonmail\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious\nnews\n"
 
 CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
@@ -16,7 +16,7 @@ case $CHOICE in
     protonmail)
         $WEB_BROWSER "https://mail.protonmail.com/login" ;;
      youtube)
-        $WEB_BROWSER "https://redirect.invidious.io/" ;;
+        $WEB_BROWSER "https://yewtu.be" ;;
     invidious)
         $WEB_BROWSER "https://invidious.xyz/login?referer=%2F" ;;
     startpage)
