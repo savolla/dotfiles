@@ -30,7 +30,9 @@ git push -u origin main
 echo "LOG: finished karna_toolkit"
 
 ## braindump
+echo "LOG: Entering braindump"
 cd "$BRAINDUMP" || exit
 git add --all
 git commit -m "$COMMIT_MESSAGE"
 git push -u origin main
+echo "LOG: finished braindump"

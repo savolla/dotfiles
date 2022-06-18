@@ -7,5 +7,6 @@ DELAY=$(echo "3600*$PERIOD" | bc)
 while true; do
         ./update-repos.sh   # update all github repos
         # ./update-blog.sh    # update my blog
+	echo -e "LOG: now waiting for some time.."
         sleep "$DELAY"
 done
