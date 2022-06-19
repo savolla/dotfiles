@@ -210,7 +210,7 @@ for_window [title="sxiv"] floating enable border pixel 0
 # for_window [title="xawtv"] floating enable, sticky enable, resize set 100 100, move position 0 0
 for_window [class="cmus"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
 for_window [class="htop"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
-for_window [class="kitty"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
+# for_window [class="kitty"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
 
 # class of
 for_window [class="GParted"] floating enable border normal
