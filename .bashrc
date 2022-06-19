@@ -56,9 +56,11 @@ alias win10-restore="vboxmanage snapshot win10 restore"
 
 
 # adding color
-alias ls='ls -hN --color=auto --group-directories-first'
-alias l='ls -lhN --color=auto --group-directories-first'
-alias lh='ls -lhNa --color=auto --group-directories-first'
+alias ls='ls -hNl --color=auto --group-directories-first'
+alias ll='ls -lhN --color=auto --group-directories-first'
+alias la='ls -lhNa --color=auto --group-directories-first'
+alias sl='ls -hNl --color=auto --group-directories-first'
+
 alias grep="grep --color=always" # Color grep - highlight desired sequence.
 alias ccat="highlight --out-format=xterm256" #Color cat - print file with syntax highlighting.
 
@@ -74,11 +76,9 @@ alias tpbs="clear && figlet -c TPB Search && ~/.config/Scripts/tpb.sh" # Pirate 
 alias gp7="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Arobas\ Music/Guitar\ Pro\ 7/GuitarPro7.exe"
 
 # typos!
-alias sl="ls -l"
-alias ls="ls -l"
-alias ll="ls -la"
 alias claer="clear"
 alias clar="clear"
+alias vim="nvim"
 
 # Bash Completion
 if [ -f /etc/bash_completion ]; then
