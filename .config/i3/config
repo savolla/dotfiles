@@ -388,12 +388,12 @@ bindsym $mod+h workspace prev
 bindsym $mod+l workspace next
 
 # use these while using alsa
-bindsym $mod+p exec --no-startup-id amixer -q sset 'Master' 5%+ 	# increase sound volume
-bindsym $mod+o exec --no-startup-id amixer -q sset 'Master' 5%- 	# decrease sound volume
+bindsym $mod+p exec --no-startup-id amixer -q sset 'Master' 5%+ # increase sound volume
+bindsym $mod+o exec --no-startup-id amixer -q sset 'Master' 5%- # decrease sound volume
 
 # use these while using pulseaudio
-# bindsym $mod+p exec --no-startup-id pactl set-sink-volume 0 +5% 	# decrease sound volume
-# bindsym $mod+o exec --no-startup-id pactl set-sink-volume 0 -5% 	# increase sound volume
+# bindsym $mod+p exec --no-startup-id pactl set-sink-volume 0 +5% # decrease sound volume
+# bindsym $mod+o exec --no-startup-id pactl set-sink-volume 0 -5% # increase sound volume
 # bindsym $mod+p exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) +5% # decrease sound volume
 # bindsym $mod+o exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) -5% # increase sound volume
 # bindsym $mod+Ctrl+i exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | grep -e '* index:' | cut -d ' ' -f 5) toggle 	# mute sound
@@ -403,7 +403,7 @@ bindsym $mod+Ctrl+k exec --no-startup-id cmus-remote -n # next song
 bindsym $mod+Ctrl+h exec --no-startup-id cmus-remote -k -5 # -5 seconds back
 bindsym $mod+Ctrl+j exec --no-startup-id cmus-remote -r # preivous song
 bindsym $mod+Ctrl+space exec --no-startup-id cmus-remote -u # pause
-bindsym $mod+Shift+i exec --no-startup-id xcalib -invert -alter
+# bindsym $mod+Shift+i exec --no-startup-id xcalib -invert -alter
 # Alsa key bindings
 # bindsym $mod+F11 exec --no-startup-id amixer -q set Master 2dB- unmute # volume UP
 # bindsym $mod+F12 exec --no-startup-id amixer -q set Master 2dB+ unmute # volume DOWN
@@ -411,9 +411,9 @@ bindsym $mod+Shift+i exec --no-startup-id xcalib -invert -alter
 bindsym $mod2+u exec --no-startup-id screenkey -s small --mods-mod win -f Hermit # quickly showing what you type
 bindsym $mod2+Shift+u exec --no-startup-id pkill -f screenkey
 bindsym $mod2+Shift+s exec --no-startup-id pkill -f ffmpeg
-bindsym $mod2+d exec --no-startup-id optirun ~/gms/DF/PyLNP
+# bindsym $mod2+d exec --no-startup-id optirun ~/gms/DF/PyLNP
 bindsym $mod2+1 exec --no-startup-id sh ~/.scripts/vocab
-bindsym $mod+b exec --no-startup-id sh ~/.scripts/book-opener.sh
+# bindsym $mod+b exec --no-startup-id sh ~/.scripts/book-opener.sh
 #bindsym $mod+b exec --no-startup-id ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 60 -s 1920x1080 -i :0.0 -acodec pcm_s16le -vcodec libx264 -preset ultrafast -crf 0 -threads 0 /home/$USER/vid/video-$(date --iso-8601)-$(date | awk '{ print $5 }').mkv
 bindsym $mod+n exec --no-startup-id kill $(ps aux | grep white-noise | grep -v grep | awk '{ print $2 }') 2> /dev/null || mpv --volume=60 ~/aud/mus/rlx/white-noise.mp3 &
 # bindsym $mod+Shift+m exec --no-startup-id sh ~/.scripts/mm
@@ -439,7 +439,6 @@ bindsym $mod+F12 exec --no-startup-id ~/.scripts/open-phone         # open phone
 exec --no-startup-id picom -b
 #exec --no-startup-id wal -n -i /home/savolla/.config/color-scheme-image # set color scheme with sxiv
 # exec --no-startup-id setxkbmap tr # switch to turkish keyboard layout
-exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and remap keys
 # exec --no-startup-id xset r rate 200 100 # type speed
 # exec --no-startup-id xset r rate 150 100 # type speed
 
@@ -455,7 +454,8 @@ exec --no-startup-id sudo chmod 777 /sys/class/backlight/intel_backlight/brightn
 # exec --no-startup-id pulseaudio-equalizer enable # i don't need this anymore (audio technica bro)
 exec --no-startup-id sct 6400 # warm and sweet screen
 # exec --no-startup-id xrdb ~/.Xresources # initialize my own .Xresources
-exec --no-startup-id pactl set-sink-volume 0 35% # set volume level
+# exec --no-startup-id pactl set-sink-volume 0 35% # set volume level (pulseaudio)
+exec --no-startup-id amixer -q sset 'Master' 35% # set volume level (alsa)
 exec --no-startup-id emacs --daemon # start emacsclient
 # exec --no-startup-id dunst -config /usr/share/dunst/dunstrc
 # exec --no-startup-id gmtool admin start scratchphone
