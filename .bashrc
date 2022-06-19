@@ -74,27 +74,16 @@ alias tpbs="clear && figlet -c TPB Search && ~/.config/Scripts/tpb.sh" # Pirate 
 alias gp7="wine ~/.wine/drive_c/Program\ Files\ \(x86\)/Arobas\ Music/Guitar\ Pro\ 7/GuitarPro7.exe"
 
 # typos!
-alias sl="ls"
-alias l="ls"
+alias sl="ls -l"
+alias ls="ls -l"
+alias ll="ls -la"
+alias claer="clear"
+alias clar="clear"
 
 # Bash Completion
 if [ -f /etc/bash_completion ]; then
 	./etc/bash_completion
 fi
-
-# virtual machine
-alias win7="sudo qemu-system-x86_64 \
--enable-kvm \
--cpu host \
--smp sockets=1,cores=3,threads=2 \
--m 10G \
--rtc base=localtime,clock=host \
--drive file=~/wms/win7.img,format=raw \
--net nic,model=e1000 \
--net user \
--display sdl \
--usbdevice tablet\
-"
 
 # CPU speed adjust
 alias fast="sudo cpupower frequency-set --max 3.5GHz"
