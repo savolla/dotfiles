@@ -9,6 +9,8 @@ CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 case $CHOICE in
     piratebay)
         $WEB_BROWSER "https://thepiratebay.org/index.html" ;;
+    discord)
+        $WEB_BROWSER "https://discord.com/login" ;;
     uzem)
         $WEB_BROWSER "https://uzemders.duzce.edu.tr/" ;;
     translate)
@@ -17,8 +19,6 @@ case $CHOICE in
         $WEB_BROWSER "https://mail.protonmail.com/login" ;;
      youtube)
         $WEB_BROWSER "https://yewtu.be" ;;
-    invidious)
-        $WEB_BROWSER "https://invidious.xyz/login?referer=%2F" ;;
     startpage)
         $WEB_BROWSER "https://startpage.com/" ;;
     searx)
