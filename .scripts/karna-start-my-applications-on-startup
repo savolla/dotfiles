@@ -1,13 +1,12 @@
 #!/bin/bash
 #
-# export QT_SCALE_FACTOR=1
-# quassel &
+export QT_SCALE_FACTOR=1
+quassel &
 emacs &
-firefox &
-anki &
-# feedreader &
-# telegram-desktop &
-# signal-desktop &
+brave &
+feedreader &
+telegram-desktop &
+signal-desktop &
 # foliate &
 # QT_SCALE_FACTOR=0.5
 # okular &
