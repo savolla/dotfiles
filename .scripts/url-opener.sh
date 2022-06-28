@@ -2,7 +2,7 @@
 set -euo pipefail
 
 WEB_BROWSER="$(whereis firefox | cut -d ' ' -f 2)"
-SITES="archwiki\ntranslate\nprotonmail\ndiscord\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious\nnews\n"
+SITES="archwiki\nrss\nwhoogle\ngoogle\nheimdall\ntranslate\nprotonmail\ndiscord\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious\nnews\n"
 
 CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
@@ -10,9 +10,11 @@ case $CHOICE in
     piratebay)
         $WEB_BROWSER "https://thepiratebay.org/index.html" ;;
     rss)
-        $WEB_BROWSER "192.168.122.215:10012/i/" ;;
+        $WEB_BROWSER "http://192.168.122.215:10012/i/" ;;
     heimdall)
-        $WEB_BROWSER "192.168.122.215" ;;
+        $WEB_BROWSER "http://192.168.122.215" ;;
+    google)
+        $WEB_BROWSER "http://192.168.122.215:5001/" ;;
     discord)
         $WEB_BROWSER "https://discord.com/login" ;;
     uzem)
