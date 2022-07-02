@@ -9,13 +9,17 @@ CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 case $CHOICE in
     # savolla's portainer apps
     rss)
-        $WEB_BROWSER "http://192.168.122.215:10012/i/" ;;
+        $WEB_BROWSER "http://192.168.1.40:10000/i/" ;;
     heimdall)
-        $WEB_BROWSER "http://192.168.122.215" ;;
+        $WEB_BROWSER "http://192.168.1.40" ;;
     google)
-        $WEB_BROWSER "http://192.168.122.215:5001/" ;;
+        $WEB_BROWSER "http://192.168.1.40:5000/" ;;
     portainer)
-        $WEB_BROWSER "https://192.168.122.215:9443/#!/home" ;;
+        $WEB_BROWSER "https://192.168.1.40:9000/#!/home" ;;
+    headphones)
+        $WEB_BROWSER "https://192.168.1.40:10001" ;;
+    speedtest)
+        $WEB_BROWSER "https://192.168.1.40:10002" ;;
 
 
     piratebay)
