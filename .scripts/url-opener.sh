@@ -2,7 +2,7 @@
 set -euo pipefail
 
 WEB_BROWSER="$(whereis firefox | cut -d ' ' -f 2)"
-SITES="archwiki\nrss\nwhoogle\nportainer\ngoogle\nheimdall\ntranslate\nprotonmail\ndiscord\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious\nnews\nwrss\nwportainer\nwheimdall\nwgoogle\nwnextcloud\n"
+SITES="archwiki\nrss\nwhoogle\nportainer\ngoogle\nheimdall\ntranslate\nprotonmail\ndiscord\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious\nnews\nwrss\nwportainer\nwheimdall\nwgoogle\nwnextcloud\nwirc\n"
 
 CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
@@ -28,6 +28,8 @@ case $CHOICE in
         $WEB_BROWSER "https://192.168.68.194:9443/#!/home" ;;
     wnextcloud)
         $WEB_BROWSER "https://192.168.68.194:10101/" ;;
+    wirc)
+        $WEB_BROWSER "http://192.168.68.194:64081/" ;;
 
 
     piratebay)
