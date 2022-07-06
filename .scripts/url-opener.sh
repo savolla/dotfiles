@@ -25,7 +25,7 @@ case $CHOICE in
     wgoogle)
         $WEB_BROWSER "http://192.168.68.194:5000/" ;;
     wportainer)
-        $WEB_BROWSER "https://192.168.68.194:9443/#!/home" ;;
+        $WEB_BROWSER "http://192.168.68.194:9443/#!/home" ;;
     wnextcloud)
         $WEB_BROWSER "https://192.168.68.194:10101/" ;;
     wirc)
