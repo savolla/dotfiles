@@ -9,13 +9,13 @@ CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 case $CHOICE in
     # savolla's portainer apps
     rss)
-        $WEB_BROWSER "http://192.168.1.40:10000/i/" ;;
+        $WEB_BROWSER "http://192.168.1.194:10000/i/" ;;
     heimdall)
-        $WEB_BROWSER "http://192.168.1.40" ;;
+        $WEB_BROWSER "http://192.168.1.194" ;;
     google)
-        $WEB_BROWSER "http://192.168.1.40:5000/" ;;
+        $WEB_BROWSER "http://192.168.1.194:5000/" ;;
     portainer)
-        $WEB_BROWSER "https://192.168.1.40:9000/#!/home" ;;
+        $WEB_BROWSER "https://192.168.1.194:9000/#!/home" ;;
 
     # work shortcuts
     wrss)
