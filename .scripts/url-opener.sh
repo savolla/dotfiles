@@ -39,7 +39,7 @@ case $CHOICE in
     uzem)
         $WEB_BROWSER "https://uzemders.duzce.edu.tr/" ;;
     translate)
-        $WEB_BROWSER "https://translate.google.com/" ;;
+        $WEB_BROWSER "https://libretranslate.com/" ;;
     protonmail)
         $WEB_BROWSER "https://mail.protonmail.com/login" ;;
      youtube)
