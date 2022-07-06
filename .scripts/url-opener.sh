@@ -2,7 +2,7 @@
 set -euo pipefail
 
 WEB_BROWSER="$(whereis firefox | cut -d ' ' -f 2)"
-SITES="archwiki\nrss\nwhoogle\nportainer\ngoogle\nheimdall\ntranslate\nprotonmail\ndiscord\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious\nnews\n"
+SITES="archwiki\nrss\nwhoogle\nportainer\ngoogle\nheimdall\ntranslate\nprotonmail\ndiscord\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious\nnews\nwrss\nwportainer\nwheimdall\nwgoogle\nwnextcloud\n"
 
 CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
@@ -16,10 +16,18 @@ case $CHOICE in
         $WEB_BROWSER "http://192.168.1.40:5000/" ;;
     portainer)
         $WEB_BROWSER "https://192.168.1.40:9000/#!/home" ;;
-    headphones)
-        $WEB_BROWSER "https://192.168.1.40:10001" ;;
-    speedtest)
-        $WEB_BROWSER "https://192.168.1.40:10002" ;;
+
+    # work shortcuts
+    wrss)
+        $WEB_BROWSER "http://192.168.68.194:10000/i/" ;;
+    wheimdall)
+        $WEB_BROWSER "http://192.168.68.194:81" ;;
+    wgoogle)
+        $WEB_BROWSER "http://192.168.68.194:5000/" ;;
+    wportainer)
+        $WEB_BROWSER "https://192.168.68.194:9443/#!/home" ;;
+    wnextcloud)
+        $WEB_BROWSER "https://192.168.68.194:10101/" ;;
 
 
     piratebay)
