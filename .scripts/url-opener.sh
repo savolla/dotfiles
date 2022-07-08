@@ -21,7 +21,7 @@ case $CHOICE in
     cloud)
         $WEB_BROWSER "https://192.168.1.194:10101" ;;
     todo)
-        $WEB_BROWSER "http://192.168.1.194:10016" ;;
+        $WEB_BROWSER "http://192.168.1.194:10016/lists/1/kanban" ;;
     music)
         $WEB_BROWSER "http://192.168.1.194:10016" ;;
     headphones)
