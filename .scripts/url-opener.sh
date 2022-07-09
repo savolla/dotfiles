@@ -9,27 +9,29 @@ CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 case $CHOICE in
     # savolla's portainer apps
     rss)
-        $WEB_BROWSER "http://192.168.1.194:10000/i/" ;;
+        $WEB_BROWSER "http://192.168.1.194:10001/i/" ;;
     dashboard)
         $WEB_BROWSER "http://192.168.1.194" ;;
     search)
-        $WEB_BROWSER "http://192.168.1.194:5000/" ;;
+        $WEB_BROWSER "http://192.168.1.194:10000/" ;;
     portainer)
-        $WEB_BROWSER "https://192.168.1.194:9000/#!/home" ;;
+        $WEB_BROWSER "https://192.168.1.194:9443/#!/home" ;;
     irc)
         $WEB_BROWSER "http://192.168.1.194:64080" ;;
     cloud)
         $WEB_BROWSER "https://192.168.1.194:10101" ;;
     todo)
-        $WEB_BROWSER "http://192.168.1.194:10016/lists/1/kanban" ;;
-    music)
-        $WEB_BROWSER "http://192.168.1.194:10016" ;;
-    headphones)
-        $WEB_BROWSER "http://192.168.1.194:10016" ;;
-    github)
-        $WEB_BROWSER "http://192.168.1.194:3000" ;;
+        $WEB_BROWSER "http://192.168.1.194:10004" ;;
+    # music)
+    #     $WEB_BROWSER "http://192.168.1.194:10016" ;;
+    # headphones)
+    #     $WEB_BROWSER "http://192.168.1.194:10016" ;;
+    # gitea)
+    #     $WEB_BROWSER "http://192.168.1.194:3000" ;;
     bookstack)
         $WEB_BROWSER "http://192.168.1.194:6876" ;;
+    youtube)
+        $WEB_BROWSER "http://192.168.1.194:3000" ;;
 
     # work shortcuts
     wrss)
@@ -56,8 +58,8 @@ case $CHOICE in
         $WEB_BROWSER "https://libretranslate.com/" ;;
     protonmail)
         $WEB_BROWSER "https://mail.protonmail.com/login" ;;
-     youtube)
-        $WEB_BROWSER "https://yewtu.be" ;;
+     # youtube)
+     #    $WEB_BROWSER "https://yewtu.be" ;;
     startpage)
         $WEB_BROWSER "https://startpage.com/" ;;
     searx)
