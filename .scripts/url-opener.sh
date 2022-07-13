@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
+export BROWSER="firefox"
 
-WEB_BROWSER="$(whereis firefox | cut -d ' ' -f 2)"
-SITES="bookstack\ngithub\nheadphones\nirc\ncloud\nmusic\ntodo\narchwiki\nrss\ngoogle\nportainer\nwgoogle\ndashboard\ntranslate\nprotonmail\ndiscord\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious\nnews\nwrss\nwportainer\nwheimdall\nwsearch\nwcloud\nwirc\n" CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
+WEB_BROWSER="$(whereis "$BROWSER" | cut -d ' ' -f 2)"
+SITES="dashboard\nrss\ngoogle\nyoutube\nportainer\nirc\ntodo\nnavidrome\nwdashboard\nwrss\nwgoogle\nwyoutube\nwportainer\nwirc\nwtodo\nwnavidrome\ngithub\narchwiki\ntranslate\nprotonmail\ndiscord\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nstarpage\npiratebay\nuzem\nnews\n"
+CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
 case $CHOICE in
     # portainer apps (HOME)
@@ -52,12 +54,8 @@ case $CHOICE in
         $WEB_BROWSER "https://libretranslate.com/" ;;
     protonmail)
         $WEB_BROWSER "https://mail.protonmail.com/login" ;;
-     # youtube)
-     #    $WEB_BROWSER "https://yewtu.be" ;;
     startpage)
         $WEB_BROWSER "https://startpage.com/" ;;
-    searx)
-        $WEB_BROWSER "https://searx.ir/" ;;
     gitprofile)
         $WEB_BROWSER "https://github.com/savolla" ;;
     gitsearch)
