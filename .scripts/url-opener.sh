@@ -2,52 +2,46 @@
 set -euo pipefail
 
 WEB_BROWSER="$(whereis firefox | cut -d ' ' -f 2)"
-SITES="bookstack\ngithub\nheadphones\nirc\ncloud\nmusic\ntodo\narchwiki\nrss\ngoogle\nportainer\nwgoogle\ndashboard\ntranslate\nprotonmail\ndiscord\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious\nnews\nwrss\nwportainer\nwheimdall\nwsearch\nwcloud\nwirc\n"
-
-CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
+SITES="bookstack\ngithub\nheadphones\nirc\ncloud\nmusic\ntodo\narchwiki\nrss\ngoogle\nportainer\nwgoogle\ndashboard\ntranslate\nprotonmail\ndiscord\nyoutube\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nsearx\nstarpage\npiratebay\nuzem\ninvidious\nnews\nwrss\nwportainer\nwheimdall\nwsearch\nwcloud\nwirc\n" CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
 case $CHOICE in
-    # savolla's portainer apps
-    rss)
-        $WEB_BROWSER "http://192.168.1.194:10001/i/" ;;
+    # portainer apps (HOME)
     dashboard)
-        $WEB_BROWSER "http://192.168.1.194" ;;
+        $WEB_BROWSER "http://192.168.1.194" ;; # heimdall
+    rss)
+        $WEB_BROWSER "http://192.168.1.194:10001/i/" ;; # freshrss
     google)
-        $WEB_BROWSER "http://192.168.1.194:10000/" ;;
-    portainer)
-        $WEB_BROWSER "https://192.168.1.194:9443/#!/home" ;;
-    irc)
-        $WEB_BROWSER "http://192.168.1.194:64080" ;;
-    cloud)
-        $WEB_BROWSER "https://192.168.1.194:10101" ;;
-    todo)
-        $WEB_BROWSER "http://192.168.1.194:10004" ;;
-    # music)
-    #     $WEB_BROWSER "http://192.168.1.194:10016" ;;
-    # headphones)
-    #     $WEB_BROWSER "http://192.168.1.194:10016" ;;
-    # gitea)
-    #     $WEB_BROWSER "http://192.168.1.194:3000" ;;
-    bookstack)
-        $WEB_BROWSER "http://192.168.1.194:6876" ;;
+        $WEB_BROWSER "http://192.168.1.194:10000/" ;; # whoogle-search
     youtube)
-        $WEB_BROWSER "http://192.168.1.194:3000" ;;
+        $WEB_BROWSER "http://192.168.68.194:3000/" ;; # invidious
+    portainer)
+        $WEB_BROWSER "https://192.168.1.194:9443/#!/home" ;; # portainer
+    irc)
+        $WEB_BROWSER "http://192.168.1.194:64080" ;; # quassel-web
+    todo)
+        $WEB_BROWSER "http://192.168.1.194:10004" ;; # vikunja
+    navidrome)
+        $WEB_BROWSER "http://192.168.1.194:4533" ;; # navidrome
 
-    # work shortcuts
-    wrss)
-        $WEB_BROWSER "http://192.168.68.194:10000/i/" ;;
+    # portainer apps (WORK)
     wdashboard)
-        $WEB_BROWSER "http://192.168.68.194:81" ;;
-    wsearch)
-        $WEB_BROWSER "http://192.168.68.194:5000/" ;;
+        $WEB_BROWSER "http://192.168.68.194" ;; # heimdall
+    wrss)
+        $WEB_BROWSER "http://192.168.68.194:10001/i/" ;; # freshrss
+    wgoogle)
+        $WEB_BROWSER "http://192.168.68.194:10000/" ;; # whoogle-search
+    wyoutube)
+        $WEB_BROWSER "http://192.168.68.194:3000/" ;; # invidious
     wportainer)
-        $WEB_BROWSER "http://192.168.68.194:9443/#!/home" ;;
-    wcloud)
-        $WEB_BROWSER "https://192.168.68.194:10101/" ;;
+        $WEB_BROWSER "https://192.168.68.194:9443/#!/home" ;; # portainer
     wirc)
-        $WEB_BROWSER "http://192.168.68.194:64081/" ;;
+        $WEB_BROWSER "http://192.168.68.194:64081/" ;; # quassel-web
+    wtodo)
+        $WEB_BROWSER "http://192.168.68.194:10004" ;; # vikunja
+    wnavidrome)
+        $WEB_BROWSER "http://192.168.68.194:4533" ;; # navidrome
 
-
+    # general web bookmarks
     piratebay)
         $WEB_BROWSER "https://thepiratebay.org/index.html" ;;
     discord)
