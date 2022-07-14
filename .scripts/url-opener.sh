@@ -15,7 +15,7 @@ case $CHOICE in
     google)
         $WEB_BROWSER "http://192.168.1.194:10000/" ;; # whoogle-search
     youtube)
-        $WEB_BROWSER "http://192.168.68.194:3000/" ;; # invidious
+        $WEB_BROWSER "http://192.168.1.194:3000/" ;; # invidious
     portainer)
         $WEB_BROWSER "https://192.168.1.194:9443/#!/home" ;; # portainer
     irc)
