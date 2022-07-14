@@ -3,11 +3,13 @@ set -euo pipefail
 export BROWSER="firefox"
 
 WEB_BROWSER="$(whereis "$BROWSER" | cut -d ' ' -f 2)"
-SITES="brain\nwbrain\ndashboard\nrss\ngoogle\nyoutube\nportainer\nirc\ntodo\nnavidrome\nwdashboard\nwrss\nwgoogle\nwyoutube\nwportainer\nwirc\nwtodo\nwnavidrome\ngithub\narchwiki\ntranslate\nprotonmail\ndiscord\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nstarpage\npiratebay\nuzem\nnews\n"
+SITES="wnextcloud\nnextcloud\nbrain\nwbrain\ndashboard\nrss\ngoogle\nyoutube\nportainer\nirc\ntodo\nnavidrome\nwdashboard\nwrss\nwgoogle\nwyoutube\nwportainer\nwirc\nwtodo\nwnavidrome\ngithub\narchwiki\ntranslate\nprotonmail\ndiscord\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nstarpage\npiratebay\nuzem\nnews\n"
 CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
 case $CHOICE in
     # portainer apps (HOME)
+    nextcloud)
+        $WEB_BROWSER "http://192.168.1.194:10091" ;; # nextcloud
     dashboard)
         $WEB_BROWSER "http://192.168.1.194" ;; # heimdall
     rss)
@@ -28,6 +30,8 @@ case $CHOICE in
         $WEB_BROWSER "http://192.168.1.194:10078" ;; # tiddlywiki
 
     # portainer apps (WORK)
+    nextcloud)
+        $WEB_BROWSER "http://192.168.68.194:10091" ;; # nextcloud
     wdashboard)
         $WEB_BROWSER "http://192.168.68.194" ;; # heimdall
     wrss)
