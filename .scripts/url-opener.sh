@@ -43,7 +43,7 @@ case $CHOICE in
     wportainer)
         $WEB_BROWSER "https://192.168.68.194:9443/#!/home" ;; # portainer
     wirc)
-        $WEB_BROWSER "http://192.168.68.194:64081/" ;; # quassel-web
+        $WEB_BROWSER "http://192.168.68.194:64080/" ;; # quassel-web
     wtodo)
         $WEB_BROWSER "http://192.168.68.194:10100" ;; # kanboard
     wspotify)
