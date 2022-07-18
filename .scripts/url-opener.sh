@@ -8,8 +8,8 @@ CHOICE=$(echo -e $SITES | rofi -dmenu -p "goto")
 
 case $CHOICE in
     # portainer apps (HOME)
-    nextcloud)
-        $WEB_BROWSER "http://192.168.1.194:10091" ;; # nextcloud
+    # nextcloud)
+    #     $WEB_BROWSER "http://192.168.1.194:10091" ;; # nextcloud
     dashboard)
         $WEB_BROWSER "http://192.168.1.194" ;; # heimdall
     rss)
@@ -23,15 +23,15 @@ case $CHOICE in
     irc)
         $WEB_BROWSER "http://192.168.1.194:64080" ;; # quassel-web
     todo)
-        $WEB_BROWSER "http://192.168.1.194:10004" ;; # vikunja
-    navidrome)
+        $WEB_BROWSER "http://192.168.1.194:10100" ;; # kanboard
+    spotify)
         $WEB_BROWSER "http://192.168.1.194:4533" ;; # navidrome
-    brain)
+    notes)
         $WEB_BROWSER "http://192.168.1.194:10078" ;; # tiddlywiki
 
     # portainer apps (WORK)
-    nextcloud)
-        $WEB_BROWSER "http://192.168.68.194:10091" ;; # nextcloud
+    # wnextcloud)
+    #     $WEB_BROWSER "http://192.168.68.194:10091" ;; # nextcloud
     wdashboard)
         $WEB_BROWSER "http://192.168.68.194" ;; # heimdall
     wrss)
@@ -45,10 +45,10 @@ case $CHOICE in
     wirc)
         $WEB_BROWSER "http://192.168.68.194:64081/" ;; # quassel-web
     wtodo)
-        $WEB_BROWSER "http://192.168.68.194:10004" ;; # vikunja
-    wnavidrome)
+        $WEB_BROWSER "http://192.168.68.194:10100" ;; # kanboard
+    wspotify)
         $WEB_BROWSER "http://192.168.68.194:4533" ;; # navidrome
-    wbrain)
+    wnotes)
         $WEB_BROWSER "http://192.168.68.194:10078" ;; # tiddlywiki
 
     # general web bookmarks
@@ -59,7 +59,7 @@ case $CHOICE in
     uzem)
         $WEB_BROWSER "https://uzemders.duzce.edu.tr/" ;;
     translate)
-        $WEB_BROWSER "https://libretranslate.com/" ;;
+        $WEB_BROWSER "https://lingva.ml/" ;;
     protonmail)
         $WEB_BROWSER "https://mail.protonmail.com/login" ;;
     startpage)
