@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-export BROWSER="firefox"
+export BROWSER="librewolf"
 
 WEB_BROWSER="$(whereis "$BROWSER" | cut -d ' ' -f 2)"
 SITES="wnextcloud\nnextcloud\nbrain\nwbrain\ndashboard\nrss\ngoogle\nyoutube\nportainer\nirc\ntodo\nnavidrome\nwdashboard\nwrss\nwgoogle\nwyoutube\nwportainer\nwirc\nwtodo\nwnavidrome\ngithub\narchwiki\ntranslate\nprotonmail\ndiscord\ngitsearch\ngitprofile\nblog\nwikipedia\nhackernews\nlibgen\nzlib\nstarpage\npiratebay\nuzem\nnews\n"
