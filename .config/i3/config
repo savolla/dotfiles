@@ -2,7 +2,7 @@
 set $mod Mod4
 set $mod2 Mod1
 set $terminal kitty
-set $browser firefox
+set $browser librewolf
 set $editor emacs
 set $FILE_MANAGER thunar
 
@@ -185,7 +185,7 @@ bindsym $mod+9 workspace $ws9
 assign [instance="emacs"] $ws2
 # assign [instance="okular"] $ws2
 # assign [class="Xournalpp"] $ws2
-assign [class="firefox"] $ws3
+assign [class="librewolf"] $ws3
 # assign [class="Feedreader"] $ws7
 # assign [class="Foliate"] $ws8
 #assign [class=""] $ws3
@@ -208,7 +208,7 @@ for_window [instance="zathura"] floating enable, resize set 800 1000, move posit
 # for_window [title="QEMU"] move container to workspace $ws9
 for_window [title="sxiv"] floating enable border pixel 0
 # for_window [title="xawtv"] floating enable, sticky enable, resize set 100 100, move position 0 0
-for_window [class="cmus"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
+# for_window [class="cmus"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
 for_window [class="htop"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
 # for_window [class="kitty"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
 
@@ -216,7 +216,7 @@ for_window [class="htop"] floating enable, move scratchpad, scratchpad show, res
 for_window [class="GParted"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="mpv"] floating enable, resize set 1280 720, move position center, sticky enable, border pixel 0
-for_window [class="Telegram"] move scratchpad,  sticky enable, resize set 478 602, move position 1303 77
+# for_window [class="Telegram"] move scratchpad,  sticky enable, resize set 478 602, move position 1303 77
 for_window [class="Signal"] move scratchpad, sticky enable, resize set 478 602, move position 1186 60
 for_window [class="Calibre"] move container to workspace $ws3
 for_window [class="Anki"] move scratchpad
