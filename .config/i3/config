@@ -461,6 +461,7 @@ exec --no-startup-id emacs --daemon # start emacsclient
 # exec --no-startup-id gmtool admin start scratchphone
 # exec --no-startup-id xset led on # light up my fancy keyboard
 exec --no-startup-id sh ~/.scripts/repair-keys # switch to turkish keys and remap keys
+exec --no-startup-id syncthing --no-browser $2> /dev/null # run syncthing to sync files across devices
 
 # GUI development
 # for_window [title="Breakout!"] floating enable, move scratchpad, scratchpad show, resize set 600 1020, move position 1300 30, border pixel 0
