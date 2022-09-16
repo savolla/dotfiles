@@ -19,7 +19,7 @@ hide_edge_borders none
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 2
-bindsym $mod+v exec --no-startup-id sh karna-open-video-url-on-mpv
+# bindsym $mod+v exec --no-startup-id sh karna-open-video-url-on-mpv
 #bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -425,7 +425,7 @@ bindsym $mod+g exec --no-startup-id ~/.scripts/url-opener.sh      # url
 bindsym $mod+F10 exec --no-startup-id ~/.scripts/sticky-notes.sh    # sticky notes
 bindsym $mod+Shift+F10 exec --no-startup-id ~/.scripts/hdmi-connect.sh    # hdmi
 bindsym $mod+F12 exec --no-startup-id ~/.scripts/open-phone         # open phone
-bindsym $mod+v --no-startup-id ~/project/vim-anywhere/bin/run # enable vim editing everywhere!!!
+bindsym $mod+v exec --no-startup-id ~/project/vim-anywhere/bin/run # enable vim editing everywhere!!!
 # bindsym $mod+*         exec --no-startup-id
 
 # INITIALIZATION
