@@ -213,13 +213,14 @@ for_window [class="htop"] floating enable, move scratchpad, scratchpad show, res
 # for_window [class="kitty"] floating enable, move scratchpad, scratchpad show, resize set 1280 720, move position center, border pixel 0
 
 # class of
-for_window [class="GParted"] floating enable border normal
-for_window [class="Pavucontrol"] floating enable
+for_window [class="GParted"] floating enable border none normal
+for_window [class="Pavucontrol"] floating enable border none
 for_window [class="mpv"] floating enable, resize set 1280 720, move position center, sticky enable, border pixel 0
 # for_window [class="Telegram"] move scratchpad,  sticky enable, resize set 478 602, move position 1303 77
-for_window [class="Signal"] move scratchpad, sticky enable, resize set 478 602, move position 1186 60
+for_window [class="Signal"] move scratchpad, sticky enable, resize set 478 602, move position 1186 60 border none
 for_window [class="Calibre"] move container to workspace $ws3
-for_window [class="Anki"] move scratchpad
+for_window [class="Anki"] move scratchpad border none
+for_window [class="Logseq"] border none move container to workspace $ws1
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
