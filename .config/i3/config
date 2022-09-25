@@ -221,6 +221,7 @@ for_window [class="Signal"] move scratchpad, sticky enable, resize set 478 602, 
 for_window [class="Calibre"] move container to workspace $ws3
 for_window [class="Anki"] move scratchpad border none
 for_window [class="Logseq"] border none move container to workspace $ws1
+for_window [class="GeoGebra"] border none
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
