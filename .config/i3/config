@@ -275,7 +275,7 @@ mode "resize" {
 # exec --no-startup-id nm-applet
 exec_always --no-startup-id unclutter -idle 1
 exec_always --no-startup-id dunst
-exec_always --no-startup-id flameshot
+# exec_always --no-startup-id flameshot
 
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground
