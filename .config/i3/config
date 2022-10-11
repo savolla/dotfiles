@@ -151,23 +151,26 @@ bindsym $mod+minus scratchpad show
 
 # ws1
 # set $ws1 1: 
-set $ws1 
+set $ws1 
 # ws2 is for doom emacs
 # set $ws2 2: 
-set $ws2 
 # ws3/4/5 are basic workstations
 # set $ws3 3: ¹
-set $ws3 
-set $ws4 ²
-set $ws5 ³
+set $ws2 
+set $ws3 
+set $ws4 4
+set $ws5 5
 # ws6 is for surfing web
-# set $ws6 6: 
+set $ws6 6
 # set $ws7 7: 
-set $ws7 
+# set $ws7 
+set $ws7 7
 # ws8 is for gaming
-set $ws8 
+# set $ws8 
+set $ws8 8
 # ws9 is for virtual machines
-set $ws9 
+# set $ws9 
+set $ws9 9
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -182,10 +185,11 @@ bindsym $mod+9 workspace $ws9
 
 # Open applications on specific workspaces
 # assign [instance="quassel"] $ws1
-assign [instance="emacs"] $ws2
+assign [instance="emacs"] $ws3
 # assign [instance="okular"] $ws2
 # assign [class="Xournalpp"] $ws2
-assign [class="librewolf"] $ws3
+assign [class="librewolf"] $ws1
+assign [class="logseq"] $ws2
 # assign [class="Feedreader"] $ws7
 # assign [class="Foliate"] $ws8
 #assign [class=""] $ws3
@@ -220,7 +224,7 @@ for_window [class="mpv"] floating enable, resize set 1280 720, move position cen
 for_window [class="Signal"] move scratchpad, sticky enable, resize set 478 602, move position 1186 60 border none
 for_window [class="Calibre"] move container to workspace $ws3
 for_window [class="Anki"] move scratchpad border none
-for_window [class="Logseq"] border none move container to workspace $ws1
+for_window [class="Logseq"] border none move container to workspace $ws2
 for_window [class="GeoGebra"] border none
 
 # switch to workspace with urgent window automatically
