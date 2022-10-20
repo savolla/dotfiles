@@ -32,7 +32,6 @@ alias prs="sudo pacman -Rs" # pacman remove
 alias prf="sudo pacman -Rs" # pacman remove force
 alias pause="process-pause.sh" # pause the process
 alias cont="process-cont.sh" # continues the process
-alias t="task" # taskwarrior!
 alias vph="gmtool admin stop scratchphone || gmtool admin start scratchphone"
 
 
