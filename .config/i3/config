@@ -476,3 +476,4 @@ exec --no-startup-id syncthing --no-browser $2> /dev/null # run syncthing to syn
 # Vm settings
 exec --no-startup-id karna-fix-vm
 exec --no-startup-id karna-start-my-applications-on-startup
+exec --no-startup-id sudo mount -t virtiofs vmshare /home/savolla/resource/vmshare
