@@ -1,0 +1,194 @@
+#!/usr/bin/env bash
+alt + space
+    which-key
+
+# alt + space; h
+#     zathura ~/resource/notes/org/savolla-keybindings.pdf
+
+# alt + space; l; c
+#     notify-send -r 27072 -i $ICONS_DIR/loading.svg "launching:" "codium" && codium
+
+# alt + space; l; l
+#     notify-send -r 27072 -i $ICONS_DIR/loading.svg "launching:" "logseq" && logseq
+
+# # browser
+# alt + space; l; b; l
+#     notify-send -r 27072 -i $ICONS_DIR/loading.svg "launching:" "librewolf" && librewolf
+
+# alt + space; l; b; f
+#     notify-send -r 27072 -i $ICONS_DIR/loading.svg "launching:" "firefox" && firefox
+
+# alt + space; l; v
+#     notify-send -r 27072 -i $ICONS_DIR/loading.svg "launching:" "mpv with youtube video" && open-youtube-video-with-mpv
+
+# ## toggle
+# # toggle picom
+# alt + space; t; p
+#     toggle-picom
+
+# # toggle screenkey
+# alt + space; t; s
+#     toggle-screenkey
+
+# # toggle vpn
+# alt + space; t; v
+#     toggle-vpn
+
+# alt + space; t; c
+#     color-picker-xorg
+
+# # display
+# alt + space; d; l; n
+#     display-last-dunst-notification
+
+# # restart
+# alt + space; r; s;
+#     kill $(pidof slstatus) && slstatus
+
+# alt + space; r; d;
+#     kill $(pidof dunst) && dunst
+
+# ## gaming
+# alt + space; l; g; m
+#     notify-send -r 27072 -i $ICONS_DIR/loading.svg  "launching:" "mangohud" && mangohud
+
+# alt + space; l; g; s
+#     notify-send -r 27072 -i $ICONS_DIR/loading.svg  "launching:" "steam" && steam
+
+# alt + space; l; g; l
+#     notify-send -r 27072 -i $ICONS_DIR/loading.svg  "launching:" "lutris" && lutris
+
+# # nix
+# alt + space; n; r
+#     rebuild-nixos
+
+# alt + space; n; u
+#     upgrade-nixos
+
+# # utilities
+# alt + space; u; c; g
+#     notify-send -r 27072 "launching:" "gcolor3" && gcolor3
+
+# ## screen recording
+# alt + space; u; r; r
+#     start-screen-recording-xorg
+
+# alt + space; u; r; s
+#     stop-screen-recording-xorg
+
+# alt + space; u; r; p
+#     pause-screen-recording-xorg
+
+# alt + space; u; r; K
+#     pkill -f screenkey
+
+# ## wallpaper
+# alt + space; u; w; b
+#     wallpaper-browser
+
+# alt + space; u; w; r
+#     set-random-wallpaper
+
+# ## mouse cursor
+# alt + space; u; m; p
+#     get-mouse-coordinates
+
+# ## screenshot
+# alt + space; u; s; p
+#     flameshot gui --path ~/resource/images/screenshots
+
+# alt + space; u; s; f
+#     flameshot full --path ~/resource/images/screenshots
+
+# # session commands
+# alt + space; s; l
+#     slock
+
+# alt + space; s; r
+#     notify-send -r 27072 "session:" "rebooting system" && systemctl reboot
+
+# alt + space; s; p
+#     notify-send -r 27072 "session:" "shutting down system" && systemctl poweroff
+
+# alt + space; s; h
+#     notify-send -r 27072 "session:" "hibernating system please wait" && systemctl hibernate
+
+alt + F1
+    pkill -f type-content-from-clipboard
+
+# volume control
+# increase volume by 2%
+alt + F12
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
+# decrease volume by 2%
+alt + F11
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
+# mute volume
+alt + F10
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+
+# # music control
+# # play next song
+# alt + space; m; n
+#     mpc next
+
+# # start/stop current song
+# alt + space; m; s
+#     mpc toggle
+
+# # play previous song
+# alt + space; m; p
+#     mpc prev
+
+# # seek through +5 seconds
+# alt + space; m; l
+#     mpc seek +5
+
+# # seek through -5 seconds
+# alt + space; m; h
+#     mpc seek -5
+
+# mouse control with keyboard
+super + h
+    xdotool mousemove_relative -- -25 0 # 󰁅
+
+super + j
+    xdotool mousemove_relative 0 25 # 󰁅
+
+super + k
+    xdotool mousemove_relative 0 -25 # 󰁝
+
+super + l
+    xdotool mousemove_relative 25 0 # 󰁔
+
+super + u
+    xdotool mousemove_relative -- -25 -15 # 󰁛
+
+super + idotless
+    xdotool mousemove_relative -- 25 -15 # 󰁜
+
+super + n
+    xdotool mousemove_relative -- -25 15 # 󰁂
+
+super + m
+    xdotool mousemove_relative -- 25 15 # 󰁃
+
+super + space
+    xdotool click --clearmodifiers 1 # 󰳽  (left)
+
+
+super + shift + space
+    xdotool click --clearmodifiers 3 # 󰳽  (right)
+
+super + shift + k
+    xdotool click --clearmodifiers 4 #   (scroll)
+
+super + shift + j
+    xdotool click --clearmodifiers 5 # 󰁅  (scroll)
+
+super + shift + h
+    xdotool click --clearmodifiers 6 #   (scroll)
+
+super + shift + l
+    xdotool click --clearmodifiers 7 #   (scroll)
+

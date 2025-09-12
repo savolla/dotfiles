@@ -1,0 +1,6 @@
+
+//@theme "/nix/store/xcfia1n9h67jj4wks2kicw6xm1alj0q0-rofi-1.7.5+wayland3/share/rofi/themes/Monokai.rasi"
+
+//@theme "/nix/store/pbfffdzdliv2yvpizb2mfphiml9dr3v0-rofi-1.7.5+wayland3/share/rofi/themes/dmenu.rasi"
+
+@theme "/nix/store/csinzwhri15fiy3m8big6ggkf6w9rzz6-rofi-1.7.9+wayland1/share/rofi/themes/gruvbox-dark.rasi"

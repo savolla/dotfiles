@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/savolla/project/scripts/linux/gnome-autostart
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Custom Startup Script
+Comment=Runs custom setup and apps at login
