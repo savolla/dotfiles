@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+setxkbmap tr &                              # set keyboard layout
+setxkbmap -option caps:swapescape &         # swap esc with caps lock
+xrandr -s 1920x1080 &                       # set resolution
+unclutter -idle 2 &                         # disable mouse cursor
+xset r rate 150 90 &                        # increase speed of keyboard
+xset s off &                                # disable screen saver
+xset -dpms &                                # disable monitor shutdown
+xset -b &                                   # dissable annoying desktop bell sound
+picom -b &                                  # start compositor for opacity/fading stuff
+mpd &                                       # start music server
+dunst &                                     # start notification daemon
+sxhkd -m 1 &                                # keyboard shortcuts
+lxsession &                                 # auth agent and other good stuff
+wpctl set-volume @DEFAULT_AUDIO_SINK@ 30% & # set pipewire volume to 30%
+adaptive-blue-light-filter &                # blue light filter
+# tmux-session-creator &                      # launch cli programs in tmux
+slstatus &             # status bar
+udiskie &              # auto mount usb
+set-random-wallpaper & # random wallpaper
+# jamesdsp -t &                               # pipewire equalizer
+
+if [[ "$CURRENT_NIXOS_SPECIALISATION" != "frontend" ]]; then
+  periodic-random-wallpaper-switcher & # wallpaper service
+  opensnitchd &                        # application firewall
+  opensnitch-ui --background &         # for opensnitch interactive promts
+  sync-dotfiles-with-xkarna-usb &      # daemon for synching and backing up config files to my thumb drive
+  update-repos &                       # auto update repositories
+  syncthing -no-browser &              # sync server
+fi
+
+# auto start gui apps
+# kitty -e attach-all-tmux-sessions &
+if [[ "$CURRENT_NIXOS_SPECIALISATION" == "frontend" ]]; then
+  emacs &
+  rm ~/.zsh-history
+else
+  emacs &
+  librewolf &
+  logseq &
+  ferdium &
+  nicotine-plus -n &
+# XD &
+fi
+
+# start window manager
+exec dbus-run-session dwm && fix-keyboard

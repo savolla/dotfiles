@@ -1,0 +1,7 @@
+[init]
+	defaultBranch = main
+[user]
+	email = savolla@protonmail.com
+	name = savolla
+[safe]
+	directory = /tmp/crosstool-ng
