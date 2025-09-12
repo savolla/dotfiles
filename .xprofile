@@ -19,6 +19,7 @@ adaptive-blue-light-filter &                # blue light filter
 slstatus &             # status bar
 udiskie &              # auto mount usb
 set-random-wallpaper & # random wallpaper
+sync-github-repos.sh & # sync my blog and other repos automatically
 # jamesdsp -t &                               # pipewire equalizer
 
 if [[ "$CURRENT_NIXOS_SPECIALISATION" != "frontend" ]]; then

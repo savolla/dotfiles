@@ -28,6 +28,7 @@ alias ls="exa"
 #alias emacs="~/.config/emacs/bin/doom run"
 alias ncdu="gdu"
 alias srm="secure-rm"
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # activate plugins
 source "$HOME"/resource/repos/zsh-autosuggestions/zsh-autosuggestions.zsh
